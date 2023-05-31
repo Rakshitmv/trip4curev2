@@ -8,16 +8,24 @@ import { Link } from "react-router-dom";
 import Slider from "react-slick";
 
 const speciality = [
-  { value: 'specialty1', label: 'Specialty1' },
-  { value: 'specialty2', label: 'Specialty2' },
-  { value: 'specialty3', label: 'Specialty3' }
+  { value: 'Cancer Treatment', label: 'Cancer Treatment' },
+  { value: 'Cardiac Surgery', label: 'Cardiac Surgery' },
+  { value: 'Cosemtic Surgery', label: 'Cosemtic Surgery' },
+  { value: 'Fertility Treatment', label: 'Fertility Treatment' },
+  { value: 'Neurology', label: 'Neurology' },
+  { value: 'Orthopedic Surgery', label: 'Orthopedic Surgery' }
+ 
 ]
 
 const country = [
-  { value: 'country1', label: 'Country1' },
-  { value: 'country2', label: 'Country2' },
-  { value: 'country3', label: 'Country3' }
+  { value: 'Argentina', label: 'Argentina' },
+  { value: 'Germany', label: 'Germany' },
+  { value: 'India', label: 'India' },
+  { value: 'Malaysia', label: 'Malaysia' },
+  { value: 'Mexico', label: 'Mexico' },
+  { value: 'Spain', label: 'Spain' }
 ]
+
 
 const fmc = {
   dots: true,
@@ -26,7 +34,7 @@ const fmc = {
   slidesToShow: 3,
   slidesToScroll: 1,
   centerPadding: '10',
-  arrows:false,
+  arrows: false,
   responsive: [
     {
       breakpoint: 768,
@@ -114,7 +122,7 @@ const afterbefore = {
   speed: 500,
   slidesToShow: 1,
   slidesToScroll: 1,
-  arrows:true,
+  arrows: true,  
   responsive: [
     {
       breakpoint: 768,
@@ -210,7 +218,7 @@ function Homepage() {
         <Container>
           <Row className="align-items-center">
             <div className="banner-text pb-9 ">
-              <h2>Wellness & Medical tourism for</h2>
+              <h2 className='main-heading'>Wellness & Medical tourism for</h2>
               <h3>Everyone, Everywhere.</h3>
             </div>
 
@@ -231,7 +239,7 @@ function Homepage() {
                   </Form.Group>
                   </Col>
                   <Col xl="2">
-                    <button type="submit" className="btn btn-primary btn-lg w-100 search-big-btn seconday-red"><i class="fa fa-search"></i> Searching</button>
+                    <button type="submit" className="btn btn-primary btn-lg w-100 search-big-btn seconday-red"><i class="fa fa-search"></i> Search</button>
                   </Col>
                 </Row>
                 </Container>
@@ -328,7 +336,7 @@ function Homepage() {
       <section className='ab-section'>
         <Container>
           <Row>
-            <div className="col-md-7 mx-auto">
+            <div className="col-md-7 mx-auto ab-section-black">
 
               <Slider {...afterbefore}>
                 <div className='ab-image position-relative'>
@@ -373,7 +381,7 @@ function Homepage() {
         </Container>
       </section>
 
-      <section id="section-02" className="py-5">
+      <section id="section-02" className="py-5 featured-medical-center">
         <Container>
          <Row>
           <div className="col-md-7 mx-auto mb-5 text-center">
@@ -452,15 +460,20 @@ function Homepage() {
               </Link>
               
           </Slider>
-         </Row>
+          </Row>
+          <Row>
+            <div className="text-center py-4">
+            <Button className="line-primary-btn px-4 py-2 mt-5" variant="outline-primary">View All Medical Centers</Button>
+            </div>
+          </Row>
          </Container>
       </section >
 
 
-      <section id="section-03" className="py-5 medical-tourism-guide">
+      <section id="section-03" className="py-5  medical-tourism-guide">
         <Container>
           <Row>
-            <div className="col-md-9 mx-auto py-5 text-center">
+            <div className="col-md-9 mx-auto py-5  mt-5 text-center">
               <h2>Medical Tourism Guide</h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</p>
             </div>

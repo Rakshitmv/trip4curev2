@@ -142,6 +142,39 @@ display: none !important;
     font-weight: 600;
 }
 
+.main-heading {
+    
+    font-weight: 700;
+}
+
+.ab-section-black {
+    background-color: lightgray;
+}
+
+.ab-section-black:hover {
+    background-color: none;
+    text-align: center;
+}
+
+.featured-medical-center {
+    background: linear-gradient(to bottom, #eaeae9 50%, #ffff 50%);
+}
+
+.text-center {
+    position: relative;
+    animation: mymove 5s infinite;
+     animation-delay: 2s;
+}
+
+  @keyframes mymove {
+      from {
+          left: 0px;
+      }
+
+      to {
+          left: 500px;
+      }
+  }
 
 .medical-tourism-guide {
 
@@ -154,7 +187,7 @@ display: none !important;
     background: url(../../../public/images/map-bg.png) no-repeat;
     background-size: cover;
     background-position: bottom center;
-    padding-bottom:120px !important
+    padding-bottom:170px !important
 }
 .mgt-block {
 border:0;

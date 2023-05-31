@@ -39,10 +39,10 @@ function Topbar() {
                         <Link to={''}><i className="fa fa-facebook"></i></Link>
                         <Link to={''}><i className="fa fa-instagram"></i></Link>
                     </Nav>
-                    <NavDropdown title="EN" className="navbar-nav flex-row align-items-center  langauge" id="collasible-nav-dropdown">
-                        <NavDropdown.Item href="/">EN</NavDropdown.Item>
-                        <NavDropdown.Item href="/">DE</NavDropdown.Item>
-                        <NavDropdown.Item href="/">SE</NavDropdown.Item>
+                    <NavDropdown title="ENGLISH" className="navbar-nav flex-row align-items-center  langauge" id="collasible-nav-dropdown">
+                        <NavDropdown.Item href="/">ENGLISH</NavDropdown.Item>
+                        <NavDropdown.Item href="/">SPANISH</NavDropdown.Item>
+                        <NavDropdown.Item href="/">ARABIC</NavDropdown.Item>
                     </NavDropdown>
                     
                 
