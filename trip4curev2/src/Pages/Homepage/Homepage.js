@@ -231,7 +231,7 @@ function Homepage() {
                   </Form.Group>
                   </Col>
                   <Col xl="2">
-                    <button type="submit" className="btn btn-primary btn-lg w-100 search-big-btn seconday-red"><i class="fa fa-search"></i> Search</button>
+                    <button type="submit" className="btn btn-primary btn-lg w-100 search-big-btn seconday-red"><i class="fa fa-search"></i> Searching</button>
                   </Col>
                 </Row>
                 </Container>
