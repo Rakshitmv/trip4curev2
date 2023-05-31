@@ -21,7 +21,7 @@ function Menu() {
           <Nav className='ms-auto'>
           <Link className='nav-link' to={'/user-sign-in'}>User Sign In</Link>
             <Link className='nav-link' to={'/hospital-sign-in'}>Hospital Sign In</Link>
-            <Nav.Link className='btn btn-primary' href="/contact">Contact Us</Nav.Link>
+            <Nav.Link className='btn' style={{backgroundColor: '#b8353b' , color: 'white'}} href="/contact">Contact Us</Nav.Link>
           </Nav>
         </Navbar.Collapse>
         {/* <NavDropdown className='user-profile ml-2 ml-sm-3 d-flex align-items-center' title="Hi Alex" id="basic-nav-dropdown">

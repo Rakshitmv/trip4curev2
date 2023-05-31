@@ -223,8 +223,8 @@ function Homepage() {
         <Container>
           <Row className="align-items-center">
             <div className="banner-text pb-9 ">
-              <h4 className='main-heading'>Wellness & Medical</h4>
-              <h4 className='main-heading'>tourism for</h4>
+              <h3 className='main-heading'>Wellness & Medical</h3>
+              <h3 className='main-heading'>tourism for</h3>
               <h3 className='main-sub-heading'>Everyone, Everywhere.</h3>
             </div>
 
@@ -245,7 +245,7 @@ function Homepage() {
                   </Form.Group>
                   </Col>
                   <Col xl="2">
-                    <button type="submit" className="btn btn-primary btn-lg w-70 search-big-btn seconday-red"><i class="fa fa-search"></i> Search</button>
+                    <button type="submit" className="btn btn-primary btn-lg w-70 search-big-btn" style={{backgroundColor: '#b8353b'}}><i class="fa fa-search"></i> Search</button>
                   </Col>
                 </Row>
                 </Container>
