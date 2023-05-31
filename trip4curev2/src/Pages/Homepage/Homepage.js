@@ -29,6 +29,7 @@ const country = [
 
 const fmc = {
   dots: true,
+  autoplay:true,
   infinite: true,
   speed: 500,
   slidesToShow: 3,
@@ -59,6 +60,7 @@ const fmc = {
 
 const mtg = {
   dots: true,
+  autoplay:true,
   infinite: true,
   speed: 500,
   slidesToShow: 3,
@@ -88,6 +90,7 @@ const mtg = {
 
 const testimonial = {
   dots: true,
+  autoplay:true,
   infinite: true,
   speed: 500,
   slidesToShow: 1,
@@ -150,6 +153,7 @@ const afterbefore = {
 
 const fd = {
   dots: false,
+  autoplay:true,
   infinite: true,
   speed: 500,
   slidesToShow: 3,
@@ -181,6 +185,7 @@ const fd = {
 
 const globalProvider = {
   dots: false,
+  autoplay:true,
   infinite: true,
   speed: 500,
   slidesToShow: 4,
@@ -218,28 +223,29 @@ function Homepage() {
         <Container>
           <Row className="align-items-center">
             <div className="banner-text pb-9 ">
-              <h2 className='main-heading'>Wellness & Medical tourism for</h2>
-              <h3>Everyone, Everywhere.</h3>
+              <h4 className='main-heading'>Wellness & Medical</h4>
+              <h4 className='main-heading'>tourism for</h4>
+              <h3 className='main-sub-heading'>Everyone, Everywhere.</h3>
             </div>
 
             <div className="form-search pb-9 ">
               <Form>
                 <Container>
                 <Row>
-                  <Col xl={6} md={8} className="col-6 mb-4 mb-xl-0 pt-3 px-4 bg-white-transparent bdrtlb border-right position-relative rounded-left form-search-item">
-                  <Form.Group className="mb-3" controlId="formBasicEmail">
+                  <Col xl={4} md={8} className="col-6 mb-4 mb-xl-0 pt-3 px-4 bg-white-transparent bdrtlb border-right position-relative rounded-left form-search-item">
+                  <Form.Group className="" controlId="formBasicEmail">
                     <Form.Label>Choose Speciality</Form.Label>
                     <Select className="form-control-filter" options={speciality} />
                   </Form.Group>
-                  </Col>
-                  <Col xl={4} md={4} className="col-6 mb-4 mb-xl-0 pt-3 px-4 bg-white-transparent brtb position-relative rounded-right form-search-item">
-                  <Form.Group className="mb-3" controlId="formBasicEmail">
+                  </Col>&emsp;
+                  <Col xl={3} md={4} className="col-6 mb-4 mb-xl-0 pt-3 px-4 bg-white-transparent brtb position-relative rounded-right form-search-item">
+                  <Form.Group className="" controlId="formBasicEmail">
                     <Form.Label>Choose Country</Form.Label>
                     <Select className="form-control-filter" options={country} />
                   </Form.Group>
                   </Col>
                   <Col xl="2">
-                    <button type="submit" className="btn btn-primary btn-lg w-100 search-big-btn seconday-red"><i class="fa fa-search"></i> Search</button>
+                    <button type="submit" className="btn btn-primary btn-lg w-70 search-big-btn seconday-red"><i class="fa fa-search"></i> Search</button>
                   </Col>
                 </Row>
                 </Container>
@@ -336,11 +342,12 @@ function Homepage() {
       <section className='ab-section'>
         <Container>
           <Row>
-            <div className="col-md-7 mx-auto ab-section-black">
+            <div className="col-md-7 mx-auto ">
 
               <Slider {...afterbefore}>
+                
                 <div className='ab-image position-relative'>
-                  <img  src={`${process.env.PUBLIC_URL}/images/slide_01.jpg`} alt="" />
+                  <img className='ab-img-black' src={`${process.env.PUBLIC_URL}/images/slide_01.jpg`} alt="" />
                   <div className='content'>
                     <h2>Before Knee Replacement</h2>
                   </div>
@@ -374,7 +381,8 @@ function Homepage() {
                   <div className='content'>
                     <h2>I’m cancer free now</h2>
                   </div>
-                </div>
+                  </div>
+                  
               </Slider>
             </div>
           </Row>
@@ -385,8 +393,8 @@ function Homepage() {
         <Container>
          <Row>
           <div className="col-md-7 mx-auto mb-5 text-center">
-             <h2>Featured Medical Centers</h2>
-             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</p>
+             <h2 className='main-heading-page'>Featured Medical Centers</h2>
+             <p className='main-sub-heading-page-fmc'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</p>
           </div>
          </Row>
          <Row>
@@ -398,7 +406,7 @@ function Homepage() {
               <Card.Img variant="top" src={`${process.env.PUBLIC_URL}/images/mc1.png`} />
               </div>
               <Card.Body>
-                <Card.Title>Galenia Hospital</Card.Title>
+                <Card.Title><h4 className='card-heading'>Galenia Hospital</h4></Card.Title>
                 <Card.Text>Mexico - 16 Specialties</Card.Text>
               </Card.Body>
             </Card>
@@ -409,7 +417,7 @@ function Homepage() {
               <Card.Img variant="top" src={`${process.env.PUBLIC_URL}/images/mc-2.png`} />
               </div>
               <Card.Body>
-                <Card.Title>Apollo Hospital Chennai</Card.Title>
+                <Card.Title><h4 className='card-heading'>Apollo Hospital Chennai</h4></Card.Title>
                 <Card.Text>India - 25 Specialties</Card.Text>
               </Card.Body>
             </Card>
@@ -420,8 +428,8 @@ function Homepage() {
               <Card.Img variant="top" src={`${process.env.PUBLIC_URL}/images/mc3.png`} />
               </div>
               <Card.Body>
-                <Card.Title>Hospital Universitario Austral</Card.Title>
-                <Card.Text>Argentina - 3 Specialties </Card.Text>
+                <Card.Title><h4 className='card-heading'>Hospital Universitario Austral</h4></Card.Title>
+                <Card.Text>Argentina - 3 Specialties</Card.Text>
               </Card.Body>
             </Card>
               </Link>
@@ -431,7 +439,7 @@ function Homepage() {
               <Card.Img variant="top" src={`${process.env.PUBLIC_URL}/images/mc4.png`} />
               </div>
               <Card.Body>
-                <Card.Title>KPJ Damansara Specialist Hospital</Card.Title>
+                <Card.Title><h4 className='card-heading'>KPJ Damansara Specialist Hospital</h4></Card.Title>
                 <Card.Text>Malaysia - 28 Specialties</Card.Text>
               </Card.Body>
             </Card>
@@ -442,7 +450,7 @@ function Homepage() {
               <Card.Img variant="top" src={`${process.env.PUBLIC_URL}/images/mc5.png`} />
               </div>
               <Card.Body>
-                <Card.Title>Apollo Hospital Chennai</Card.Title>
+                <Card.Title><h4 className='card-heading'>Apollo Hospital Chennai</h4></Card.Title>
                 <Card.Text>India - 25 Specialties</Card.Text>
               </Card.Body>
             </Card>
@@ -453,7 +461,7 @@ function Homepage() {
               <Card.Img variant="top" src={`${process.env.PUBLIC_URL}/images/mc6.png`} />
               </div>
               <Card.Body>
-                <Card.Title>Hospital Universitario Austral</Card.Title>
+                <Card.Title><h4 className='card-heading'>Hospital Universitario Austral</h4></Card.Title>
                 <Card.Text>Argentina - 3 Specialties</Card.Text>
               </Card.Body>
             </Card>
@@ -463,7 +471,7 @@ function Homepage() {
           </Row>
           <Row>
             <div className="text-center py-4">
-            <Button className="line-primary-btn px-4 py-2 mt-5" variant="outline-primary">View All Medical Centers</Button>
+            <Button className="line-primary-btn px-4 py-2 mt-5" variant="outline-primary"><h6 className='btn-font'>View All Medical Centers</h6></Button>
             </div>
           </Row>
          </Container>
@@ -474,62 +482,62 @@ function Homepage() {
         <Container>
           <Row>
             <div className="col-md-9 mx-auto py-5  mt-5 text-center">
-              <h2>Medical Tourism Guide</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</p>
+              <h2 className='main-heading-page'>Medical Tourism Guide</h2>
+              <h5 className='main-sub-heading'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</h5>
             </div>
           </Row>
           <Row>
           <Slider {...mtg}>
           <Card className="sliderblock mgt-block">
               <Card.Body>
-                <Card.Title>Checking out the doctor</Card.Title>
+                <Card.Title><h4 className='medical-card-heading'>Checking out the doctor</h4></Card.Title>
                 <Card.Text>
-                A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.
+                <h6 className='medical-card-sub-heading'>A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.</h6>
                 </Card.Text>
                 <Button className="text-link" variant="link">Read More</Button>
               </Card.Body>
             </Card>
             <Card className="sliderblock mgt-block">
               <Card.Body>
-                <Card.Title>Checking out the doctor</Card.Title>
+                <Card.Title><h4 className='medical-card-heading'>Checking out the doctor</h4></Card.Title>
                 <Card.Text>
-                A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.
+                  <h6 className='medical-card-sub-heading'>A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.</h6>
                 </Card.Text>
                 <Button className="text-link" variant="link">Read More</Button>
               </Card.Body>
             </Card>
             <Card className="sliderblock mgt-block">
               <Card.Body>
-                <Card.Title>Checking out the doctor</Card.Title>
+                <Card.Title><h4 className='medical-card-heading'>Checking out the doctor</h4></Card.Title>
                 <Card.Text>
-                A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.
+                 <h6 className='medical-card-sub-heading'>A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.</h6>
                 </Card.Text>
                 <Button className="text-link" variant="link">Read More</Button>
               </Card.Body>
             </Card>
             <Card className="sliderblock mgt-block">
               <Card.Body>
-                <Card.Title>Checking out the doctor</Card.Title>
+                <Card.Title><h4 className='medical-card-heading'>Checking out the doctor</h4></Card.Title>
                 <Card.Text>
-                A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.
+                 <h6 className='medical-card-sub-heading'>A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.</h6>
                 </Card.Text>
                 <Button className="text-link" variant="link">Read More</Button>
               </Card.Body>
             </Card>
             <Card className="sliderblock mgt-block">
               <Card.Body>
-                <Card.Title>Checking out the doctor</Card.Title>
+                <Card.Title><h4 className='medical-card-heading'>Checking out the doctor</h4></Card.Title>
                 <Card.Text>
-                A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.
+                 <h6 className='medical-card-sub-heading'>A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.</h6>
                 </Card.Text>
                 <Button className="text-link" variant="link">Read More</Button>
               </Card.Body>
             </Card>
             <Card className="sliderblock mgt-block">
               <Card.Body>
-                <Card.Title>Checking out the doctor</Card.Title>
+                <Card.Title><h4 className='medical-card-heading'>Checking out the doctor</h4></Card.Title>
                 <Card.Text>
-                A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.
+                  <h6 className='medical-card-sub-heading'>A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.</h6>
                 </Card.Text>
                 <Button className="text-link" variant="link">Read More</Button>
               </Card.Body>
@@ -546,8 +554,8 @@ function Homepage() {
         <Container>
           <Row>
             <div className="col-md-8 mb-5">
-              <h2>Featured Destinations</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</p>
+              <h2 className='main-heading-page'>Featured Destinations</h2>
+              <h5 className='main-sub-heading'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</h5>
             </div>
           </Row>
           <Row>
@@ -602,7 +610,7 @@ function Homepage() {
           </Row>
           <Row>
             <div className="text-center py-4">
-            <Button className="line-primary-btn px-4 py-2" variant="outline-primary">View All Destinations</Button>
+            <Button className="line-primary-btn px-4 py-2  text-center" variant="outline-primary"><h6 className='btn-font'>View All Destinations</h6></Button>
             </div>
           </Row>
           </Container>
@@ -612,7 +620,7 @@ function Homepage() {
       <section id="section-05" className="py-5 testimonials">
         <Container>
           <Row>
-          <div class="col-md-9 mx-auto py-5 text-center"><h2 className="text-white">What our Patients say...</h2></div>
+          <div class="col-md-9 mx-auto py-5 text-center"><h2 className="text-white-heading">What our Patients say...</h2></div>
           </Row>
           <Row>
             <div className="col-md-8 mx-auto text-center testimonial-card">
@@ -666,8 +674,8 @@ function Homepage() {
         <Container>
           <Row>
             <div className="col-md-8 mb-5">
-              <h2>Global Insurance Providers</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</p>
+              <h2 className='main-heading-page'>Global Insurance Providers</h2>
+              <h5 className='main-sub-heading'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</h5>
             </div>
           </Row>
           <Row>
@@ -695,8 +703,8 @@ function Homepage() {
           <Container>
             <Row>
               <div className="col-md-8  mx-auto text-center">
-                <h2>Latest Announcements</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</p>
+                <h2 className='main-heading-page'>Latest Announcements</h2>
+                <h5 className='main-sub-heading'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</h5>
               </div>
           </Row>
           <Row className="mt-4">
@@ -704,8 +712,8 @@ function Homepage() {
               <Card className="border-0 position-relative blog-card">
                 <Card.Img variant="top" className="rounded-0" src={`${process.env.PUBLIC_URL}/images/blog1.png`} />
                 <Card.Body>
-                  <Card.Title>Our New Miami Beach Hotel is Open!</Card.Title>
-                  <Card.Text>A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.</Card.Text>
+                  <Card.Title><h4 className='medical-card-heading'>Our New Miami Beach Hotel is Open!</h4></Card.Title>
+                  <Card.Text><h6 className='medical-card-sub-heading'>A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.</h6></Card.Text>
                   <Button className="text-link" variant="link">Read More</Button>
                 </Card.Body>
               </Card>
@@ -714,8 +722,8 @@ function Homepage() {
               <Card className="border-0 position-relative blog-card">
                 <Card.Img variant="top" className="rounded-0" src={`${process.env.PUBLIC_URL}/images/blog2.png`} />
                 <Card.Body>
-                  <Card.Title>Know the Secreat of Resort</Card.Title>
-                  <Card.Text>A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.</Card.Text>
+                  <Card.Title><h4 className='medical-card-heading'>Know the Secreat of Resort</h4></Card.Title>
+                  <Card.Text><h6 className='medical-card-sub-heading'>A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.</h6></Card.Text>
                   <Button className="text-link" variant="link">Read More</Button>
                 </Card.Body>
               </Card>
@@ -724,15 +732,15 @@ function Homepage() {
               <Card className="border-0 position-relative blog-card">
                 <Card.Img variant="top" className="rounded-0" src={`${process.env.PUBLIC_URL}/images/blog3.png`} />
                 <Card.Body>
-                  <Card.Title>How to book a Resort in best price on Mountains</Card.Title>
-                  <Card.Text>A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.</Card.Text>
+                  <Card.Title><h4 className='medical-card-heading'>How to book a Resort in best price on Mountains</h4></Card.Title>
+                  <Card.Text><h6 className='medical-card-sub-heading'>A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.</h6></Card.Text>
                   <Button className="text-link" variant="link">Read More</Button>
                 </Card.Body>
               </Card>
             </Col>
           </Row>
           <Row>
-          <div class="text-center py-4"><button type="button" class="line-primary-btn px-4 py-2 btn btn-outline-primary">View All Announcement</button></div>
+          <div class="text-center py-4"><button type="button" class="line-primary-btn px-4 py-2 btn btn-outline-primary"><h6 className='btn-font'>View All Announcement</h6></button></div>
           </Row>
           </Container>
        

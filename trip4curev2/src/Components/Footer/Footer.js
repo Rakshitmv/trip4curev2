@@ -13,7 +13,7 @@ function Footer() {
         <img  src={`${process.env.PUBLIC_URL}/images/logo-w.png`} alt='' height={120} />
         </Col>
         <Col md={4}>
-          <h5>Quick Links</h5>
+          <h5 className='footer-font'>Quick Links</h5>
           <Row>
             <Col md={6}>
               <ul className="footer-links">

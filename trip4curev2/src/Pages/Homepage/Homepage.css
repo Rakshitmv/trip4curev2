@@ -143,25 +143,57 @@ display: none !important;
 }
 
 .main-heading {
-    
+    font-family: var(--heading--font-family);
+    font-weight: 200;
+    font-size: xx-large;
+}
+
+.main-sub-heading {
+    font-family: 'Centaur';
     font-weight: 700;
 }
 
-.ab-section-black {
-    background-color: lightgray;
-}
+/* .ab-section-black {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
 
-.ab-section-black:hover {
+/* .ab-section-black:hover {
     background-color: none;
     text-align: center;
-}
+} */
 
 .featured-medical-center {
     background: linear-gradient(to bottom, #eaeae9 50%, #ffff 50%);
 }
 
-.text-center {
-    position: relative;
+.main-heading-page {
+    font-size: 40px;
+    font-family: 'Centaur';
+    font-weight:700;
+}
+
+.main-sub-heading-page {
+    font-family: 'Poppins';
+    
+}
+
+.main-sub-heading-page-fmc {
+    color: rgb(101, 99, 99)
+}
+
+.card-heading {
+    font-family: 'Centaur';
+}
+
+.card-sub-heading {
+    font-family: 'Poppins';
+    
+}
+
+/* .text-center {
+    
     animation: mymove 5s infinite;
      animation-delay: 2s;
 }
@@ -174,7 +206,7 @@ display: none !important;
       to {
           left: 500px;
       }
-  }
+  } */
 
 .medical-tourism-guide {
 
@@ -208,6 +240,15 @@ margin: 10px;
     color: var(--primary-color)
 }
 
+
+.medical-card-heading {
+    font-family: 'Centaur';
+    font-weight: 800;
+}
+
+.medical-card-sub-heading {
+    font-family: 'Poppins';
+}
 /* .medical-guide-card {
     display: flex;
     gap: 1rem;
@@ -241,6 +282,16 @@ margin: 10px;
     top: 270px;
     left: 100px;
 }
+
+.destination-centers{
+    font-family: 'Poppins';
+}
+
+.btn-font {
+    text-align: center;
+    font-family: 'Poppins';
+}
+
 .fd-bottom-content{
     text-align: center;
     width: 100%;
@@ -284,6 +335,10 @@ margin: 10px;
     color: black;
 }
 
+.text-white {
+    font-family: 'Poppins';
+}
+
 .guest-img {
     
     width: 100px;
@@ -322,9 +377,15 @@ margin: 10px;
     justify-content: space-around;
 }
 
-.client-block{
-
+.text-white-heading {
+    font-family: 'Centaur';
+    color: white;
+    font-weight: 700;
 }
+
+/* .client-block{
+
+} */
 .client-block img{
     border: 2px solid #dcf2f9;
     max-width: 95%;
@@ -340,10 +401,63 @@ margin: 10px;
     font-family: 'Centaur';
     font-weight: 700;
 }
+
 .ab-section{
     background: #faf5f2;
-    padding: 60px 0
+    padding: 60px 0;
 }
+
+.ab-image .content {
+    position: absolute;
+    inset: 0;
+    background: transparent;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 40px;
+    transition: .2s;
+    padding: 20px;
+}
+
+.ab-image {
+    
+    padding-left: 70px;
+    
+}
+
+/* .ab-img-black {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: #080d15;
+    opacity: .7;
+    
+} */
+
+/* .ab-section-black {
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    
+} */
+
+/* .ab-image-black {
+    display: none;
+    background: rgba(0,0,0,0.5);
+    z-index: 2;
+} */
+
+.ab-image:hover .content {
+    background: rgba(0, 0, 0, .3);
+    padding-bottom: 50px;
+}
+
+.ab-section .slick-prev {
+    left: -60px;
+}
+
 .blog-card .card-body{
     position: relative;
     top: -30px;
@@ -369,27 +483,6 @@ margin: 10px;
     /* border: 2px solid white; */
 }
 
-.ab-image .content{
-    position: absolute;
-    inset: 0;
-    background: transparent;
-    text-align: center;
-    color: #fff;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    padding-bottom: 40px;
-    transition: .2s;
-    padding: 20px;
-}
-
-.ab-image:hover .content {
-    background: rgba(0,0,0,.3);
-    padding-bottom: 50px;
-}
-.ab-section .slick-prev {
-    left: -60px;
-}
 
 .footer_red {
     color: white;
