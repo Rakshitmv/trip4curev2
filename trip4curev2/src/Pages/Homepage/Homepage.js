@@ -326,7 +326,7 @@ function Homepage() {
                   <img src={`${process.env.PUBLIC_URL}/images/ic-cancer-treatment.png`} className="normal-state"  alt="" />
                   <img src={`${process.env.PUBLIC_URL}/images/ic-cancer-treatment-white.png`} className="hover-state"  alt="" />
                   </div>
-                    <span class="card-text font-size-md font-weight-semibold mt-2 d-block">
+                    <span className="card-text font-size-md font-weight-semibold mt-2 d-block ">
                     Cancer Treatment
                     </span>
                   </div>
@@ -407,7 +407,7 @@ function Homepage() {
               </div>
               <Card.Body>
                 <Card.Title><h4 className='card-heading'>Galenia Hospital</h4></Card.Title>
-                <Card.Text>Mexico - 16 Specialties</Card.Text>
+                <Card.Text>Mexico - 16 Specialties</Card.Text><br></br>
               </Card.Body>
             </Card>
               </Link>
@@ -418,7 +418,7 @@ function Homepage() {
               </div>
               <Card.Body>
                 <Card.Title><h4 className='card-heading'>Apollo Hospital Chennai</h4></Card.Title>
-                <Card.Text>India - 25 Specialties</Card.Text>
+                <Card.Text>India - 25 Specialties</Card.Text><br></br>
               </Card.Body>
             </Card>
               </Link>
@@ -429,7 +429,7 @@ function Homepage() {
               </div>
               <Card.Body>
                 <Card.Title><h4 className='card-heading'>Hospital Universitario Austral</h4></Card.Title>
-                <Card.Text>Argentina - 3 Specialties</Card.Text>
+                <Card.Text>Argentina - 3 Specialties</Card.Text><br></br>
               </Card.Body>
             </Card>
               </Link>
@@ -451,7 +451,7 @@ function Homepage() {
               </div>
               <Card.Body>
                 <Card.Title><h4 className='card-heading'>Apollo Hospital Chennai</h4></Card.Title>
-                <Card.Text>India - 25 Specialties</Card.Text>
+                <Card.Text>India - 25 Specialties</Card.Text><br></br>
               </Card.Body>
             </Card>
               </Link>
@@ -462,7 +462,7 @@ function Homepage() {
               </div>
               <Card.Body>
                 <Card.Title><h4 className='card-heading'>Hospital Universitario Austral</h4></Card.Title>
-                <Card.Text>Argentina - 3 Specialties</Card.Text>
+                <Card.Text>Argentina - 3 Specialties</Card.Text><br></br>
               </Card.Body>
             </Card>
               </Link>
@@ -470,8 +470,8 @@ function Homepage() {
           </Slider>
           </Row>
           <Row>
-            <div className="text-center py-4">
-            <Button className="line-primary-btn px-4 py-2 mt-5" variant="outline-primary"><h6 className='btn-font'>View All Medical Centers</h6></Button>
+            <div className="text-center py-4 mt-2">
+            <Button className="line-primary-btn px-4 py-2 text-center mt-5" variant="outline-primary"><h6 className='btn-font'>View All Medical Centers</h6></Button>
             </div>
           </Row>
          </Container>
@@ -610,7 +610,7 @@ function Homepage() {
           </Row>
           <Row>
             <div className="text-center py-4">
-            <Button className="line-primary-btn px-4 py-2  text-center" variant="outline-primary"><h6 className='btn-font'>View All Destinations</h6></Button>
+            <Button className="line-primary-btn px-5 py-2  text-center" variant="outline-primary"><h6 className='btn-font'>View All Destinations</h6></Button>
             </div>
           </Row>
           </Container>
@@ -713,8 +713,8 @@ function Homepage() {
                 <Card.Img variant="top" className="rounded-0" src={`${process.env.PUBLIC_URL}/images/blog1.png`} />
                 <Card.Body>
                   <Card.Title><h4 className='medical-card-heading'>Our New Miami Beach Hotel is Open!</h4></Card.Title>
-                  <Card.Text><h6 className='medical-card-sub-heading'>A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.</h6></Card.Text>
-                  <Button className="text-link" variant="link">Read More</Button>
+                  <Card.Text><h6 className='medical-card-sub-heading'>A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.</h6></Card.Text><br></br>
+                  <Button className="text-link" variant="link">Read More</Button><br></br>
                 </Card.Body>
               </Card>
             </Col>
@@ -723,8 +723,8 @@ function Homepage() {
                 <Card.Img variant="top" className="rounded-0" src={`${process.env.PUBLIC_URL}/images/blog2.png`} />
                 <Card.Body>
                   <Card.Title><h4 className='medical-card-heading'>Know the Secreat of Resort</h4></Card.Title>
-                  <Card.Text><h6 className='medical-card-sub-heading'>A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.</h6></Card.Text>
-                  <Button className="text-link" variant="link">Read More</Button>
+                  <Card.Text><h6 className='medical-card-sub-heading'>A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.</h6></Card.Text><br></br>
+                  <Button className="text-link" variant="link">Read More</Button><br></br>
                 </Card.Body>
               </Card>
             </Col>

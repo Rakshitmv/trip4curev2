@@ -144,14 +144,17 @@ display: none !important;
 
 .main-heading {
     font-family: var(--heading--font-family);
-    font-weight: 200;
+    font-weight: 500;
     font-size: xx-large;
 }
 
 .main-sub-heading {
     font-family: 'Centaur';
     font-weight: 700;
+    font-size: larger;
 }
+
+
 
 /* .ab-section-black {
     display: flex;
@@ -288,7 +291,11 @@ margin: 10px;
 }
 
 .btn-font {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    margin-top: 5px;
     font-family: 'Poppins';
 }
 
