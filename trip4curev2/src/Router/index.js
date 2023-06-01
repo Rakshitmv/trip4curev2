@@ -7,6 +7,7 @@ import NewPassword from "../Pages/NewPassword/NewPassword";
 import VerifyAccount from "../Pages/VerifyAccount/VerifyAccount";
 import HospitalSignIn from "../Pages/HospitalSignIn/HospitalSignIn";
 import HospitalSignUp from "../Pages/HospitalSignUp/HospitalSignUp";
+import ContactUS from "../Pages/ContactUS/ContactUS";
 
 
 const router = createBrowserRouter([
@@ -29,7 +30,11 @@ const router = createBrowserRouter([
     {
       path: "/hospital-sign-up",
       element: <HospitalSignUp />
-    },
+  },
+    {
+      path: "/contact-us",
+      element: <ContactUS />
+  },
     {
       path: "/forgot-password",
       element: <ForgotPassword /> 
