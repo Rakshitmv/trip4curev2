@@ -7,6 +7,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.2.3",
+    "google-translate-api": "^2.3.0",
     "mdb-react-ui-kit": "^6.0.0",
     "react": "^18.2.0",
     "react-advanced-news-ticker": "^1.0.1",
@@ -45,5 +46,5 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "http://3.14.213.147/trip4curev2/" 
+  "homepage": "http://3.14.213.147/trip4curev2/"
 }

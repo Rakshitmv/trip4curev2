@@ -7,6 +7,12 @@ import Footer from "../../Components/Footer/Footer";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
 
+
+
+
+
+
+
 const speciality = [
   { value: 'Cancer Treatment', label: 'Cancer Treatment' },
   { value: 'Cardiac Surgery', label: 'Cardiac Surgery' },
@@ -217,6 +223,7 @@ const globalProvider = {
 function Homepage() {
   return (
     <>
+      
       <Topbar />
       <Header />
       <section id="section-01" className="home-main-intro">

@@ -1,0 +1,10 @@
+
+
+.field1-2 {
+    display: flex;
+    gap: 50px;
+}
+
+.message {
+    text-align: left;
+}

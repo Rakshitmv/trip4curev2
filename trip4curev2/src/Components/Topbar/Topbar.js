@@ -6,6 +6,17 @@ import NewsTicker from "react-advanced-news-ticker";
 import { Link } from "react-router-dom";
 export const Directions = Object.freeze({ UP: 1, DOWN: 1 });
 export const TickerStates = Object.freeze({ Stopped: 0, Running: 1, Paused: 2 });
+// import translate from 'google-translate-api';
+
+// const [translatedText, setTranslatedText] = useState('');
+
+// const translatePage = async (targetLanguage) => {
+//   const html = document.documentElement.innerHTML;
+//   const { text } = await translate(html, { to: targetLanguage });
+
+//   setTranslatedText(text);
+// };
+
 
 function Topbar() { 
     return (
@@ -41,8 +52,8 @@ function Topbar() {
                     </Nav>
                     <NavDropdown title="ENGLISH" className="navbar-nav flex-row align-items-center  langauge" id="collasible-nav-dropdown">
                         <NavDropdown.Item href="/">ENGLISH</NavDropdown.Item>
-                        <NavDropdown.Item href="/">SPANISH</NavDropdown.Item>
-                        <NavDropdown.Item href="/">ARABIC</NavDropdown.Item>
+                        <NavDropdown.Item  href="/">SPANISH</NavDropdown.Item>
+                        <NavDropdown.Item  href="/">ARABIC</NavDropdown.Item>
                     </NavDropdown>
                     
                 
