@@ -6,39 +6,7 @@ import '../SignIn/SignIn.css'
 
 
 function SignIn() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [isValidEmail, setIsValidEmail] = useState(false);
-  const [isValidPassword, setIsValidPassword] = useState(false);
 
-    const handleEmailChange = (e) => {
-        const newEmail = e.target.value;
-        setEmail(newEmail);
-        setIsValidEmail(validateEmail(newEmail));
-    }; 
-
-
-
-    const handlePasswordChange = (e) => {
-    const newPassword = e.target.value;
-    setPassword(newPassword);
-    setIsValidPassword(validatePassword(newPassword));
-    };
-    
-
-    const validateEmail = (email) => {
-    // Email validation using regex
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  };
-
-    
-      const validatePassword = (password) => {
-    // Password validation using regex
-    // Example: Password should contain at least 8 characters with at least one uppercase, one lowercase, one number, and one special character
-    const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/;
-    return passwordRegex.test(password);
-    };
     
 
 
@@ -54,23 +22,15 @@ function SignIn() {
                         <Form>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label >Email address</Form.Label>
-                                <Form.Control type="email" onChange={handleEmailChange}  value={email} placeholder="Enter email" />
-                                    {isValidEmail ? (
-                                        <span style={{ color: 'green' }}>Email is valid</span>
-                                    ) : (
-                                        <span style={{ color: 'red' }}>Email is invalid</span>
-                                    )}
+                                <Form.Control type="email" placeholder="Enter email" />
+                              
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <Form.Label>Password</Form.Label>
-                                <Form.Control type="password"     value={password}
-                                     onChange={handlePasswordChange} placeholder="Password" />
-                                    {isValidPassword ? (
-                                            <span style={{ color: 'green' }}>Password is valid</span>
-                                        ) : (
-                                            <span style={{ color: 'red' }}>Password is invalid</span>
-                                        )}
+                                <Form.Control type="password" 
+                                    placeholder="Password" />
+                                  
                             </Form.Group>
                             <Row className='mt-3'>
                                 <Col>

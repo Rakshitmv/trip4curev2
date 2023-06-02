@@ -6,7 +6,8 @@ import "./Homepage.css";
 import Footer from "../../Components/Footer/Footer";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
-
+import ViewSpeciality from '../ViewSpeciality/ViewSpeciality';
+import ViewMedicalCenter from '../ViewMedicalCenter/ViewMedicalCenter';
 
 
 
@@ -259,7 +260,7 @@ function Homepage() {
               </Form>
             </div>
 
-            <div className="font-size-lg mb-2">Or browse Top Specialties: <Link to={''} className="red-link">View All Specialties</Link></div>
+            <div className="font-size-lg mb-2">Or browse Top Specialties: <Link to={'/view-speciality'} className="red-link">View All Specialties</Link></div>
             <div className="list-inline pb-8 flex-wrap my-n2">
               <div className="list-inline-item py-2">
                 <Link to={''} class="card border-0 icon-box link-hover-dark-white">
@@ -478,7 +479,7 @@ function Homepage() {
           </Row>
           <Row>
             <div className="text-center py-4 mt-2">
-            <Button className="line-primary-btn px-4 py-2 text-center mt-5" variant="outline-primary"><h6 className='btn-font'>View All Medical Centers</h6></Button>
+           <Link to={'/view-medical-center'}><Button className="line-primary-btn px-4 py-2 text-center mt-5" variant="outline-primary"><h6 className='btn-font'>View All Medical Centers</h6></Button></Link>
             </div>
           </Row>
          </Container>

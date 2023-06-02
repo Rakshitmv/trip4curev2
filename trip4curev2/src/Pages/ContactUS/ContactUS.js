@@ -48,8 +48,9 @@ const ContactUS = () => {
                                 </Form.Group>
                               </div><br></br>
                             <Form.Group className="mb-4" controlId="formBasicPassword">
-                                <Form.Label className=''>Message</Form.Label>
-                                <Form.Control  className= "pb-5 message" type="text" placeholder="Enter Message" />
+                                <Form.Label className='' >Message</Form.Label>
+                                  <Form.Control className="pb-5 message"  type="text" placeholder="Enter Message" />
+                                
                             </Form.Group>
                             
                             <div className='d-grid my-4'>

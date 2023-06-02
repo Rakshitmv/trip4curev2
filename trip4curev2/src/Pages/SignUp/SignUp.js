@@ -6,66 +6,7 @@ import '../SignIn/SignIn.css'
 
 function SignUp() {
 
-    const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
-  });
 
-  const [errors, setErrors] = useState({});
-
-  const validateForm = () => {
-    const { firstName, lastName, email, password, confirmPassword } = formData;
-    const errors = {};
-
-    // Regular expressions for validation
-    const nameRegex = /^[A-Za-z\s]+$/;
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
-
-    if (!firstName.match(nameRegex)) {
-      errors.firstName = 'Invalid first name';
-    }
-
-    if (!lastName.match(nameRegex)) {
-      errors.lastName = 'Invalid last name';
-    }
-
-    if (!email.match(emailRegex)) {
-      errors.email = 'Invalid email address';
-    }
-
-    if (!password.match(passwordRegex)) {
-      errors.password =
-        'Password must contain at least 8 characters, including one uppercase letter, one lowercase letter, and one number';
-    }
-
-    if (password !== confirmPassword) {
-      errors.confirmPassword = 'Passwords do not match';
-    }
-
-    setErrors(errors);
-    return Object.keys(errors).length === 0;
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (validateForm()) {
-      // Form is valid, you can proceed with form submission or further actions
-      console.log('Form is valid:', formData);
-    } else {
-      // Form is invalid, display error messages
-      console.log('Form is invalid:', errors);
-    }
-  };
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-    
 
 
 
@@ -81,36 +22,36 @@ function SignUp() {
                         <Form>
                             <Form.Group className="mb-3" controlId="fullName">
                                 <Form.Label>First Name</Form.Label>
-                                <Form.Control type="text"  name="firstName" value={formData.firstName}
-                                      onChange={handleChange} placeholder="Enter Name" />
-                                  {errors.firstName && <span>{errors.firstName}</span>}
+                                <Form.Control type="text"  name="firstName" 
+                                       placeholder="Enter Name" />
+                                  
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="fullName">
                                 <Form.Label>Last Name</Form.Label>
-                                <Form.Control type="text"  name="lastName"  value={formData.lastName}
-                                      onChange={handleChange} placeholder="Enter Name" />
-                                   {errors.lastName && <span>{errors.lastName}</span>}
+                                <Form.Control type="text"  name="lastName"  
+                                       placeholder="Enter Name" />
+                                  
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Email address</Form.Label>
-                                <Form.Control type="email" name="email"  value={formData.email}
-                                      onChange={handleChange} placeholder="Enter email" />
-                                  {errors.email && <span>{errors.email}</span>}
+                                <Form.Control type="email" name="email" 
+                                     placeholder="Enter email" />
+                                
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <Form.Label>Set Password</Form.Label>
-                                <Form.Control type="password"    name="password"  value={formData.password}
-                                      onChange={handleChange} placeholder="Set Password" />
-                                    {errors.password && <span>{errors.password}</span>}
+                                <Form.Control type="password"    name="password"  
+                                      placeholder="Set Password" />
+                                 
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="confirmPassword">
                                 <Form.Label>Confirm Password</Form.Label>
-                                <Form.Control type="password"  name="confirmPassword" value={formData.confirmPassword}
-                                      onChange={handleChange} placeholder="Confirm Password" /> 
-                                  {errors.confirmPassword && <span>{errors.confirmPassword}</span>}
+                                <Form.Control type="password"  name="confirmPassword" 
+                                       placeholder="Confirm Password" /> 
+                                 
                             </Form.Group>
                             <div className='d-grid my-4'>
                                 <Button variant="primary" type="submit">

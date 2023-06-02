@@ -8,6 +8,8 @@ import VerifyAccount from "../Pages/VerifyAccount/VerifyAccount";
 import HospitalSignIn from "../Pages/HospitalSignIn/HospitalSignIn";
 import HospitalSignUp from "../Pages/HospitalSignUp/HospitalSignUp";
 import ContactUS from "../Pages/ContactUS/ContactUS";
+import ViewSpeciality from "../Pages/ViewSpeciality/ViewSpeciality";
+import ViewMedicalCenter from "../Pages/ViewMedicalCenter/ViewMedicalCenter";
 
 
 const router = createBrowserRouter([
@@ -34,6 +36,16 @@ const router = createBrowserRouter([
     {
       path: "/contact-us",
       element: <ContactUS />
+  },
+
+  {
+    path: "/view-speciality",
+    element: <ViewSpeciality />
+  },
+
+  {
+    path: "/view-medical-center",
+    element: <ViewMedicalCenter />
   },
     {
       path: "/forgot-password",
