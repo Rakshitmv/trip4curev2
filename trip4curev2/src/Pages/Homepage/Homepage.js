@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import ViewSpeciality from '../ViewSpeciality/ViewSpeciality';
 import ViewMedicalCenter from '../ViewMedicalCenter/ViewMedicalCenter';
+import MedicalCenterInfoPages_1 from '../ViewMedicalCenterInfoPages/MedicalCenterInfoPages_1';
+
 
 
 

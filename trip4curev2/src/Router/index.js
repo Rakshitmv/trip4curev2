@@ -10,6 +10,12 @@ import HospitalSignUp from "../Pages/HospitalSignUp/HospitalSignUp";
 import ContactUS from "../Pages/ContactUS/ContactUS";
 import ViewSpeciality from "../Pages/ViewSpeciality/ViewSpeciality";
 import ViewMedicalCenter from "../Pages/ViewMedicalCenter/ViewMedicalCenter";
+import MedicalCenterInfoPages_1 from "../Pages/ViewMedicalCenterInfoPages/MedicalCenterInfoPages_1";
+import MedicalCenterInfoPages_2 from "../Pages/ViewMedicalCenterInfoPages/MedicalCenterInfoPages_2";
+import MedicalCenterInfoPages_3 from "../Pages/ViewMedicalCenterInfoPages/MedicalCenterInfoPages_3";
+import MedicalCenterInfoPages_4 from "../Pages/ViewMedicalCenterInfoPages/MedicalCenterInfoPages_4";
+import MedicalCenterInfoPages_5 from "../Pages/ViewMedicalCenterInfoPages/MedicalCenterInfoPages_5";
+import MedicalCenterInfoPages_6 from "../Pages/ViewMedicalCenterInfoPages/MedicalCenterInfoPages_6";
 
 
 const router = createBrowserRouter([
@@ -47,6 +53,37 @@ const router = createBrowserRouter([
     path: "/view-medical-center",
     element: <ViewMedicalCenter />
   },
+
+  {
+    path: "/view-medical-center/medical-center-info-page_1",
+    element: <MedicalCenterInfoPages_1 />
+  },
+
+    {
+    path: "/view-medical-center/medical-center-info-page_2",
+    element: <MedicalCenterInfoPages_2 />
+  },
+
+    {
+    path: "/view-medical-center/medical-center-info-page_3",
+    element: <MedicalCenterInfoPages_3 />
+  },
+
+    {
+    path: "/view-medical-center/medical-center-info-page_4",
+    element: <MedicalCenterInfoPages_4 />
+  },
+
+    {
+    path: "/view-medical-center/medical-center-info-page_5",
+    element: <MedicalCenterInfoPages_5 />
+  },
+
+    {
+    path: "/view-medical-center/medical-center-info-page_6",
+    element: <MedicalCenterInfoPages_6 />
+  },
+
     {
       path: "/forgot-password",
       element: <ForgotPassword /> 
@@ -60,7 +97,7 @@ const router = createBrowserRouter([
       element: <VerifyAccount /> 
     }
     ],
-     { basename: '/trip4cureV2' }
+     { basename: '/trip4curev2' }
     );
 
 
