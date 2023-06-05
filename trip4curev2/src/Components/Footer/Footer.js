@@ -47,7 +47,7 @@ function Footer() {
                 <li><Link to={''}>Orthopedic Surgery</Link></li>
               </ul>
         </Col>
-        <Col md={2}>
+        <Col md={1}>
         <h5>Connect With Us</h5>
         <div className='footer-social'>
           <Link to={''}><i className='fa fa-twitter'></i></Link>
