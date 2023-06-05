@@ -1,4 +1,4 @@
 .card-series-1, .card-series-2 {
     display: flex;
-    gap: 40px;
+    gap: 100px;
 }

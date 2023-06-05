@@ -2,8 +2,33 @@ import React from 'react'
 import { Button, Col, Container, Form, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import '../HospitalSignIn/SignIn.css'
+import * as Yup from 'yup';
+import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
 
 function HospitalSignIn() {
+
+ const validationSchema = Yup.object().shape({
+        email: Yup.string()
+            .required('Email is required')
+            .email('Email is invalid'),
+        password: Yup.string()
+            .required('Password is required')
+            .min(8)
+            .max(15)
+    });
+    const formOptions = { resolver: yupResolver(validationSchema) };
+
+    // get functions to build form with useForm() hook
+    const { register, handleSubmit, reset, formState } = useForm(formOptions);
+    const { errors } = formState;
+
+    function onSubmit(data) {
+
+        return false;
+    }
+
+
   return (
     <div className='login-reg-wrapper h-100 d-flex flex-column'> 
         <Container className='my-auto'>
@@ -13,15 +38,17 @@ function HospitalSignIn() {
                         <div className="logo"><Link className="d-flex justify-content-center fw-bolder" to={'/'} title=""> <img  src={`${process.env.PUBLIC_URL}/images/logo.png`}height={130} width={100}/></Link> </div>
                         <hr class="mx-n4 mx-sm-n5" />
                         <p class="lead text-center">Login to Hospital account</p>
-                        <Form>
+                        <Form onSubmit={handleSubmit(onSubmit)}>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Email address</Form.Label>
-                                <Form.Control type="email" placeholder="Enter email" />
+                                <input name="email" type="text" {...register('email')} placeholder='Enter email' className={`form-control ${errors.email ? 'is-invalid' : ''}`} />
+                                    <div className="invalid-feedback">{errors.email?.message}</div>
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <Form.Label>Password</Form.Label>
-                                <Form.Control type="password" placeholder="Password" />
+                                <input name="password" type="password" {...register('password')} placeholder='Enter password' maxLength={'15'} className={`form-control ${errors.password ? 'is-invalid' : ''}`} />
+                                    <div className="invalid-feedback">{errors.password?.message}</div>
                             </Form.Group>
                             <Row className='mt-3'>
                                 <Col>

@@ -11,7 +11,13 @@ const ViewMedicalCenter = () => {
             <section id= 'view-medical-page' className='view-medical-center-page '>
                 <Container>
                     <Row>
-                        <div className='col-md-7 pt-5 mx-auto card-series-1'>
+                        <div className='col-md-9 mx-auto mt-5 text-center'>
+                            <h1>Medical Center</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</p>
+                        </div>
+                        
+                        <div className='col-md-9 pt-5 mx-auto card-series-1'>
+                            
                             <Link to={'/view-medical-center/medical-center-info-page_1'} className="sliderblock"> 
                             <Card className="text-center">
                             <div className="image-block">
@@ -38,7 +44,7 @@ const ViewMedicalCenter = () => {
                         </div>
                     </Row>
                     <Row>
-                        <div className='col-md-7 pt-5 mx-auto card-series-2'>
+                        <div className='col-md-9 pt-5 mx-auto card-series-2'>
                             <Link to={'/view-medical-center/medical-center-info-page_3'} className="sliderblock">
                             <Card className="text-center">
                             <div className="image-block">
@@ -65,7 +71,7 @@ const ViewMedicalCenter = () => {
                         </div>
                     </Row>
                     <Row>
-                        <div className='col-md-7 pt-5 mx-auto card-series-2'>
+                        <div className='col-md-9 pt-5 mx-auto card-series-2'>
                             <Link to={'/view-medical-center/medical-center-info-page_5'} className="sliderblock">
                             <Card className="text-center">
                             <div className="image-block">

@@ -3,6 +3,7 @@ import '../ViewMedicalCenterInfoPages/MedicalCenterInfoPages.css'
 import { Col, Container, Form, Row, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
+
 const MedicalCenterInfoPages_6 = () => {
   return (
     <>
