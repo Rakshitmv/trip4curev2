@@ -24,6 +24,25 @@ function SignIn() {
     const { register, handleSubmit, reset, formState } = useForm(formOptions);
     const { errors } = formState;
 
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+
+     async function signIn() {
+        let item = {email, password}
+        console.warn(item)
+        let result = await fetch("http://13.234.216.30:8080/login/", {
+            method: 'POST',
+            body: JSON.stringify(item),
+            headers: {
+                "Content-Type": 'application/json',
+                "Accept": 'application/json'
+            }
+        })  
+         result = await result.json()
+         console.warn("result", result);
+         localStorage.setItem("userinfo",JSON.stringify(result))
+    }
+
     function onSubmit(data) {
 
         return false;
@@ -42,13 +61,13 @@ function SignIn() {
                             <Form onSubmit={handleSubmit(onSubmit)}>
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
                                     <Form.Label type="email" >Email address</Form.Label>
-                                    <input name="email" type="text" {...register('email')} placeholder='Enter email' className={`form-control ${errors.email ? 'is-invalid' : ''}`} />
+                                    <input name="email"  value= {email}  onChange={(e) => setEmail(e.target.value)} type="text" {...register('email')} placeholder='Enter email' className={`form-control ${errors.email ? 'is-invalid' : ''}`} />
                                     <div className="invalid-feedback">{errors.email?.message}</div>
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" controlId="formBasicPassword">
                                     <Form.Label>Password</Form.Label>
-                                    <input name="password" type="password" {...register('password')} maxLength={'15'} placeholder='Enter password' className={`form-control ${errors.password ? 'is-invalid' : ''}`} />
+                                    <input name="password" value= {password} onChange={(e) => setPassword(e.target.value)} type="password" {...register('password')} maxLength={'15'} placeholder='Enter password' className={`form-control ${errors.password ? 'is-invalid' : ''}`} />
                                     <div className="invalid-feedback">{errors.password?.message}</div>
 
                                 </Form.Group>
@@ -61,7 +80,7 @@ function SignIn() {
                                     <Col className='text-end'><Link to={'/forgot-password'}>Forgot Password ?</Link></Col>
                                 </Row>
                                 <div className='d-grid my-4'>
-                                    <Button variant="primary" type="submit">
+                                    <Button variant="primary" onClick={signIn} type="submit">
                                         Sign In
                                     </Button>
                                 </div>

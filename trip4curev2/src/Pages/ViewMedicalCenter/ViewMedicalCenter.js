@@ -12,7 +12,7 @@ const ViewMedicalCenter = () => {
                 <Container>
                     <Row>
                         <div className='col-md-9 mx-auto mt-5 text-center'>
-                            <h1>Medical Center</h1>
+                            <h1>Medical Centers</h1>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</p>
                         </div>
                         
@@ -25,6 +25,7 @@ const ViewMedicalCenter = () => {
                             </div>
                             <Card.Body>
                                 <Card.Title><h4 className='card-heading'>Galenia Hospital</h4></Card.Title>
+                                <Card.Text>Mexico</Card.Text>
                                 <Card.Text>Mexico - 16 Specialties</Card.Text><br></br>
                             </Card.Body>
                             </Card>
@@ -37,6 +38,7 @@ const ViewMedicalCenter = () => {
                             </div>
                             <Card.Body>
                                 <Card.Title><h4 className='card-heading'>Apollo Hospital Chennai</h4></Card.Title>
+                                <Card.Text>Chennai</Card.Text>
                                 <Card.Text>India - 25 Specialties</Card.Text><br></br>
                             </Card.Body>
                             </Card>

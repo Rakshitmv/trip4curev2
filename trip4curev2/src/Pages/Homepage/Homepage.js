@@ -391,7 +391,37 @@ function Homepage() {
                   <div className='content'>
                     <h2>I’m cancer free now</h2>
                   </div>
+                </div>
+                <div className='ab-image position-relative'>
+                  <img  src={`${process.env.PUBLIC_URL}/images/slide_07.jpg`} alt="" />
+                  <div className='content'>
+                    <h2>Pregnant</h2>
                   </div>
+                </div>
+                {/* <div className='ab-image position-relative'>
+                  <img  src={`${process.env.PUBLIC_URL}/images/slide_08.jpg`} alt="" />
+                  <div className='content'>
+                    <h2>Knee sucessfull surgery</h2>
+                  </div>
+                </div> */}
+                <div className='ab-image position-relative'>
+                  <img  src={`${process.env.PUBLIC_URL}/images/slide_09.jpg`} alt="" />
+                  <div className='content'>
+                    <h2>Old is Gold</h2>
+                  </div>
+                </div>
+                {/* <div className='ab-image position-relative'>
+                  <img  src={`${process.env.PUBLIC_URL}/images/slide_10.jpg`} alt="" />
+                  <div className='content'>
+                    <h2>TB</h2>
+                  </div>
+                </div> */}
+                <div className='ab-image position-relative'>
+                  <img  src={`${process.env.PUBLIC_URL}/images/slide_11.jpg`} alt="" />
+                  <div className='content'>
+                    <h2>Cancer free</h2>
+                  </div>
+                </div>
                   
               </Slider>
             </div>

@@ -56,6 +56,31 @@ const validationSchema = Yup.object().shape({
     // get functions to build form with useForm() hook
     const { register, handleSubmit, reset, formState } = useForm(formOptions);
     const { errors } = formState;
+    
+
+   
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    const [c_password, setC_Password] = useState("")
+    const [role, setRole] = useState("")
+    const [country, setCountry] = useState("")
+
+     async function signUp() {
+        let item = { userInput,userInput1,email,password,c_password,role,country}
+        console.warn(item)
+        let result = await fetch("http://13.234.216.30:8080/register/", {
+            method: 'POST',
+            body: JSON.stringify(item),
+            headers: {
+                "Content-Type": 'application/json',
+                "Accept": 'application/json'
+            }
+        })  
+         result = await result.json()
+         console.warn("result", result);
+         localStorage.setItem("userinfo",JSON.stringify(result))
+    }
+
 
     function onSubmit(data) {
 
@@ -76,7 +101,7 @@ const validationSchema = Yup.object().shape({
                             <Form onSubmit={handleSubmit(onSubmit)}>
                                 <Form.Group className="mb-3" controlId="fullName">
                                     <Form.Label>First Name</Form.Label>
-                                    <input name="firstname" type="text" {...register('firstname')} onChange={(e) => handleInput(e)} value={userInput} placeholder='Enter first name' className={`form-control ${errors.firstname ? 'is-invalid' : ''}`} />
+                                    <input name="firstname"  type="text" {...register('firstname')} onChange={(e) => handleInput(e)} value={userInput} placeholder='Enter first name' className={`form-control ${errors.firstname ? 'is-invalid' : ''}`} />
                                     <div className="invalid-feedback">{errors.firstname?.message}</div>
 
                                 </Form.Group>
@@ -89,29 +114,29 @@ const validationSchema = Yup.object().shape({
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
                                     <Form.Label>Email address</Form.Label>
-                                    <input name="email" type="text" {...register('email')} placeholder='Enter email' className={`form-control ${errors.email ? 'is-invalid' : ''}`} />
+                                    <input name="email" value={email} type="text" {...register('email')} placeholder='Enter email' onChange={(e) => setEmail(e.target.value)} className={`form-control ${errors.email ? 'is-invalid' : ''}`} />
                                     <div className="invalid-feedback">{errors.email?.message}</div>
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" controlId="formBasicPassword">
                                     <Form.Label>Set Password</Form.Label>
-                                    <input name="setpassword" type="password" {...register('setpassword')} placeholder='Enter Password' className={`form-control ${errors.setpassword ? 'is-invalid' : ''}`} maxlength="15" />
+                                    <input name="setpassword" value= {password} type="password" {...register('setpassword')} placeholder='Enter Password' onChange={(e) => setPassword(e.target.value)} className={`form-control ${errors.setpassword ? 'is-invalid' : ''}`} maxlength="15" />
                                     <div className="invalid-feedback">{errors.setpassword?.message}</div>
 
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" controlId="confirmPassword">
                                     <Form.Label>Confirm Password</Form.Label>
-                                    <input name="confirmpassword" type="password" {...register('confirmpassword')} placeholder='Confirm Password' maxlength="15" className={`form-control ${errors.confirmpassword ? 'is-invalid' : ''}`} />
+                                    <input name="confirmpassword"  value= {c_password} type="password" {...register('confirmpassword')} placeholder='Confirm Password' onChange={(e) => setC_Password(e.target.value)} maxlength="15" className={`form-control ${errors.confirmpassword ? 'is-invalid' : ''}`} />
                                     <div className="invalid-feedback">{errors.confirmpassword?.message}</div>
                                 </Form.Group>
                                 <div className='d-grid my-4'>
-                                    <Button variant="primary" type="submit">
+                                    <Button onclick={signUp} variant="primary" type="submit">
                                         Sign Up
                                     </Button>
                                 </div>
                             </Form>
-                            <p class="text-muted text-center mb-2">Already have an account? <Link to={'/user-sign-in'}>Log In</Link></p>
+                            <p  class="text-muted text-center mb-2">Already have an account? <Link to={'/user-sign-in'}>Log In</Link></p>
                         </div>
                     </Col>
                 </Row>

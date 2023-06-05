@@ -84,6 +84,11 @@ const router = createBrowserRouter([
     element: <MedicalCenterInfoPages_6 />
   },
 
+  {
+    path: "/sign-up/verify-account",
+    element: <VerifyAccount />
+  },
+
     {
       path: "/forgot-password",
       element: <ForgotPassword /> 
