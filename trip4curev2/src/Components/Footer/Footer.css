@@ -55,6 +55,12 @@ footer h5{
     color: #fff;
 }
 
+footer .footer-connect {
+    font-family: 'Poppins';
+    color: #fff;
+    font-weight: 700;
+}
+
 footer hr{
     border-color: #fff;
 }

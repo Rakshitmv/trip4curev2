@@ -352,6 +352,12 @@ function Homepage() {
       <section className='ab-section'>
         <Container>
           <Row>
+            <div className='col-md-7 mx-auto mt-3 mb-5 text-center'>
+              <h2 className='main-heading-page'>Our Success Stories...</h2>
+              <h5 className='main-sub-heading'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</h5>
+            </div>
+          </Row>
+          <Row>
             <div className="col-md-7 mx-auto ">
 
               <Slider {...afterbefore}>
@@ -447,7 +453,8 @@ function Homepage() {
               </div>
               <Card.Body>
                 <Card.Title><h4 className='card-heading'>Galenia Hospital</h4></Card.Title>
-                <Card.Text>Mexico - 16 Specialties</Card.Text><br></br>
+                <Card.Text><h4>Mexico City</h4></Card.Text>
+                <Card.Text>Mexico - 16 Specialties</Card.Text>
               </Card.Body>
             </Card>
               </Link>
@@ -457,8 +464,9 @@ function Homepage() {
               <Card.Img variant="top" src={`${process.env.PUBLIC_URL}/images/mc-2.png`} />
               </div>
               <Card.Body>
-                <Card.Title><h4 className='card-heading'>Apollo Hospital Chennai</h4></Card.Title>
-                <Card.Text>India - 25 Specialties</Card.Text><br></br>
+                    <Card.Title><h4 className='card-heading'>Apollo Hospital</h4></Card.Title>
+                    <Card.Text><h4>Chennai</h4></Card.Text>
+                    <Card.Text>India - 25 Specialties</Card.Text>
               </Card.Body>
             </Card>
               </Link>
@@ -469,7 +477,8 @@ function Homepage() {
               </div>
               <Card.Body>
                 <Card.Title><h4 className='card-heading'>Hospital Universitario Austral</h4></Card.Title>
-                <Card.Text>Argentina - 3 Specialties</Card.Text><br></br>
+                <Card.Text><h4>Santa Fe</h4></Card.Text>
+                <Card.Text>Argentina - 3 Specialties</Card.Text>
               </Card.Body>
             </Card>
               </Link>
@@ -479,7 +488,8 @@ function Homepage() {
               <Card.Img variant="top" src={`${process.env.PUBLIC_URL}/images/mc4.png`} />
               </div>
               <Card.Body>
-                <Card.Title><h4 className='card-heading'>KPJ Damansara Specialist Hospital</h4></Card.Title>
+                <Card.Title><h4 className='card-heading'>KPJ Damansara Hospital</h4></Card.Title>
+                <Card.Text><h4>Kuala Lumpur</h4></Card.Text>
                 <Card.Text>Malaysia - 28 Specialties</Card.Text>
               </Card.Body>
             </Card>
@@ -490,8 +500,9 @@ function Homepage() {
               <Card.Img variant="top" src={`${process.env.PUBLIC_URL}/images/mc5.png`} />
               </div>
               <Card.Body>
-                <Card.Title><h4 className='card-heading'>Apollo Hospital Chennai</h4></Card.Title>
-                <Card.Text>India - 25 Specialties</Card.Text><br></br>
+                <Card.Title><h4 className='card-heading'>Apollo Hospital</h4></Card.Title>
+                <Card.Text><h4>Chennai</h4></Card.Text>
+                <Card.Text>India - 25 Specialties</Card.Text>
               </Card.Body>
             </Card>
               </Link>
@@ -502,7 +513,8 @@ function Homepage() {
               </div>
               <Card.Body>
                 <Card.Title><h4 className='card-heading'>Hospital Universitario Austral</h4></Card.Title>
-                <Card.Text>Argentina - 3 Specialties</Card.Text><br></br>
+                <Card.Text><h4>Santa Fe</h4></Card.Text>
+                <Card.Text>Argentina - 3 Specialties</Card.Text>
               </Card.Body>
             </Card>
               </Link>
@@ -752,9 +764,9 @@ function Homepage() {
               <Card className="border-0 position-relative blog-card">
                 <Card.Img variant="top" className="rounded-0" src={`${process.env.PUBLIC_URL}/images/blog1.png`} />
                 <Card.Body>
-                  <Card.Title><h4 className='medical-card-heading'>Our New Miami Beach Hotel is Open!</h4></Card.Title>
-                  <Card.Text><h6 className='medical-card-sub-heading'>A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.</h6></Card.Text><br></br>
-                  <Button className="text-link" variant="link">Read More</Button><br></br>
+                  <Card.Title><h4 className='medical-card-heading'>Our New Miami Beach Hotel is Open Now!</h4></Card.Title>
+                  <Card.Text><h6 className='medical-card-sub-heading'>A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.</h6></Card.Text>
+                  <Button className="text-link" variant="link">Read More</Button>
                 </Card.Body>
               </Card>
             </Col>
@@ -762,9 +774,9 @@ function Homepage() {
               <Card className="border-0 position-relative blog-card">
                 <Card.Img variant="top" className="rounded-0" src={`${process.env.PUBLIC_URL}/images/blog2.png`} />
                 <Card.Body>
-                  <Card.Title><h4 className='medical-card-heading'>Know the Secreat of Resort</h4></Card.Title>
-                  <Card.Text><h6 className='medical-card-sub-heading'>A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.</h6></Card.Text><br></br>
-                  <Button className="text-link" variant="link">Read More</Button><br></br>
+                  <Card.Title><h4 className='medical-card-heading'>Know the Secreat of Resort Its Amazing!!!</h4></Card.Title>
+                  <Card.Text><h6 className='medical-card-sub-heading'>A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.</h6></Card.Text>
+                  <Button className="text-link" variant="link">Read More</Button>
                 </Card.Body>
               </Card>
             </Col>
