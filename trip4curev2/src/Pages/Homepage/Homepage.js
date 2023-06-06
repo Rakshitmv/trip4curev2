@@ -774,7 +774,7 @@ function Homepage() {
               <Card className="border-0 position-relative blog-card">
                 <Card.Img variant="top" className="rounded-0" src={`${process.env.PUBLIC_URL}/images/blog2.png`} />
                 <Card.Body>
-                  <Card.Title><h4 className='medical-card-heading'>Know the Secreat of Resort Its Amazing!!!</h4></Card.Title>
+                  <Card.Title><h4 className='medical-card-heading'>Know the Secreat of Resort Its Amazing!</h4></Card.Title>
                   <Card.Text><h6 className='medical-card-sub-heading'>A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.</h6></Card.Text>
                   <Button className="text-link" variant="link">Read More</Button>
                 </Card.Body>

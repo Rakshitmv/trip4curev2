@@ -8,7 +8,7 @@ function Footer() {
     <footer>
     
     <Container>
-      <Row  className='py-5'>
+      <Row  className='py-5 px-5  mx-5 footer-left-side'>
         <Col md={2}>
         <img  src={`${process.env.PUBLIC_URL}/images/logo-w.png`} alt='' height={120} />
         </Col>
@@ -25,7 +25,7 @@ function Footer() {
                 <li><Link to={''}>Resources</Link></li>
               </ul>
             </Col>
-            <Col md={6}>
+            <Col md={4}>
             <ul className="footer-links">
                 <li><Link to={''}>Privacy</Link></li>
                 <li><Link to={''}>Terms of Use</Link></li>
@@ -36,7 +36,7 @@ function Footer() {
             </Col>
           </Row>
         </Col>
-        <Col md={4}>
+        <Col md={3}>
           <h5>Featured Specialties</h5>
           <ul className="footer-links">
                 <li><Link to={''}>Cancer Treatment</Link></li>
@@ -47,7 +47,7 @@ function Footer() {
                 <li><Link to={''}>Orthopedic Surgery</Link></li>
               </ul>
         </Col>
-        <Col md={2}>
+        <Col md={3}>
         <h6 className='footer-connect'>Connect With Us</h6>
         <div className='footer-social'>
           <Link to={''}><i className='fa fa-twitter'></i></Link>
