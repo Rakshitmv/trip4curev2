@@ -1,10 +1,42 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button, Col, Container, Form, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import '../SignUp/SignUp.css'
 import '../SignIn/SignIn.css'
+import * as Yup from 'yup';
+import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
 
 function NewPassword() {
+    const validationSchema = Yup.object().shape({
+
+        checkpassword: Yup.string()
+            .required('Current Password is required')
+            .min(8)
+            .max(15),
+        setpassword: Yup.string()
+            .required('Password is required')
+            .min(8)
+            .max(15),
+        confirmpassword: Yup.string()
+            .required('Confirm Password is required')
+            .min(8)
+            .max(15)
+            .oneOf([Yup.ref('setpassword')], 'Passwords does not match')
+    });
+
+
+    const formOptions = { resolver: yupResolver(validationSchema) };
+
+    // get functions to build form with useForm() hook
+    const { register, handleSubmit, reset, formState } = useForm(formOptions);
+    const { errors } = formState;
+
+    function onSubmit(data) {
+
+        return false;
+    }
+
     return (
         <div className='login-reg-wrapper h-100 d-flex flex-column'>
             <Container className='my-auto'>
@@ -14,26 +46,29 @@ function NewPassword() {
                             <div className="logo"><Link className="d-flex justify-content-center fw-bolder" to={'/'} title=""> <img src={`${process.env.PUBLIC_URL}/images/logo.png`} height={130} width={100} /></Link> </div>
                             <hr class="mx-n4 mx-sm-n5" />
                             <p class="lead text-center">Create New Password!</p>
-                            <Form>
+                            <Form onSubmit={handleSubmit(onSubmit)}>
 
                                 <Form.Group className="mb-3" controlId="formBasicPassword">
                                     <Form.Label>Enter Current Password</Form.Label>
-                                    <Form.Control type="password" placeholder="Enter Current Password" />
+                                    <input name="checkpassword" type="password" {...register('checkpassword')} placeholder='Enter Current Password' maxlength="15" className={`form-control ${errors.checkpassword ? 'is-invalid' : ''}`} />
+                                    <div className="invalid-feedback">{errors.checkpassword?.message}</div>
                                 </Form.Group>
 
 
                                 <Form.Group className="mb-3" controlId="formBasicPassword">
                                     <Form.Label>New Password</Form.Label>
-                                    <Form.Control type="password" placeholder="New Password" />
+                                    <input name="setpassword" type="password" {...register('setpassword')} placeholder='Enter New Password' maxlength="15" className={`form-control ${errors.setpassword ? 'is-invalid' : ''}`} />
+                                    <div className="invalid-feedback">{errors.setpassword?.message}</div>
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" controlId="confirmPassword">
                                     <Form.Label>Confirm Password</Form.Label>
-                                    <Form.Control type="password" placeholder="Confirm Password" />
+                                    <input name="confirmpassword" type="password" {...register('confirmpassword')} placeholder='Confirm Password' maxlength="15" className={`form-control ${errors.confirmpassword ? 'is-invalid' : ''}`} />
+                                    <div className="invalid-feedback">{errors.confirmpassword?.message}</div>
                                 </Form.Group>
                                 <div className='d-grid my-4'>
                                     <Button variant="primary" type="submit">
-                                       Set Password
+                                        Set Password
                                     </Button>
                                 </div>
                             </Form>

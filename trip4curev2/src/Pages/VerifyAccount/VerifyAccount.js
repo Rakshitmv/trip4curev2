@@ -1,10 +1,81 @@
-import React from 'react'
+import React,{ useEffect, useState } from 'react'
 import { Button, Col, Container, Form, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import '../SignUp/SignUp.css'
 import '../SignIn/SignIn.css'
+import * as Yup from 'yup';
+import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
+import { useNavigate,useParams } from "react-router-dom";
+
 
 function VerifyAccount() {
+
+    const params = useParams();
+
+    useEffect(() => {
+        const saved = localStorage.getItem("registrationmail");
+        console.log('email>>>',saved)
+        console.log(">>>>>>>>>>>>>>",params.name)
+        setemail(saved);
+    });
+    
+
+    const navigate = useNavigate();
+    const validationSchema = Yup.object().shape({
+        otp: Yup.number()
+            .required('OTP is required')
+
+    });
+
+    const [otp, setotp] = useState("");
+    const [email, setemail] = useState("");
+    const [msg, setMsg] = useState("");
+    const handleInput = (e) => {
+        const formattedNumber = formatNumber(e.target.value);
+        setotp(formattedNumber);
+    };
+
+    const formatNumber = (value) => {
+        return value.replace(/[^0-9]/ig ,"")
+    }
+
+    const formOptions = { resolver: yupResolver(validationSchema) };
+
+    // get functions to build form with useForm() hook
+    const { register, handleSubmit, reset, formState } = useForm(formOptions);
+    const { errors } = formState;
+
+    let onSubmit = async (e) => {
+        try {
+            let res = await fetch("http://13.234.216.30:8080/activateaccount/", {
+              method: "POST",
+              body: JSON.stringify({
+                email: email,
+                otp:otp
+              }),
+              headers: {
+                  "Content-Type": 'application/json',
+                  "Accept": 'application/json'
+              }
+            });
+            let resJson = await res.json();
+            if (res.status === 201) {
+                if(params.name='hospital'){
+                    navigate("/hospital-sign-in");
+                }else{
+                    navigate("/user-sign-in");
+                }
+            } else {
+                setMsg(resJson.msg||resJson.error||resJson.message)
+            }
+          } catch (err) {
+            setMsg("Something wents wrong")
+            console.log(err);
+          }
+    }
+
+
     return (
         <div className='login-reg-wrapper h-100 d-flex flex-column'>
             <Container className='my-auto'>
@@ -15,11 +86,13 @@ function VerifyAccount() {
                             <hr class="mx-n4 mx-sm-n5" />
                             <p class="lead text-center">Please Enter One-Time Password to verify your account</p>
                             <p class="lead text-center" style={{fontSize:"1rem"}}>A one time password has been sent to your email</p>
-                            <Form className='p-4 px-sm-5 mx-5'>
+                            <Form className='p-4 px-sm-5 mx-5' onSubmit={handleSubmit(onSubmit)}>
 
                                 <Form.Group className="mx-3" controlId="formBasicPassword">
                          
-                                    <Form.Control type="password" placeholder=" Enter the OTP" />
+                                <input name="otp" type="text" {...register('otp')} placeholder='Enter OTP' onChange={(e) => handleInput(e)} value={otp} className={`form-control ${errors.otp ? 'is-invalid' : ''}`}  maxlength="6"/>
+                                    <div className="invalid-feedback">{errors.otp?.message}</div>
+                                    <span style={{color:'red'}}>{msg}</span>
                                 </Form.Group>
 
 

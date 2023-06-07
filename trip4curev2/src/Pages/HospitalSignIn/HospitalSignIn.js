@@ -1,14 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button, Col, Container, Form, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import '../HospitalSignIn/SignIn.css'
 import * as Yup from 'yup';
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useNavigate } from "react-router-dom";
+
+
 
 function HospitalSignIn() {
-
- const validationSchema = Yup.object().shape({
+    const navigate = useNavigate();
+    const validationSchema = Yup.object().shape({
         email: Yup.string()
             .required('Email is required')
             .email('Email is invalid'),
@@ -22,10 +25,36 @@ function HospitalSignIn() {
     // get functions to build form with useForm() hook
     const { register, handleSubmit, reset, formState } = useForm(formOptions);
     const { errors } = formState;
+    const [password, setpassword] = useState("");
+    const [email, setemail] = useState("");
+    const [msg, setMsg] = useState("");
 
-    function onSubmit(data) {
-
-        return false;
+    let onSubmit = async (e) => {
+        try {
+            let res = await fetch("http://13.234.216.30:8080/login/", {
+              method: "POST",
+              body: JSON.stringify({
+                email: email,
+                password:password
+              }),
+              headers: {
+                  "Content-Type": 'application/json',
+                  "Accept": 'application/json'
+              }
+            });
+            let resJson = await res.json();
+            if (res.status === 201) {
+              navigate("/")
+              console.log(res)
+  
+            } else {
+                setMsg(resJson.msg||resJson.error||resJson.message)
+                console.log(res)
+            }
+          } catch (err) {
+            setMsg("Something wents wrong")
+            console.log(err);
+          }
     }
 
 
@@ -41,14 +70,15 @@ function HospitalSignIn() {
                         <Form onSubmit={handleSubmit(onSubmit)}>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Email address</Form.Label>
-                                <input name="email" type="text" {...register('email')} placeholder='Enter email' className={`form-control ${errors.email ? 'is-invalid' : ''}`} />
+                                <input name="email" type="text" {...register('email')} placeholder='Enter email' onChange={(e) => setemail(e.target.value)} value={email} className={`form-control ${errors.email ? 'is-invalid' : ''}`} />
                                     <div className="invalid-feedback">{errors.email?.message}</div>
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <Form.Label>Password</Form.Label>
-                                <input name="password" type="password" {...register('password')} placeholder='Enter password' maxLength={'15'} className={`form-control ${errors.password ? 'is-invalid' : ''}`} />
+                                <input name="password" type="password" {...register('password')} placeholder='Enter password' onChange={(e) => setpassword(e.target.value)} value={password}  maxLength={'15'} className={`form-control ${errors.password ? 'is-invalid' : ''}`} />
                                     <div className="invalid-feedback">{errors.password?.message}</div>
+                                    <span style={{color:'red'}}>{msg}</span>
                             </Form.Group>
                             <Row className='mt-3'>
                                 <Col>

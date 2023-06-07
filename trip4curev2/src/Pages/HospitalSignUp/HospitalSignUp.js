@@ -1,14 +1,18 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { Button, Col, Container, Form, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import '../SignUp/SignUp.css'
-import '../SignIn/SignIn.css' 
+import '../SignIn/SignIn.css'
 import * as Yup from 'yup';
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useNavigate } from "react-router-dom";
+
+
 
 function HospitalSignUp() {
-  const validationSchema = Yup.object().shape({
+    const navigate = useNavigate();
+    const validationSchema = Yup.object().shape({
         hospitalname: Yup.string()
             .required('First name is required')
             .min(2),
@@ -18,9 +22,9 @@ function HospitalSignUp() {
         city: Yup.string()
             .required('City name is required')
             .min(2),
-        year: Yup.number()
+        year: Yup.string()
             .required('Establishment year is required'),
-        contactnumber: Yup.number()
+        contactnumber: Yup.string()
             .required('Establishment year is required')
             .min(5),
         email: Yup.string()
@@ -37,33 +41,36 @@ function HospitalSignUp() {
             .oneOf([Yup.ref('setpassword')], 'Passwords does not match')
     });
 
-    const [userInput1, setUserInput1] = useState("");
-    const [userInput2, setUserInput2] = useState("");
-    const [userInput3, setUserInput3] = useState("");
-    const [userInput4, setUserInput4] = useState("");
-    const [userInput5, setUserInput5] = useState("");
+    const [firstname, setfirstname] = useState("");
+    const [country, setcountry] = useState("");
+    const [city, setcity] = useState("");
+    const [email, setEmail] = useState("");
+    const [year, setyear] = useState("");
+    const [contactnumber, setcontactnumber] = useState("");
+    const [createPassword, setCreatePassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
     const handleInput1 = (e) => {
         const formattedNumber = formatNumber(e.target.value);
-        setUserInput1(formattedNumber);
+        setfirstname(formattedNumber);
     };
     const handleInput2 = (e) => {
         const formattedNumber = formatNumber(e.target.value);
-        setUserInput2(formattedNumber);
+        setcountry(formattedNumber);
     };
 
     const handleInput3 = (e) => {
         const formattedNumber = formatNumber(e.target.value);
-        setUserInput3(formattedNumber);
+        setcity(formattedNumber);
     };
 
     const handleInput4 = (e) => {
         const formattedNumber = OnlyNumber(e.target.value);
-        setUserInput4(formattedNumber);
+        setyear(formattedNumber);
     };
 
     const handleInput5 = (e) => {
         const formattedNumber = NotAlph(e.target.value);
-        setUserInput5(formattedNumber);
+        setcontactnumber(formattedNumber);
     };
 
 
@@ -87,10 +94,43 @@ function HospitalSignUp() {
     const { register, handleSubmit, reset, formState } = useForm(formOptions);
     const { errors } = formState;
 
-    function onSubmit(data) {
 
-        return false;
+    const [msg, setMsg] = useState("");
+    let onSubmit = async (e) => {
+        try {
+            let res = await fetch("http://13.234.216.30:8080/hospital_register/", {
+                method: "POST",
+                body: JSON.stringify({
+                    hospital_name: firstname,
+                    hospital_country: country,
+                    email: email,
+                    hospital_city: city,
+                    contact_number: confirmPassword,
+                    establishment_year: year,
+                    password: createPassword,
+                    c_password: confirmPassword
+                }),
+                headers: {
+                    "Content-Type": 'application/json',
+                    "Accept": 'application/json'
+                }
+            });
+            let resJson = await res.json();
+            if (res.status === 201) {
+                localStorage.setItem("registrationmail", email);
+                navigate("/verify-account/hospital");
+                console.log(res)
+
+            } else {
+                setMsg(resJson.msg||resJson.error||resJson.message)
+                console.log(res)
+            }
+        } catch (err) {
+            setMsg("Something wents wrong")
+            console.log(err);
+        }
     }
+
 
     return (
         <div className='login-reg-wrapper h-100 d-flex flex-column'>
@@ -104,49 +144,50 @@ function HospitalSignUp() {
                             <Form onSubmit={handleSubmit(onSubmit)}>
                                 <Form.Group className="mb-3" controlId="fullName">
                                     <Form.Label>Hospital Name</Form.Label>
-                                    <input name="hospitalname" type="text" {...register('hospitalname')} maxLength={'25'} onChange={(e) => handleInput1(e)} value={userInput1} placeholder='Enter hospital name' className={`form-control ${errors.hospitalname ? 'is-invalid' : ''}`} />
+                                    <input name="hospitalname" type="text" {...register('hospitalname')} maxLength={'25'} onChange={(e) => handleInput1(e)} value={firstname} placeholder='Enter hospital name' className={`form-control ${errors.hospitalname ? 'is-invalid' : ''}`} />
                                     <div className="invalid-feedback">{errors.hospitalname?.message}</div>
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
                                     <Form.Label>Email address</Form.Label>
-                                    <input name="email" type="text" {...register('email')} placeholder='Enter email' className={`form-control ${errors.email ? 'is-invalid' : ''}`} />
+                                    <input name="email" type="text" {...register('email')} onChange={(e) => setEmail(e.target.value)} value={email} placeholder='Enter email' className={`form-control ${errors.email ? 'is-invalid' : ''}`} />
                                     <div className="invalid-feedback">{errors.email?.message}</div>
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" controlId="fullName">
                                     <Form.Label>Country</Form.Label>
-                                    <input name="country" type="text" {...register('country')} maxLength={'25'} onChange={(e) => handleInput2(e)} value={userInput2} placeholder='Enter country name' className={`form-control ${errors.country ? 'is-invalid' : ''}`} />
+                                    <input name="country" type="text" {...register('country')} maxLength={'25'} onChange={(e) => handleInput2(e)} value={country} placeholder='Enter country name' className={`form-control ${errors.country ? 'is-invalid' : ''}`} />
                                     <div className="invalid-feedback">{errors.country?.message}</div>
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" controlId="formBasicPassword">
                                     <Form.Label>City</Form.Label>
-                                    <input name="city" type="text" {...register('city')} maxLength={'25'} onChange={(e) => handleInput3(e)} value={userInput3} placeholder='Enter city name' className={`form-control ${errors.city ? 'is-invalid' : ''}`} />
+                                    <input name="city" type="text" {...register('city')} maxLength={'25'} onChange={(e) => handleInput3(e)} value={city} placeholder='Enter city name' className={`form-control ${errors.city ? 'is-invalid' : ''}`} />
                                     <div className="invalid-feedback">{errors.city?.message}</div>
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" controlId="formBasicPassword">
                                     <Form.Label>Establishment Year</Form.Label>
-                                    <input name="year" type="text" {...register('year')} maxLength={'4'} onChange={(e) => handleInput4(e)} value={userInput4} placeholder='Enter establishment year' className={`form-control ${errors.year ? 'is-invalid' : ''}`} />
+                                    <input name="year" type="text" {...register('year')} maxLength={'4'} onChange={(e) => handleInput4(e)} value={year} placeholder='Enter establishment year' className={`form-control ${errors.year ? 'is-invalid' : ''}`} />
                                     <div className="invalid-feedback">{errors.year?.message}</div>
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" controlId="formBasicPassword">
                                     <Form.Label>Contact Number</Form.Label>
-                                    <input name="contactnumber" type="text" {...register('contactnumber')} maxLength={'20'} onChange={(e) => handleInput5(e)} value={userInput5} placeholder='Enter contact number' className={`form-control ${errors.contactnumber ? 'is-invalid' : ''}`} />
+                                    <input name="contactnumber" type="text" {...register('contactnumber')} maxLength={'20'} onChange={(e) => handleInput5(e)} value={contactnumber} placeholder='Enter contact number' className={`form-control ${errors.contactnumber ? 'is-invalid' : ''}`} />
                                     <div className="invalid-feedback">{errors.contactnumber?.message}</div>
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" controlId="formBasicPassword">
                                     <Form.Label>Set Password</Form.Label>
-                                    <input name="setpassword" type="password" {...register('setpassword')} placeholder='Enter Password' className={`form-control ${errors.setpassword ? 'is-invalid' : ''}`} maxlength="20" />
+                                    <input name="setpassword" type="password" {...register('setpassword')} onChange={(e) => setCreatePassword(e.target.value)} value={createPassword} placeholder='Enter Password' className={`form-control ${errors.setpassword ? 'is-invalid' : ''}`} maxlength="20" />
                                     <div className="invalid-feedback">{errors.setpassword?.message}</div>
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" controlId="confirmPassword">
                                     <Form.Label>Confirm Password</Form.Label>
-                                    <input name="confirmpassword" type="password" {...register('confirmpassword')} placeholder='Confirm Password' maxlength="15" className={`form-control ${errors.confirmpassword ? 'is-invalid' : ''}`} />
+                                    <input name="confirmpassword" type="password" {...register('confirmpassword')} onChange={(e) => setConfirmPassword(e.target.value)} value={confirmPassword} placeholder='Confirm Password' maxlength="15" className={`form-control ${errors.confirmpassword ? 'is-invalid' : ''}`} />
                                     <div className="invalid-feedback">{errors.confirmpassword?.message}</div>
+                                    <span style={{color:'red'}}>{msg}</span>
                                 </Form.Group>
 
                                 <div className='d-grid my-4'>

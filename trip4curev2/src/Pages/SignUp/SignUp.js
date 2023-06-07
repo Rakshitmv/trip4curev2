@@ -6,11 +6,13 @@ import '../SignIn/SignIn.css'
 import * as Yup from 'yup';
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useNavigate } from "react-router-dom";
+
 
 function SignUp() {
+    const navigate = useNavigate();
 
-
-const validationSchema = Yup.object().shape({
+    const validationSchema = Yup.object().shape({
         firstname: Yup.string()
             .required('First name is required')
             .min(2),
@@ -31,16 +33,21 @@ const validationSchema = Yup.object().shape({
             .oneOf([Yup.ref('setpassword')], 'Passwords does not match')
     });
 
-    const [userInput, setUserInput] = useState("");
-    const [userInput1, setUserInput1] = useState("");
+    const [firstname, setfirstname] = useState("");
+    const [LastName, setLastName] = useState("");
+    const [email, setEmail] = useState("");
+    const [createPassword, setCreatePassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+    const [msg, setMsg] = useState("");
+
     const handleInput = (e) => {
         const formattedNumber = formatNumber(e.target.value);
-        setUserInput(formattedNumber);
+        setfirstname(formattedNumber);
     };
 
     const handleInput1 = (e) => {
         const formattedNumber = formatNumber1(e.target.value);
-        setUserInput1(formattedNumber);
+        setLastName(formattedNumber);
     };
 
     const formatNumber = (value) => {
@@ -56,37 +63,43 @@ const validationSchema = Yup.object().shape({
     // get functions to build form with useForm() hook
     const { register, handleSubmit, reset, formState } = useForm(formOptions);
     const { errors } = formState;
-    
 
-   
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
-    const [c_password, setC_Password] = useState("")
-    const [role, setRole] = useState("")
-    const [country, setCountry] = useState("")
+    // function onSubmit(data) {
 
-     async function signUp() {
-        let item = { userInput,userInput1,email,password,c_password,role,country}
-        console.warn(item)
-        let result = await fetch("http://13.234.216.30:8080/register/", {
-            method: 'POST',
-            body: JSON.stringify(item),
-            headers: {
-                "Content-Type": 'application/json',
-                "Accept": 'application/json'
+    //     return false;
+    // }
+
+
+    let onSubmit = async (e) => {
+        // e.preventDefault();
+        try {
+            let res = await fetch("http://13.234.216.30:8080/register/", {
+                method: "POST",
+                body: JSON.stringify({
+                    first_name: firstname,
+                    last_name: LastName,
+                    email: email,
+                    password: createPassword,
+                    c_password: confirmPassword
+                }),
+                headers: {
+                    "Content-Type": 'application/json',
+                    "Accept": 'application/json'
+                }
+            });
+            let resJson = await res.json();
+            if (res.status === 201) {
+                localStorage.setItem("registrationmail", email);
+                navigate("/verify-account/user");
+            } else {
+                setMsg(resJson.msg||resJson.error||resJson.message)
+                console.log(res)
             }
-        })  
-         result = await result.json()
-         console.warn("result", result);
-         localStorage.setItem("userinfo",JSON.stringify(result))
-    }
-
-
-    function onSubmit(data) {
-
-        return false;
-    }
-
+        } catch (err) {
+            setMsg("Something wents wrong")
+            console.log(err);
+        }
+    };
 
 
     return (
@@ -101,42 +114,43 @@ const validationSchema = Yup.object().shape({
                             <Form onSubmit={handleSubmit(onSubmit)}>
                                 <Form.Group className="mb-3" controlId="fullName">
                                     <Form.Label>First Name</Form.Label>
-                                    <input name="firstname"  type="text" {...register('firstname')} onChange={(e) => handleInput(e)} value={userInput} placeholder='Enter first name' className={`form-control ${errors.firstname ? 'is-invalid' : ''}`} />
+                                    <input name="firstname" type="text" {...register('firstname')} onChange={(e) => handleInput(e)} value={firstname} placeholder='Enter first name' className={`form-control ${errors.firstname ? 'is-invalid' : ''}`} />
                                     <div className="invalid-feedback">{errors.firstname?.message}</div>
 
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" controlId="fullName">
                                     <Form.Label>Last Name</Form.Label>
-                                    <input name="lastname" type="text" {...register('lastname')} placeholder='Enter last name' onChange={(e) => handleInput1(e)} value={userInput1} className={`form-control ${errors.lastname ? 'is-invalid' : ''}`} />
+                                    <input name="lastname" type="text" {...register('lastname')} placeholder='Enter last name' onChange={(e) => handleInput1(e)} value={LastName} className={`form-control ${errors.lastname ? 'is-invalid' : ''}`} />
                                     <div className="invalid-feedback">{errors.lastname?.message}</div>
 
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
                                     <Form.Label>Email address</Form.Label>
-                                    <input name="email" value={email} type="text" {...register('email')} placeholder='Enter email' onChange={(e) => setEmail(e.target.value)} className={`form-control ${errors.email ? 'is-invalid' : ''}`} />
+                                    <input name="email" type="text" {...register('email')} placeholder='Enter email' onChange={(e) => setEmail(e.target.value)} value={email} className={`form-control ${errors.email ? 'is-invalid' : ''}`} />
                                     <div className="invalid-feedback">{errors.email?.message}</div>
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" controlId="formBasicPassword">
                                     <Form.Label>Set Password</Form.Label>
-                                    <input name="setpassword" value= {password} type="password" {...register('setpassword')} placeholder='Enter Password' onChange={(e) => setPassword(e.target.value)} className={`form-control ${errors.setpassword ? 'is-invalid' : ''}`} maxlength="15" />
+                                    <input name="setpassword" type="password" {...register('setpassword')} placeholder='Enter Password' onChange={(e) => setCreatePassword(e.target.value)} value={createPassword} className={`form-control ${errors.setpassword ? 'is-invalid' : ''}`} maxlength="15" />
                                     <div className="invalid-feedback">{errors.setpassword?.message}</div>
 
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" controlId="confirmPassword">
                                     <Form.Label>Confirm Password</Form.Label>
-                                    <input name="confirmpassword"  value= {c_password} type="password" {...register('confirmpassword')} placeholder='Confirm Password' onChange={(e) => setC_Password(e.target.value)} maxlength="15" className={`form-control ${errors.confirmpassword ? 'is-invalid' : ''}`} />
+                                    <input name="confirmpassword" type="password" {...register('confirmpassword')} placeholder='Confirm Password' onChange={(e) => setConfirmPassword(e.target.value)} value={confirmPassword} maxlength="15" className={`form-control ${errors.confirmpassword ? 'is-invalid' : ''}`} />
                                     <div className="invalid-feedback">{errors.confirmpassword?.message}</div>
+                                    <span style={{color:'red'}}>{msg}</span>
                                 </Form.Group>
                                 <div className='d-grid my-4'>
-                                    <Button onclick={signUp} variant="primary" type="submit">
+                                    <Button variant="primary" type="submit">
                                         Sign Up
                                     </Button>
                                 </div>
                             </Form>
-                            <p  class="text-muted text-center mb-2">Already have an account? <Link to={'/user-sign-in'}>Log In</Link></p>
+                            <p class="text-muted text-center mb-2">Already have an account? <Link to={'/user-sign-in'}>Log In</Link></p>
                         </div>
                     </Col>
                 </Row>
@@ -148,5 +162,4 @@ const validationSchema = Yup.object().shape({
         </div>
     )
 }
-
 export default SignUp
