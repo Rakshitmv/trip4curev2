@@ -103,13 +103,13 @@ const ContactUS = () => {
                             <hr class="mx-n4 mx-sm-n5" />
                             <p class="lead text-center">Contact us</p>
                             <Form onSubmit={handleSubmit(onSubmit)}>
-                                <div className='field1-2'>
+                                {/* <div className='field1-2'>
                                     <Form.Group className="mb-3" controlId="fullName">
                                         <Form.Label>Business Collabration</Form.Label>
                                         <input name="firstname" type="text" {...register('business')} onChange={(e) => handleInput1(e)} value={userInput1} placeholder='Business Collabration' className={`form-control ${errors.firstname ? 'is-invalid' : ''}`} />
                                         <div className="invalid-feedback">{errors.firstname?.message}</div>
                                     </Form.Group>
-                                </div><br></br>
+                                </div><br></br> */}
                                 <div className='field1-2'>
                                     <Form.Group className="mb-3" controlId="fullName">
                                         <Form.Label>First Name</Form.Label>
