@@ -132,7 +132,7 @@ const afterbefore = {
   autoplay:true,
   infinite: true,
   speed: 500,
-  slidesToShow: 1,
+  slidesToShow: 2,
   slidesToScroll: 1,
   arrows: true,  
   responsive: [
@@ -229,33 +229,41 @@ function Homepage() {
       
       <Topbar />
       <Header />
-      <section id="section-01" className="home-main-intro">
+      <section id="section-01" className="home-main-intro ">
         <Container>
           <Row className="align-items-center">
-            <div className="banner-text pb-9 ">
-              <h3 className='main-heading'>Wellness & Medical</h3>
-              <h3 className='main-heading'>tourism for</h3>
-              <h3 className='main-sub-heading'>Everyone, Everywhere.</h3>
+            <div className="banner-text pb-1 ">
+              <h5 className='main-heading'>Wellness & Medical</h5>
+              <h5 className='main-heading'>tourism for</h5>
+              <h5 className='main-sub-heading'>Everyone, Everywhere.</h5>
             </div>
 
-            <div className="form-search pb-9 ">
-              <Form>
-                <Container>
-                <Row>
-                  <Col xl={4} md={8} className="col-6 mb-4 mb-xl-0 pt-3 px-4 bg-white-transparent bdrtlb border-right position-relative rounded-left form-search-item">
-                  <Form.Group className="" controlId="formBasicEmail">
-                    <Form.Label>Choose Speciality</Form.Label>
-                    <Select className="form-control-filter" options={speciality} />
-                  </Form.Group>
-                  </Col>&emsp;
-                  <Col xl={3} md={4} className="col-6 mb-4 mb-xl-0 pt-3 px-4 bg-white-transparent brtb position-relative rounded-right form-search-item">
+
+             {/* <Col xl={3} md={4} className="col-6 mb-4 mb-xl-0 pt-3 px-4 bg-white-transparent brtb position-relative rounded-right form-search-item">
                   <Form.Group className="" controlId="formBasicEmail">
                     <Form.Label>Choose Country</Form.Label>
                     <Select className="form-control-filter" options={country} />
                   </Form.Group>
+                  </Col> */}
+
+            <div className="form-search pb-5 ">
+              <Form>
+                <Container>
+                <Row>
+                  <Col xl={3} md={4} className="col-2 pt-1   bg-white-transparent bdrtlb border-right position-relative rounded-left form-search-item">
+                  <Form.Group className="pb-0 choose-height" controlId="formBasicEmail">
+                    <Form.Label><h5>Choose Speciality</h5></Form.Label>
+                    <Select className="form-control-filter" options={speciality} />
+                  </Form.Group>
+                  </Col>&emsp;
+                  <Col xl={3} md={4} className="col-2 pt-1 bg-white-transparent brtb position-relative rounded-right form-search-item">
+                  <Form.Group className="" controlId="formBasicEmail">
+                    <Form.Label><h5>Choose Country</h5></Form.Label>
+                    <Select className="form-control-filter" options={country} />
+                  </Form.Group>
                   </Col>
                   <Col xl="2">
-                    <button type="submit" className="btn btn-primary btn-lg w-70 search-big-btn" style={{backgroundColor: '#b8353b'}}><i class="fa fa-search"></i> Search</button>
+                    <button type="submit" className="btn   w-60  search-big-btn" style={{backgroundColor: '#b8353b', color: 'white'}}><i class="fa fa-search"></i> Search</button>
                   </Col>
                 </Row>
                 </Container>
@@ -358,7 +366,7 @@ function Homepage() {
             </div>
           </Row>
           <Row>
-            <div className="col-md-7 mx-auto ">
+            <div className="col-md-8 mx-auto ">
 
               <Slider {...afterbefore}>
                 

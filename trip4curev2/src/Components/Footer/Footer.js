@@ -8,7 +8,7 @@ function Footer() {
     <footer>
     
     <Container>
-      <Row  className='py-5 px-5  mx-5 footer-left-side'>
+      <Row  className='py-5 px-5  footer-left-side'>
         <Col md={2}>
         <img  src={`${process.env.PUBLIC_URL}/images/logo-w.png`} alt='' height={120} />
         </Col>

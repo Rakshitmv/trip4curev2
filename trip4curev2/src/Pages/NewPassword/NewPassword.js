@@ -6,6 +6,8 @@ import '../SignIn/SignIn.css'
 import * as Yup from 'yup';
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
+import Footer from '../../Components/Footer/Footer'
+import Header from '../../Components/Header/Header'
 
 function NewPassword() {
     const validationSchema = Yup.object().shape({
@@ -38,6 +40,8 @@ function NewPassword() {
     }
 
     return (
+     <>
+        <Header />
         <div className='login-reg-wrapper h-100 d-flex flex-column'>
             <Container className='my-auto'>
                 <Row>
@@ -78,10 +82,12 @@ function NewPassword() {
                 </Row>
             </Container>
 
-            <Container fluid className='py-3'>
+            {/* <Container fluid className='py-3'>
                 <p className="text-center text-2 text-muted mb-0">Copyright © 2023 <Link to={''}>trip4cure</Link>. All Rights Reserved.</p>
-            </Container>
+            </Container> */}
         </div>
+        <Footer />
+     </>        
     )
 }
 

@@ -7,6 +7,8 @@ import '../ContactUS/ContactUS.css'
 import * as Yup from 'yup';
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
+import Footer from '../../Components/Footer/Footer'
+import Header from '../../Components/Header/Header'
 
 const ContactUS = () => {
     const validationSchema = Yup.object().shape({
@@ -90,15 +92,24 @@ const ContactUS = () => {
         return false;
     }
     return (
-        <div className='login-reg-wrapper h-100 d-flex flex-column'>
+     <>  
+        <Header />       
+        <div className='login-reg-wrapper h-70 d-flex flex-column'>
             <Container className='my-auto'>
                 <Row>
                     <Col md={9} lg={8} xl={6} className="mx-auto">
                         <div className='bg-white shadow-md rounded p-4 px-sm-5 mt-4'>
                             <div className="logo"><Link className="d-flex justify-content-center fw-bolder" to={'/'} title=""> <img src={`${process.env.PUBLIC_URL}/images/logo.png`} height={130} width={100} /></Link> </div>
                             <hr class="mx-n4 mx-sm-n5" />
-                            <p class="lead text-center">Contact US</p>
+                            <p class="lead text-center">Contact us</p>
                             <Form onSubmit={handleSubmit(onSubmit)}>
+                                <div className='field1-2'>
+                                    <Form.Group className="mb-3" controlId="fullName">
+                                        <Form.Label>Business Collabration</Form.Label>
+                                        <input name="firstname" type="text" {...register('business')} onChange={(e) => handleInput1(e)} value={userInput1} placeholder='Business Collabration' className={`form-control ${errors.firstname ? 'is-invalid' : ''}`} />
+                                        <div className="invalid-feedback">{errors.firstname?.message}</div>
+                                    </Form.Group>
+                                </div><br></br>
                                 <div className='field1-2'>
                                     <Form.Group className="mb-3" controlId="fullName">
                                         <Form.Label>First Name</Form.Label>
@@ -155,10 +166,12 @@ const ContactUS = () => {
                 </Row>
             </Container>
 
-            <Container fluid className='py-3'>
+            {/* <Container fluid className='py-3'>
                 <p className="text-center text-2 text-muted mb-0">Copyright © 2023 <Link to={'/'}>trip4cure</Link>. All Rights Reserved.</p>
-            </Container>
+            </Container> */}
         </div>
+        <Footer />
+     </>        
     )
 }
 

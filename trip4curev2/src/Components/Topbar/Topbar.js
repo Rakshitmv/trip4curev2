@@ -48,7 +48,7 @@ function Topbar() {
                     <Nav className="nav social social-white">
                         <Link to={''}><i className="fa fa-twitter"></i></Link>
                         <Link to={''}><i className="fa fa-facebook"></i></Link>
-                        <Link to={''}><i className="fa fa-instagram"></i></Link>
+                        <Link to={''}><i className="fa fa-linkedin"></i></Link>
                     </Nav>
                     <NavDropdown title="ENGLISH" className="navbar-nav flex-row align-items-center  langauge" id="collasible-nav-dropdown">
                         <NavDropdown.Item href="/">ENGLISH</NavDropdown.Item>

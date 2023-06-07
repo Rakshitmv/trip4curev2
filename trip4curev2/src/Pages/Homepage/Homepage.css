@@ -3,18 +3,18 @@
     font-family: var(--body-font-family);
     font-weight: 500;
 }
-.banner-text h3{
-    font-size: 62px;
+.banner-text h5{
+    font-size: 50px;
 }
 .home-main-intro {
     background:#f3f3f3 url(../../../public/images/marisa-howenstine-nFsOlSE9Mn8-unsplash.png);
     background-size: contain;
-    background-position: right bottom;
+    background-position: right top ;
     background-repeat: no-repeat;
     position: relative;
     z-index: 1;
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 .card{
     border-radius: var(--radius-small);
@@ -27,26 +27,45 @@
 }
 
 .brtb{
-    border-top: 3px solid #dcf2f9;
-    border-right: 3px solid #dcf2f9;
-    border-bottom: 3px solid #dcf2f9;
+    width: 220px;
+    height: 60px;
+    border-top: 2px solid #dcf2f9;
+    border-right: 2px solid #dcf2f9;
+    border-bottom: 2px solid #dcf2f9;
 }
 .bdrtlb{
-    border-top: 3px solid #dcf2f9;
-    border-left: 3px solid #dcf2f9;
-    border-bottom: 3px solid #dcf2f9;
+    width: 220px;
+    height: 60px;
+    border-top: 2px solid #dcf2f9;
+    border-left: 2px solid #dcf2f9;
+    border-bottom: 2px solid #dcf2f9;
 }
-.pb-9, .py-9 {
-    padding-bottom: 4.375rem!important;
+.pb-3, .py-9 {
+    padding-bottom: 1.375rem!important;
 }
 .search-big-btn{
+    /* margin-top: 10px; */
+    font-family: var(--body-font-family);
     height: 100%;
 }
 .form-search-item label{
-    font-weight:500; 
+    font-weight:200; 
 }
+
+.choose-height {
+    height: 10px;
+}
+
+.form-control-filter {
+    font-family: var(--body-font-family);
+    margin-top: -16px;
+    margin-right: -17px;
+    height: 5px;
+}
+
 .form-control-filter .css-13cymwt-control{
     border: 0;
+    
     background: transparent;
 }
 .form-control-filter .css-1fdsijx-ValueContainer{
@@ -60,9 +79,9 @@
     background: transparent;
 }
 
-.list-inline-item {
+/* .list-inline-item {
     margin-right: 0.5rem;
-}
+} */
 .icon-box {
     width: 120px;
     height: 120px;
@@ -144,8 +163,8 @@ display: none !important;
 
 .main-heading {
     font-family: var(--heading--font-family);
-    font-weight: 500;
-    font-size: xx-large;
+    font-weight: 700;
+    font-size: larger;
 }
 
 .main-sub-heading {
@@ -224,11 +243,11 @@ display: none !important;
     background-position: bottom center;
     padding-bottom:170px !important
 }
-.mgt-block {
+/* .mgt-block {
 border:0;
 box-shadow: 0px 0px 10px rgba(86,68,169,.1);
 margin: 10px;
-}
+} */
 .text-link{
     padding: 0;
     color: var(--primary-color);
@@ -296,6 +315,7 @@ margin: 10px;
     align-items: center;
     text-align: center;
     margin-top: 5px;
+    /* color: #ed1d24; */
     font-family: 'Poppins';
 }
 
@@ -429,6 +449,7 @@ margin: 10px;
 }
 
 .ab-image {
+    height: 400px;
     
     padding-left: 15px;
     

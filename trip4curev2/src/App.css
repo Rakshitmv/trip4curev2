@@ -66,6 +66,7 @@ a:hover {
 }
 .red-link:hover{
     text-decoration: underline;
+    color: var(--primary-color)
 }
 .font-size-lg {
     font-size: 1.125rem!important;

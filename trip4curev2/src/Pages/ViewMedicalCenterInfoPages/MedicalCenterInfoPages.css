@@ -1,0 +1,29 @@
+/* .medicalslide {
+    display: flex;
+}
+
+
+
+
+.sliderblock {
+    text-decoration: none;
+}
+
+.sliderblock,
+.image-block {
+    overflow: hidden;
+}
+
+
+
+.sliderblock .medicalslideheight {
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+.sliderblock:hover .medicalslideheight {
+    -webkit-transform: scale(1.08);
+    transform: scale(1.08);
+} */

@@ -3,11 +3,14 @@ import '../ViewMedicalCenter/ViewMedicalCenter.css'
 import { Col, Container, Form, Row, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import MedicalCenterInfoPages_1 from '../ViewMedicalCenterInfoPages/MedicalCenterInfoPages_1';
+import Header from '../../Components/Header/Header';
+import Footer from '../../Components/Footer/Footer';
 
 
 const ViewMedicalCenter = () => {
     return (
         <>
+            <Header />
             <section id= 'view-medical-page' className='view-medical-center-page '>
                 <Container>
                     <Row>
@@ -75,7 +78,7 @@ const ViewMedicalCenter = () => {
                         </div>
                     </Row>
                     <Row>
-                        <div className='col-md-9 pt-5 mx-auto card-series-2'>
+                        <div className='col-md-9 pt-5 mx-auto mb-5 card-series-2'>
                             <Link to={'/view-medical-center/medical-center-info-page_5'} className="sliderblock">
                             <Card className="text-center">
                             <div className="image-block">
@@ -104,6 +107,7 @@ const ViewMedicalCenter = () => {
                     </Row>
                 </Container>
             </section>
+            <Footer />
         </>
   )
 }
