@@ -232,10 +232,9 @@ function Homepage() {
       <section id="section-01" className="home-main-intro ">
         <Container>
           <Row className="align-items-center">
-            <div className="banner-text pb-1 ">
-              <h5 className='main-heading'>Wellness & Medical</h5>
-              <h5 className='main-heading'>tourism for</h5>
-              <h5 className='main-sub-heading'>Everyone, Everywhere.</h5>
+            <div className="banner-text pb-5 ">
+              <h5 className='main-heading'>Wellness & Medical tourism for</h5>
+              <h5 className='main-sub-heading-up'>Everyone, Everywhere.</h5>
             </div>
 
 
@@ -270,8 +269,8 @@ function Homepage() {
               </Form>
             </div>
 
-            <div className="font-size-lg mb-2">Or browse Top Specialties: <Link to={'/view-speciality'} className="red-link">View All Specialties</Link></div>
-            <div className="list-inline pb-8 flex-wrap my-n2">
+            <div className="font-size-lg mt-2 mb-2">Or browse Top Specialties: <Link to={'/view-speciality'} className="red-link">View All Specialties</Link></div>
+            <div className="list-inline pb-5 flex-wrap my-n2">
               <div className="list-inline-item py-2">
                 <Link to={''} class="card border-0 icon-box link-hover-dark-white">
                   <div class="card-body p-0">

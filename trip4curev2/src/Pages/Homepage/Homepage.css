@@ -57,18 +57,22 @@
 }
 
 .form-control-filter {
-    font-family: var(--body-font-family);
+    font-family: var(--heading--font-family);
     margin-top: -16px;
     margin-right: -17px;
     height: 5px;
+    font-size: large;
 }
 
 .form-control-filter .css-13cymwt-control{
     border: 0;
-    
+    font-family: var(--heading--font-family);
+    font-weight: 400;
     background: transparent;
 }
 .form-control-filter .css-1fdsijx-ValueContainer{
+    font-family: var(--heading--font-family);
+    /* font-weight: 300; */
     padding: 0;
 }
 
@@ -77,6 +81,8 @@
     border: 0;
     box-shadow: none;
     background: transparent;
+    font-family: var(--heading--font-family);
+    /* font-weight: 500; */
 }
 
 /* .list-inline-item {
@@ -171,6 +177,14 @@ display: none !important;
     font-family: 'Centaur';
     font-weight: 700;
     font-size: larger;
+}
+
+.main-sub-heading-up {
+    font-family: 'Centaur';
+    font-weight: 700;
+    font-size: larger;
+    margin-left: 5px;
+    margin-top: -20px;
 }
 
 

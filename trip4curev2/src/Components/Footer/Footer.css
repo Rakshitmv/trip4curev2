@@ -47,6 +47,7 @@ list-style: none;
 
 
 footer{
+    padding-left: 100px;
     background-color: #b8353b;
 }
 footer h5{
@@ -62,7 +63,7 @@ footer .footer-connect {
 }
 
 .footer-left-side {
-    padding-left: 200px;
+    padding-left: 250px;
 }
 
 footer hr{

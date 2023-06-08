@@ -53,6 +53,7 @@ function Footer() {
           <Link to={''}><i className='fa fa-twitter'></i></Link>
           <Link to={''}><i className='fa fa-facebook'></i></Link>
           <Link to={''}><i className='fa fa-linkedin'></i></Link>
+          <Link to={''}><i className="fa fa-instagram"></i></Link>
           </div>
         </Col>
       </Row>
