@@ -86,8 +86,8 @@ function VerifyAccount() {
                 <Row>
                     <Col md={9} lg={7} xl={7} className="mx-auto">
                         <div className='bg-white shadow-md rounded p-4 px-sm-5 mt-4'>
-                            <div className="logo"><Link className="d-flex justify-content-center fw-bolder" to={'/'} title=""> <img src={`${process.env.PUBLIC_URL}/images/logo.png`} height={130} width={100} /></Link> </div>
-                            <hr class="mx-n4 mx-sm-n5" />
+                            {/* <div className="logo"><Link className="d-flex justify-content-center fw-bolder" to={'/'} title=""> <img src={`${process.env.PUBLIC_URL}/images/logo.png`} height={130} width={100} /></Link> </div>
+                            <hr class="mx-n4 mx-sm-n5" /> */}
                             <p class="lead text-center">Please Enter One-Time Password to verify your account</p>
                             <p class="lead text-center" style={{fontSize:"1rem"}}>A one time password has been sent to your email</p>
                             <Form className='p-4 px-sm-5 mx-5' onSubmit={handleSubmit(onSubmit)}>

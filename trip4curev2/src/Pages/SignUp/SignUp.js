@@ -112,8 +112,8 @@ function SignUp() {
                 <Row>
                     <Col md={9} lg={7} xl={5} className="mx-auto">
                         <div className='bg-white shadow-md rounded p-4 px-sm-5 mt-4'>
-                            <div className="logo"><Link className="d-flex justify-content-center fw-bolder" to={'/'} title=""> <img src={`${process.env.PUBLIC_URL}/images/logo.png`} height={130} width={100} /></Link> </div>
-                            <hr class="mx-n4 mx-sm-n5" />
+                            {/* <div className="logo"><Link className="d-flex justify-content-center fw-bolder" to={'/'} title=""> <img src={`${process.env.PUBLIC_URL}/images/logo.png`} height={130} width={100} /></Link> </div>
+                            <hr class="mx-n4 mx-sm-n5" /> */}
                             <p class="lead text-center">User Sign Up!</p>
                             <Form onSubmit={handleSubmit(onSubmit)}>
                                 <Form.Group className="mb-3" controlId="fullName">

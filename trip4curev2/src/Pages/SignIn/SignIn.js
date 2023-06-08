@@ -8,6 +8,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useNavigate } from "react-router-dom";
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
+import UserProfilePage from '../UserProfilePage/UserProfilePage';
 
 function SignIn() {
     const navigate = useNavigate();
@@ -68,8 +69,8 @@ function SignIn() {
                 <Row>
                     <Col md={9} lg={7} xl={5} className="mx-auto">
                         <div className='bg-white shadow-md rounded p-4 px-sm-5 mt-4'>
-                            <div className="logo"><Link className="d-flex justify-content-center fw-bolder" to={'/'} title=""> <img src={`${process.env.PUBLIC_URL}/images/logo.png`} height={130} width={100} /></Link> </div>
-                            <hr class="mx-n4 mx-sm-n5" />
+                            {/* <div className="logo"><Link className="d-flex justify-content-center fw-bolder" to={'/'} title=""> <img src={`${process.env.PUBLIC_URL}/images/logo.png`} height={130} width={100} /></Link> </div> */}
+                            {/* <hr class="mx-n4 mx-sm-n5" /> */}
                             <p class="lead text-center">Login to User account</p>
                             <Form onSubmit={handleSubmit(onSubmit)}>
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -93,7 +94,7 @@ function SignIn() {
                                     <Col className='text-end'><Link to={'/forgot-password'}>Forgot Password ?</Link></Col>
                                 </Row>
                                 <div className='d-grid my-4'>
-                                    <Button variant="primary" type="submit">
+                                        <Button style={ {backgroundColor: '#b8353b'}}  onClick={UserProfilePage} type="submit">
                                         Sign In
                                     </Button>
                                 </div>

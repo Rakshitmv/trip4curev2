@@ -7,6 +7,8 @@ import * as Yup from 'yup';
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useNavigate } from "react-router-dom";
+import Footer from '../../Components/Footer/Footer'
+import Header from '../../Components/Header/Header'
 
 
 
@@ -133,79 +135,83 @@ function HospitalSignUp() {
 
 
     return (
-        <div className='login-reg-wrapper h-100 d-flex flex-column'>
-            <Container className='my-auto'>
-                <Row>
-                    <Col md={9} lg={7} xl={5} className="mx-auto">
-                        <div className='bg-white shadow-md rounded p-4 px-sm-5 mt-4'>
-                            <div className="logo"><Link className="d-flex justify-content-center fw-bolder" to={'/'} title=""> <img src={`${process.env.PUBLIC_URL}/images/logo.png`} height={130} width={100} /></Link> </div>
-                            <hr class="mx-n4 mx-sm-n5" />
-                            <p class="lead text-center">Hospital Sign Up!</p>
-                            <Form onSubmit={handleSubmit(onSubmit)}>
-                                <Form.Group className="mb-3" controlId="fullName">
-                                    <Form.Label>Hospital Name</Form.Label>
-                                    <input name="hospitalname" type="text" {...register('hospitalname')} maxLength={'25'} onChange={(e) => handleInput1(e)} value={firstname} placeholder='Enter hospital name' className={`form-control ${errors.hospitalname ? 'is-invalid' : ''}`} />
-                                    <div className="invalid-feedback">{errors.hospitalname?.message}</div>
-                                </Form.Group>
-                                <Form.Group className="mb-3" controlId="formBasicEmail">
-                                    <Form.Label>Email address</Form.Label>
-                                    <input name="email" type="text" {...register('email')} onChange={(e) => setEmail(e.target.value)} value={email} placeholder='Enter email' className={`form-control ${errors.email ? 'is-invalid' : ''}`} />
-                                    <div className="invalid-feedback">{errors.email?.message}</div>
-                                </Form.Group>
+        <>
+            <Header />
+            <div className='login-reg-wrapper h-90 d-flex flex-column'>
+                <Container className='my-auto'>
+                    <Row>
+                        <Col md={9} lg={7} xl={5} className="mx-auto">
+                            <div className='bg-white shadow-md rounded p-4 px-sm-5 mt-4'>
+                                {/* <div className="logo"><Link className="d-flex justify-content-center fw-bolder" to={'/'} title=""> <img src={`${process.env.PUBLIC_URL}/images/logo.png`} height={130} width={100} /></Link> </div>
+                                <hr class="mx-n4 mx-sm-n5" /> */}
+                                <p class="lead text-center">Hospital Sign Up!</p>
+                                <Form onSubmit={handleSubmit(onSubmit)}>
+                                    <Form.Group className="mb-3" controlId="fullName">
+                                        <Form.Label>Hospital Name</Form.Label>
+                                        <input name="hospitalname" type="text" {...register('hospitalname')} maxLength={'25'} onChange={(e) => handleInput1(e)} value={firstname} placeholder='Enter hospital name' className={`form-control ${errors.hospitalname ? 'is-invalid' : ''}`} />
+                                        <div className="invalid-feedback">{errors.hospitalname?.message}</div>
+                                    </Form.Group>
+                                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                                        <Form.Label>Email address</Form.Label>
+                                        <input name="email" type="text" {...register('email')} onChange={(e) => setEmail(e.target.value)} value={email} placeholder='Enter email' className={`form-control ${errors.email ? 'is-invalid' : ''}`} />
+                                        <div className="invalid-feedback">{errors.email?.message}</div>
+                                    </Form.Group>
 
-                                <Form.Group className="mb-3" controlId="fullName">
-                                    <Form.Label>Country</Form.Label>
-                                    <input name="country" type="text" {...register('country')} maxLength={'25'} onChange={(e) => handleInput2(e)} value={country} placeholder='Enter country name' className={`form-control ${errors.country ? 'is-invalid' : ''}`} />
-                                    <div className="invalid-feedback">{errors.country?.message}</div>
-                                </Form.Group>
+                                    <Form.Group className="mb-3" controlId="fullName">
+                                        <Form.Label>Country</Form.Label>
+                                        <input name="country" type="text" {...register('country')} maxLength={'25'} onChange={(e) => handleInput2(e)} value={country} placeholder='Enter country name' className={`form-control ${errors.country ? 'is-invalid' : ''}`} />
+                                        <div className="invalid-feedback">{errors.country?.message}</div>
+                                    </Form.Group>
 
-                                <Form.Group className="mb-3" controlId="formBasicPassword">
-                                    <Form.Label>City</Form.Label>
-                                    <input name="city" type="text" {...register('city')} maxLength={'25'} onChange={(e) => handleInput3(e)} value={city} placeholder='Enter city name' className={`form-control ${errors.city ? 'is-invalid' : ''}`} />
-                                    <div className="invalid-feedback">{errors.city?.message}</div>
-                                </Form.Group>
+                                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                                        <Form.Label>City</Form.Label>
+                                        <input name="city" type="text" {...register('city')} maxLength={'25'} onChange={(e) => handleInput3(e)} value={city} placeholder='Enter city name' className={`form-control ${errors.city ? 'is-invalid' : ''}`} />
+                                        <div className="invalid-feedback">{errors.city?.message}</div>
+                                    </Form.Group>
 
-                                <Form.Group className="mb-3" controlId="formBasicPassword">
-                                    <Form.Label>Establishment Year</Form.Label>
-                                    <input name="year" type="text" {...register('year')} maxLength={'4'} onChange={(e) => handleInput4(e)} value={year} placeholder='Enter establishment year' className={`form-control ${errors.year ? 'is-invalid' : ''}`} />
-                                    <div className="invalid-feedback">{errors.year?.message}</div>
-                                </Form.Group>
+                                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                                        <Form.Label>Establishment Year</Form.Label>
+                                        <input name="year" type="text" {...register('year')} maxLength={'4'} onChange={(e) => handleInput4(e)} value={year} placeholder='Enter establishment year' className={`form-control ${errors.year ? 'is-invalid' : ''}`} />
+                                        <div className="invalid-feedback">{errors.year?.message}</div>
+                                    </Form.Group>
 
-                                <Form.Group className="mb-3" controlId="formBasicPassword">
-                                    <Form.Label>Contact Number</Form.Label>
-                                    <input name="contactnumber" type="text" {...register('contactnumber')} maxLength={'20'} onChange={(e) => handleInput5(e)} value={contactnumber} placeholder='Enter contact number' className={`form-control ${errors.contactnumber ? 'is-invalid' : ''}`} />
-                                    <div className="invalid-feedback">{errors.contactnumber?.message}</div>
-                                </Form.Group>
+                                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                                        <Form.Label>Contact Number</Form.Label>
+                                        <input name="contactnumber" type="text" {...register('contactnumber')} maxLength={'20'} onChange={(e) => handleInput5(e)} value={contactnumber} placeholder='Enter contact number' className={`form-control ${errors.contactnumber ? 'is-invalid' : ''}`} />
+                                        <div className="invalid-feedback">{errors.contactnumber?.message}</div>
+                                    </Form.Group>
 
-                                <Form.Group className="mb-3" controlId="formBasicPassword">
-                                    <Form.Label>Set Password</Form.Label>
-                                    <input name="setpassword" type="password" {...register('setpassword')} onChange={(e) => setCreatePassword(e.target.value)} value={createPassword} placeholder='Enter Password' className={`form-control ${errors.setpassword ? 'is-invalid' : ''}`} maxlength="20" />
-                                    <div className="invalid-feedback">{errors.setpassword?.message}</div>
-                                </Form.Group>
+                                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                                        <Form.Label>Set Password</Form.Label>
+                                        <input name="setpassword" type="password" {...register('setpassword')} onChange={(e) => setCreatePassword(e.target.value)} value={createPassword} placeholder='Enter Password' className={`form-control ${errors.setpassword ? 'is-invalid' : ''}`} maxlength="20" />
+                                        <div className="invalid-feedback">{errors.setpassword?.message}</div>
+                                    </Form.Group>
 
-                                <Form.Group className="mb-3" controlId="confirmPassword">
-                                    <Form.Label>Confirm Password</Form.Label>
-                                    <input name="confirmpassword" type="password" {...register('confirmpassword')} onChange={(e) => setConfirmPassword(e.target.value)} value={confirmPassword} placeholder='Confirm Password' maxlength="15" className={`form-control ${errors.confirmpassword ? 'is-invalid' : ''}`} />
-                                    <div className="invalid-feedback">{errors.confirmpassword?.message}</div>
-                                    <span style={{color:'red'}}>{msg}</span>
-                                </Form.Group>
+                                    <Form.Group className="mb-3" controlId="confirmPassword">
+                                        <Form.Label>Confirm Password</Form.Label>
+                                        <input name="confirmpassword" type="password" {...register('confirmpassword')} onChange={(e) => setConfirmPassword(e.target.value)} value={confirmPassword} placeholder='Confirm Password' maxlength="15" className={`form-control ${errors.confirmpassword ? 'is-invalid' : ''}`} />
+                                        <div className="invalid-feedback">{errors.confirmpassword?.message}</div>
+                                        <span style={{color:'red'}}>{msg}</span>
+                                    </Form.Group>
 
-                                <div className='d-grid my-4'>
-                                    <Button variant="primary" type="submit">
-                                        Sign Up
-                                    </Button>
-                                </div>
-                            </Form>
-                            <p class="text-muted text-center mb-2">Already have an account? <Link to={'/hospital-sign-in'}>Log In</Link></p>
-                        </div>
-                    </Col>
-                </Row>
-            </Container>
+                                    <div className='d-grid my-4'>
+                                        <Button variant="primary" type="submit">
+                                            Sign Up
+                                        </Button>
+                                    </div>
+                                </Form>
+                                <p class="text-muted text-center mb-2">Already have an account? <Link to={'/hospital-sign-in'}>Log In</Link></p>
+                            </div>
+                        </Col>
+                    </Row>
+                </Container>
 
-            <Container fluid className='py-3'>
-                <p className="text-center text-2 text-muted mb-0">Copyright © 2023 <Link to={'/'}>trip4cure</Link>. All Rights Reserved.</p>
-            </Container>
-        </div>
+                {/* <Container fluid className='py-3'>
+                    <p className="text-center text-2 text-muted mb-0">Copyright © 2023 <Link to={'/'}>trip4cure</Link>. All Rights Reserved.</p>
+                </Container> */}
+            </div>
+            <Footer />
+        </>
     )
 }
 
