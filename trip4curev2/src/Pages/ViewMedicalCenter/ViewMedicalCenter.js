@@ -15,8 +15,8 @@ const ViewMedicalCenter = () => {
                 <Container>
                     <Row>
                         <div className='col-md-9 mx-auto mt-5 text-center'>
-                            <h1>Medical Centers</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</p>
+                            <h1 className='medical-center-heading'>Medical Centers</h1>
+                            <p className='medical-center-subheading'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</p>
                         </div>
                         
                         <div className='col-md-9 pt-5 mx-auto card-series-1'>

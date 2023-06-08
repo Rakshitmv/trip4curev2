@@ -2,3 +2,13 @@
     display: flex;
     gap: 100px;
 }
+
+.medical-center-heading {
+    font-size: 40px;
+    font-family: 'Centaur';
+    font-weight: bolder;
+}
+
+.medical-center-subheading {
+    font-family: 'Poppins';
+}

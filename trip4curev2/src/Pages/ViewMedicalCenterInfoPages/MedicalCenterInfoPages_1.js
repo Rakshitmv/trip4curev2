@@ -65,6 +65,16 @@ const MedicalCenterInfoPages_1 = () => {
             </div>
           </Row> */}
           <Row>
+            <div className=' col-md-4 img-gallery'>
+              <img></img>
+              <img></img>
+              <img></img>
+              <img></img>
+              <img></img>
+              <img></img>
+            </div>
+          </Row>
+          <Row>
             <div className='col-md-7 mt-5'>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</p>
             </div>
