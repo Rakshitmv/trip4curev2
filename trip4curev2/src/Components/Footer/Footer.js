@@ -10,7 +10,7 @@ function Footer() {
     <Container>
       <Row  className='py-5 px-5  footer-left-side'>
         <Col md={2}>
-        <img  src={`${process.env.PUBLIC_URL}/images/logo-w.png`} alt='' height={120} />
+       <Link to={'/'}><img  src={`${process.env.PUBLIC_URL}/images/logo-w.png`} alt='' height={120} /></Link>
         </Col>
         <Col md={4}>
           <h5 className='footer-font'>Quick Links</h5>

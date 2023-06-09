@@ -11,8 +11,9 @@ const ViewSpeciality = () => {
       <section className='viewspeciality-page'>
         <Container>
           <Row>
-            <div className=' mt-5 mx-auto viewspeciality-header'>
+            <div className=' text-center mt-5 mx-auto viewspeciality-header'>
               <h2 className='viewspeciality-main-heading'>All Available Specialties</h2>
+              <p className='viewspeciality-sub-heading'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</p>
             </div>
           </Row>
           <Row>

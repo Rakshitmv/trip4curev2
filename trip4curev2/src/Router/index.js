@@ -18,6 +18,9 @@ import MedicalCenterInfoPages_5 from "../Pages/ViewMedicalCenterInfoPages/Medica
 import MedicalCenterInfoPages_6 from "../Pages/ViewMedicalCenterInfoPages/MedicalCenterInfoPages_6";
 import ResetPassword from "../Pages/ResetPassword/ResetPassword";
 import VerifyOtp from "../Pages/VerifyOtp/VerifyOtp";
+import UserProfilePage from "../Pages/UserProfilePage/UserProfilePage";
+import ViewAllDestination from "../Pages/ViewAllDestination/ViewAllDestination";
+import Search from "../Pages/Search/Search";
 
 
 const router = createBrowserRouter([
@@ -108,7 +111,20 @@ const router = createBrowserRouter([
      {
       path: "/verify-otp",
       element: <VerifyOtp /> 
-    } 
+  } ,
+     
+     {
+       path: "/view-all-announcement",
+       element: <UserProfilePage />
+  },
+    {
+      path: "/view-all-destination",
+      element: <ViewAllDestination />
+  },
+  {
+    path: "/search",
+    element: <Search />
+    }
     
     ],
      { basename: '/trip4curev2' }

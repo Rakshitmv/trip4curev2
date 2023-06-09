@@ -262,7 +262,7 @@ function Homepage() {
                   </Form.Group>
                   </Col>
                   <Col xl="2">
-                    <button type="submit" className="btn   w-60  search-big-btn" style={{backgroundColor: '#b8353b', color: 'white'}}><i class="fa fa-search"></i> Search</button>
+                     <Link to={'/search'}><button type="submit" className="btn   w-60  search-big-btn" style={{backgroundColor: '#b8353b', color: 'white'}}><i class="fa fa-search"></i> Search</button></Link>
                   </Col>
                 </Row>
                 </Container>
@@ -669,7 +669,7 @@ function Homepage() {
           </Row>
           <Row>
             <div className="text-center py-4">
-            <Button className="line-primary-btn px-5 py-2  text-center" variant="outline-primary"><h6 className='btn-font'>View All Destinations</h6></Button>
+           <Link to={'/view-all-destination'}> <Button className="line-primary-btn px-5 py-2  text-center" variant="outline-primary"><h6 className='btn-font'>View All Destinations</h6></Button></Link>
             </div>
           </Row>
           </Container>
@@ -799,7 +799,7 @@ function Homepage() {
             </Col>
           </Row>
           <Row>
-          <div class="text-center py-4"><button type="button" class="line-primary-btn px-4 py-2 btn btn-outline-primary"><h6 className='btn-font'>View All Announcement</h6></button></div>
+          <Link to={'/view-all-announcement'}><div class="text-center py-4"><button type="button" class="line-primary-btn px-4 py-2 btn btn-outline-primary"><h6 className='btn-font'>View All Announcement</h6></button></div></Link>
           </Row>
           </Container>
        
