@@ -1,3 +1,7 @@
+@import url("//db.onlinewebfonts.com/c/8e1f2a0617863e3914ef2ccdab13480c?family=Centaur");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
 
 .banner-text h2{
     font-family: var(--body-font-family);
@@ -27,6 +31,7 @@
 }
 
 .brtb{
+    font-family: 'Poppins';
     width: 220px;
     height: 60px;
     border-top: 2px solid #dcf2f9;
@@ -34,6 +39,7 @@
     border-bottom: 2px solid #dcf2f9;
 }
 .bdrtlb{
+    font-family: 'Poppins';
     width: 220px;
     height: 60px;
     border-top: 2px solid #dcf2f9;
@@ -45,10 +51,11 @@
 }
 .search-big-btn{
     /* margin-top: 10px; */
-    font-family: var(--body-font-family);
+    font-family: 'Poppins';
     height: 100%;
 }
 .form-search-item label{
+    font-family: 'Poppins';
     font-weight:200; 
 }
 
@@ -57,7 +64,7 @@
 }
 
 .form-control-filter {
-    font-family: var(--heading--font-family);
+    font-family: 'Poppins';
     margin-top: -16px;
     margin-right: -17px;
     height: 5px;
@@ -66,12 +73,12 @@
 
 .form-control-filter .css-13cymwt-control{
     border: 0;
-    font-family: var(--heading--font-family);
+    font-family: 'Poppins';
     font-weight: 400;
     background: transparent;
 }
 .form-control-filter .css-1fdsijx-ValueContainer{
-    font-family: var(--heading--font-family);
+    font-family: 'Poppins';
     /* font-weight: 300; */
     padding: 0;
 }
@@ -81,8 +88,13 @@
     border: 0;
     box-shadow: none;
     background: transparent;
-    font-family: var(--heading--font-family);
+    font-family: 'Poppins'
     /* font-weight: 500; */
+}
+
+.choose-speciality {
+    font-family: 'Poppins';
+    font-size: medium;
 }
 
 /* .list-inline-item {

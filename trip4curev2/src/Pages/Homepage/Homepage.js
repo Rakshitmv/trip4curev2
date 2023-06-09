@@ -251,13 +251,13 @@ function Homepage() {
                 <Row>
                   <Col xl={3} md={4} className="col-2 pt-1   bg-white-transparent bdrtlb border-right position-relative rounded-left form-search-item">
                   <Form.Group className="pb-0 choose-height" controlId="formBasicEmail">
-                    <Form.Label><h5>Choose Speciality</h5></Form.Label>
+                    <Form.Label><h5 className='choose-speciality'>Choose Speciality</h5></Form.Label>
                     <Select className="form-control-filter" options={speciality} />
                   </Form.Group>
                   </Col>&emsp;
                   <Col xl={3} md={4} className="col-2 pt-1 bg-white-transparent brtb position-relative rounded-right form-search-item">
                   <Form.Group className="" controlId="formBasicEmail">
-                    <Form.Label><h5>Choose Country</h5></Form.Label>
+                    <Form.Label><h5 className='choose-speciality'>Choose Country</h5></Form.Label>
                     <Select className="form-control-filter" options={country} />
                   </Form.Group>
                   </Col>
