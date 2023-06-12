@@ -800,7 +800,7 @@ function Homepage() {
             </Col>
           </Row>
           <Row>
-            <div class="text-center"><button type="button" class="line-primary-btn px-4 py-2 btn btn-outline-primary"><h6 className='btn-font'>View All Announcement</h6></button></div>
+           <Link to={'/view-all-announcement'}> <div class="text-center"><button type="button" class="line-primary-btn px-4 py-2 btn btn-outline-primary"><h6 className='btn-font'>View All Announcement</h6></button></div></Link>
           </Row>
         </Container>
 

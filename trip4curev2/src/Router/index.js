@@ -21,6 +21,8 @@ import VerifyOtp from "../Pages/VerifyOtp/VerifyOtp";
 import UserProfilePage from "../Pages/UserProfilePage/UserProfilePage";
 import ViewAllDestination from "../Pages/ViewAllDestination/ViewAllDestination";
 import Search from "../Pages/Search/Search";
+import MedicalMenuBarServices from "../Pages/ViewMedicalCenterInfoPages/MedicalCenterMenuBar/MedicalMenuBarServices";
+import MedicalMenuBarDoctors from "../Pages/ViewMedicalCenterInfoPages/MedicalCenterMenuBar/MedicalMenuBarDoctors";
 
 
 const router = createBrowserRouter([
@@ -63,6 +65,22 @@ const router = createBrowserRouter([
     path: "/view-medical-center/medical-center-info-page_1",
     element: <MedicalCenterInfoPages_1 />
   },
+
+
+  {
+    path: "/view-medical-center/medical-center-info-page_1/medical-menu-bar-service",
+    element: <MedicalMenuBarServices />
+  },
+
+    {
+    path: "/view-medical-center/medical-center-info-page_1/medical-menu-bar-doctor",
+    element: <MedicalMenuBarDoctors />
+  },
+
+  // {
+  //   path: "/view-medical-center/medical-center-info-page_1/medical-menu-bar-overview",
+  //   element: <Med
+  // },
 
     {
     path: "/view-medical-center/medical-center-info-page_2",
