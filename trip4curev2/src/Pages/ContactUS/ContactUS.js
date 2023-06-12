@@ -33,7 +33,7 @@ const ContactUS = () => {
             .required('Email is required')
             .email('Email is invalid'),
         massege: Yup.string()
-            .required('Message name is required')
+            .required('Message is required')
             .min(2),
     });
 
@@ -102,6 +102,7 @@ const ContactUS = () => {
                             {/* <div className="logo"><Link className="d-flex justify-content-center fw-bolder" to={'/'} title=""> <img src={`${process.env.PUBLIC_URL}/images/logo.png`} height={130} width={100} /></Link> </div>
                             <hr class="mx-n4 mx-sm-n5" /> */}
                             <p class="lead text-center">Contact us</p>
+                            <p class="text-center">Contact us for collaborating for business.</p>
                             <Form onSubmit={handleSubmit(onSubmit)}>
                                 {/* <div className='field1-2'>
                                     <Form.Group className="mb-3" controlId="fullName">

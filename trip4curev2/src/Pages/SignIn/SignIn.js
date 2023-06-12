@@ -47,7 +47,9 @@ function SignIn() {
             });
             let resJson = await res.json();
             if (res.status === 201) {
-              navigate("/")
+              navigate("/");
+              localStorage.setItem("token",resJson['token']);
+              localStorage.setItem("user",resJson['User Type']);
               console.log(res)
              
             } else {

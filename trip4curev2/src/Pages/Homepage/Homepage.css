@@ -1,66 +1,88 @@
 @import url("//db.onlinewebfonts.com/c/8e1f2a0617863e3914ef2ccdab13480c?family=Centaur");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
 
-
-.banner-text h2{
+.banner-text h2 {
     font-family: var(--body-font-family);
     font-weight: 500;
 }
-.banner-text h5{
+
+.banner-text h5 {
     font-size: 50px;
 }
+
+.ad-img {
+    width: 100%;
+    /* or any custom size */
+    height: 100% !important;
+    object-fit: contain;
+}
+
+.btn:hover {
+    background-color: #b8353b !important;
+    border: #b8353b !important;
+}
+
 .home-main-intro {
-    background:#f3f3f3 url(../../../public/images/marisa-howenstine-nFsOlSE9Mn8-unsplash.png);
+    background: #f3f3f3 url(../../../public/images/marisa-howenstine-nFsOlSE9Mn8-unsplash.png);
     background-size: contain;
-    background-position: right top ;
+    background-position: right top;
     background-repeat: no-repeat;
     position: relative;
     z-index: 1;
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
-.card{
-    border-radius: var(--radius-small);
-}
-.bg-white-transparent{
-    background: rgba(255, 255, 255, .9);
-}
-.border-right {
-    border-right: 1px solid #dcf2f9!important;
+    padding-top: 25px;
+    padding-bottom: 10px;
 }
 
-.brtb{
-    font-family: 'Poppins';
+.card {
+    border-radius: var(--radius-small);
+}
+
+.bg-white-transparent {
+    background: rgba(255, 255, 255, .9);
+}
+
+.border-right {
+    border-right: 1px solid #dcf2f9 !important;
+}
+
+.brtb {
     width: 220px;
     height: 60px;
     border-top: 2px solid #dcf2f9;
     border-right: 2px solid #dcf2f9;
     border-bottom: 2px solid #dcf2f9;
 }
-.bdrtlb{
-    font-family: 'Poppins';
+
+.bdrtlb {
     width: 220px;
     height: 60px;
     border-top: 2px solid #dcf2f9;
     border-left: 2px solid #dcf2f9;
     border-bottom: 2px solid #dcf2f9;
 }
-.pb-3, .py-9 {
-    padding-bottom: 1.375rem!important;
+
+.pb-3,
+.py-9 {
+    padding-bottom: 1.375rem !important;
 }
-.search-big-btn{
+
+.search-big-btn {
     /* margin-top: 10px; */
-    font-family: 'Poppins';
+    font-family: var(--body-font-family);
     height: 100%;
 }
-.form-search-item label{
-    font-family: 'Poppins';
-    font-weight:200; 
+
+.form-search-item label {
+    font-weight: 200;
 }
 
 .choose-height {
     height: 10px;
+}
+
+.choose-text {
+    font-family: var(--body-font-family);
+    font-size: 15px;
 }
 
 .form-control-filter {
@@ -71,30 +93,26 @@
     font-size: large;
 }
 
-.form-control-filter .css-13cymwt-control{
+.form-control-filter .css-13cymwt-control {
     border: 0;
     font-family: 'Poppins';
     font-weight: 400;
     background: transparent;
 }
-.form-control-filter .css-1fdsijx-ValueContainer{
+
+.form-control-filter .css-1fdsijx-ValueContainer {
     font-family: 'Poppins';
     /* font-weight: 300; */
     padding: 0;
 }
 
 .form-control-filter .css-t3ipsp-control:hover,
-.form-control-filter .css-t3ipsp-control{
+.form-control-filter .css-t3ipsp-control {
     border: 0;
     box-shadow: none;
     background: transparent;
-    font-family: 'Poppins'
-    /* font-weight: 500; */
-}
-
-.choose-speciality {
     font-family: 'Poppins';
-    font-size: medium;
+    /* font-weight: 500; */
 }
 
 /* .list-inline-item {
@@ -109,7 +127,7 @@
     line-height: normal;
 }
 
-.icon-box .card-body{
+.icon-box .card-body {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -117,53 +135,62 @@
 }
 
 
-.icon-box span{
+.icon-box span {
     font-weight: 600;
     line-height: 16px;
 }
-.icon-box:hover{
-    background-color:var(--primary-color);
+
+.icon-box:hover {
+    background-color: var(--primary-color);
     color: #fff;
 }
+
 .list-inline-item {
     display: inline-block;
 }
-.icon-box .normal-state{
+
+.icon-box .normal-state {
     display: inline-block;
 }
-.icon-box .hover-state{
+
+.icon-box .hover-state {
     display: none;
 }
-.icon-box:hover .normal-state{
-display: none !important;
+
+.icon-box:hover .normal-state {
+    display: none !important;
 }
-.icon-box:hover .hover-state{
+
+.icon-box:hover .hover-state {
     display: inline-block !important;
-    }
+}
+
 .icon-box img {
     height: 36px;
 }
 
-.sliderblock{
+.sliderblock {
     text-decoration: none;
 }
+
 .sliderblock,
-.image-block{
+.image-block {
     overflow: hidden;
 }
 
-.sliderblock .card-title{
+.sliderblock .card-title {
     font-family: var(--heading--font-family);
     font-weight: 600;
 }
 
-.sliderblock .card-img-top{
+.sliderblock .card-img-top {
     -webkit-transition: .3s ease-in-out;
     transition: .3s ease-in-out;
     -webkit-transform: scale(1);
     transform: scale(1);
 }
-.sliderblock:hover .card-img-top{
+
+.sliderblock:hover .card-img-top {
     -webkit-transform: scale(1.08);
     transform: scale(1.08);
 }
@@ -224,7 +251,7 @@ display: none !important;
 
 .main-sub-heading-page {
     font-family: 'Poppins';
-    
+
 }
 
 .main-sub-heading-page-fmc {
@@ -237,7 +264,7 @@ display: none !important;
 
 .card-sub-heading {
     font-family: 'Poppins';
-    
+
 }
 
 /* .text-center {
@@ -263,24 +290,42 @@ display: none !important;
     background-repeat: no-repeat;
 }
 
-.medical-tourism-guide{
+.medical-tourism-guide {
     background: url(../../../public/images/map-bg.png) no-repeat;
     background-size: cover;
     background-position: bottom center;
-    padding-bottom:170px !important
+    padding-bottom: 170px !important
 }
+
+.card-title {
+    height: 40px;
+}
+
 /* .mgt-block {
 border:0;
 box-shadow: 0px 0px 10px rgba(86,68,169,.1);
 margin: 10px;
 } */
-.text-link{
+.text-link {
     padding: 0;
-    color: var(--primary-color);
+    color: var(--primary-color) !important;
     text-decoration: none;
+    border: white;
 }
-.slick-list{
-    margin-bottom: 20px;
+
+.text-link:hover {
+    padding: 0;
+    color: var(--primary-color) !important;
+    text-decoration: none;
+    border: white;
+    background-color: white !important;
+}
+
+
+
+
+.slick-list {
+    /* margin-bottom: 20px; */
 }
 
 .btn-bg {
@@ -291,12 +336,19 @@ margin: 10px;
 
 .medical-card-heading {
     font-family: 'Centaur';
-    font-weight: 800;
+    font-weight: 600;
+    font-size: 18px;
 }
 
 .medical-card-sub-heading {
     font-family: 'Poppins';
+    font-size: 11px;
 }
+
+.card-img-top {
+    width: 95%;
+}
+
 /* .medical-guide-card {
     display: flex;
     gap: 1rem;
@@ -313,7 +365,7 @@ margin: 10px;
     justify-content: space-around;
 }
 
-.fd-content{
+.fd-content {
     position: absolute;
     top: 0;
     display: flex;
@@ -331,7 +383,7 @@ margin: 10px;
     left: 100px;
 }
 
-.destination-centers{
+.destination-centers {
     font-family: 'Poppins';
 }
 
@@ -345,7 +397,7 @@ margin: 10px;
     font-family: 'Poppins';
 }
 
-.fd-bottom-content{
+.fd-bottom-content {
     text-align: center;
     width: 100%;
 }
@@ -376,7 +428,7 @@ margin: 10px;
     justify-content: center;
     align-items: center;
     background-size: auto;
-    
+
     background: url(/public/images/bg-testimonials.png) no-repeat;
     background-position: center center;
     background-size: cover;
@@ -384,7 +436,7 @@ margin: 10px;
 }
 
 .testimonial-card {
-    opacity:  0.9;
+    opacity: 0.9;
     color: black;
 }
 
@@ -393,7 +445,7 @@ margin: 10px;
 }
 
 .guest-img {
-    
+
     width: 100px;
     height: 100px;
     margin: 0 auto;
@@ -402,10 +454,16 @@ margin: 10px;
 .global-card {
     display: flex;
     justify-content: space-around;
-    
+
 }
 
-.testimonial-card .card{
+.global-provider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.testimonial-card .card {
     background-color: transparent;
     box-shadow: none;
     border: 0;
@@ -415,6 +473,7 @@ margin: 10px;
     border: 2px solid #fff;
     border-radius: 100%;
 }
+
 .testimonial-card .slick-dots li.slick-active button {
     border: 2px solid #fff;
     background-color: #fff;
@@ -439,7 +498,7 @@ margin: 10px;
 /* .client-block{
 
 } */
-.client-block img{
+.client-block img {
     border: 2px solid #dcf2f9;
     max-width: 95%;
     height: auto;
@@ -450,14 +509,19 @@ margin: 10px;
     /* height: 100vh; */
     /* border: 2px solid lawngreen; */
 }
-.card-title{
+
+.card-title {
     font-family: 'Centaur';
     font-weight: 700;
 }
 
-.ab-section{
+.ab-section {
     background: linear-gradient(to bottom, #eaeae9 50%, #ffff 50%);
-    padding: 60px 0;
+    padding: 20px 0;
+}
+
+.card-text {
+    font-size: 10px;
 }
 
 .ab-image .content {
@@ -465,20 +529,22 @@ margin: 10px;
     inset: 0;
     background: transparent;
     text-align: center;
-    color: #fff;
+    color: #b8353b;
     display: flex;
+    font-weight: 700;
     align-items: flex-end;
     justify-content: center;
-    padding-bottom: 40px;
+    padding-bottom: 30px;
     transition: .2s;
-    padding: 20px;
+    /* background: rgba(0, 0, 0, .3); */
+    /* padding: 20px; */
 }
 
 .ab-image {
     height: 400px;
-    
-    padding-left: 15px;
-    
+
+    /* padding-left: 15px; */
+
 }
 
 /* .ab-img-black {
@@ -512,14 +578,15 @@ margin: 10px;
     left: -60px;
 }
 
-.blog-card .card-body{
+.blog-card .card-body {
     position: relative;
     top: -30px;
     z-index: 1;
-    background: #fff; 
+    background: #fff;
     width: 90%;
-    box-shadow: 0px 0px 10px rgba(86,68,169,.1);
+    box-shadow: 0px 0px 10px rgba(86, 68, 169, .1);
 }
+
 .thdiv {
     color: white;
 
@@ -623,8 +690,3 @@ margin: 10px;
     margin-left: -120px;
     /* border: 2px solid white; */
 }
-
-/* 
-@media (min-width:480px) {
-   
-} */

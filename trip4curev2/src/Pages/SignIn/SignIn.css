@@ -1,19 +1,21 @@
-
 .login-reg-wrapper .btn:not(.btn-link) {
     -webkit-box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
     height: 52px;
 }
+
 .login-reg-wrapper .form-control:not(.form-control-sm) {
     padding: 0.81rem 0.96rem;
     height: inherit;
 }
+
 .login-reg-wrapper .form-control:focus {
     -webkit-box-shadow: 0 0 5px rgba(128, 189, 255, 0.5);
     box-shadow: 0 0 5px rgba(128, 189, 255, 0.5);
     border-color: var(--primary-color) !important;
 }
-.logo a{
+
+.logo a {
     font-size: 26px;
     text-decoration: none;
 }

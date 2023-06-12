@@ -47,7 +47,8 @@ function HospitalSignIn() {
             let resJson = await res.json();
             if (res.status === 201) {
               navigate("/")
-              console.log(res)
+              console.log(res);
+              localStorage.setItem("token",resJson.token);
   
             } else {
                 setMsg(resJson.msg||resJson.error||resJson.message)

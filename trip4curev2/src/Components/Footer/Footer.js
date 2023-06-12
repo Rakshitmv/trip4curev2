@@ -8,11 +8,11 @@ function Footer() {
     <footer>
     
     <Container>
-      <Row  className='py-5 px-5  footer-left-side'>
-        <Col md={2}>
-       <Link to={'/'}><img  src={`${process.env.PUBLIC_URL}/images/logo-w.png`} alt='' height={120} /></Link>
+      <Row  className='py-5  footer-left-side'>
+        <Col md={2} >
+        <img  src={`${process.env.PUBLIC_URL}/images/logo-w.png`} alt='' height={120} />
         </Col>
-        <Col md={4}>
+        <Col md={4} style={{paddingLeft:'3%'}}>
           <h5 className='footer-font'>Quick Links</h5>
           <Row>
             <Col md={6}>
@@ -36,7 +36,7 @@ function Footer() {
             </Col>
           </Row>
         </Col>
-        <Col md={3}>
+        <Col md={3} style={{paddingLeft:'5%'}}>
           <h5>Featured Specialties</h5>
           <ul className="footer-links">
                 <li><Link to={''}>Cancer Treatment</Link></li>
@@ -47,9 +47,9 @@ function Footer() {
                 <li><Link to={''}>Orthopedic Surgery</Link></li>
               </ul>
         </Col>
-        <Col md={3}>
+        <Col md={3} style={{paddingLeft:'7%'}}>
         <h6 className='footer-connect'>Connect With Us</h6>
-        <div className='footer-social'>
+        <div className='footer-social' style={{paddingLeft:'9%'}}>
           <Link to={''}><i className='fa fa-twitter'></i></Link>
           <Link to={''}><i className='fa fa-facebook'></i></Link>
           <Link to={''}><i className='fa fa-linkedin'></i></Link>

@@ -66,7 +66,7 @@ const MedicalCenterInfoPages_1 = () => {
           </Row> */}
           <Row>
             <div className=' col-md-4 img-gallery'>
-              <img></img>
+              <img src={`${process.env.PUBLIC_URL}/images/slide_03.jpg`} alt=""></img>
               <img></img>
               <img></img>
               <img></img>
