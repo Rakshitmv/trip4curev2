@@ -6,7 +6,6 @@ import Footer from '../../Components/Footer/Footer';
 // import Nav from 'react-bootstrap/Nav';
 // import Navbar from 'react-bootstrap/Navbar';
 // import Menu from './Nav/Menu';
-import "./Homepage.css";
 import "./UserProfilePage.css";
 import { useForm } from "react-hook-form";
 import * as Yup from 'yup';

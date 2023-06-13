@@ -252,13 +252,13 @@ function Homepage() {
                   <Row>
                     <Col xl={3} md={4} className="col-2 pt-1   bg-white-transparent bdrtlb border-right position-relative rounded-left form-search-item">
                       <Form.Group className="pb-0 choose-height" controlId="formBasicEmail">
-                        <Form.Label><h5 className='choose-text'>Choose Speciality</h5></Form.Label>
+                        <Form.Label><p className='font-style'>Choose Speciality</p></Form.Label>
                         <Select className="form-control-filter" options={speciality} />
                       </Form.Group>
                     </Col>&emsp;
                     <Col xl={3} md={4} className="col-2 pt-1 bg-white-transparent brtb position-relative rounded-right form-search-item">
                       <Form.Group className="" controlId="formBasicEmail">
-                        <Form.Label><h5 className='choose-text'>Choose Country</h5></Form.Label>
+                        <Form.Label><p className='font-style'>Choose Country</p></Form.Label>
                         <Select className="form-control-filter" options={country} />
                       </Form.Group>
                     </Col>
@@ -337,7 +337,7 @@ function Homepage() {
                   </div>
                 </Link>
               </div>
-              <div className="list-inline-item py-2">
+              {/* <div className="list-inline-item py-2">
                 <Link to={''} class="card border-0 icon-box link-hover-dark-white">
                   <div class="card-body p-0">
                     <div>
@@ -349,7 +349,7 @@ function Homepage() {
                     </span>
                   </div>
                 </Link>
-              </div>
+              </div> */}
             </div>
 
 
@@ -373,67 +373,67 @@ function Homepage() {
                 <div className='ab-image position-relative '>
                   <img className='ab-img-black ad-img' src={`${process.env.PUBLIC_URL}/images/slide_01.jpg`} alt="" />
                   <div className='content'>
-                    <h2>Before Knee Replacement</h2>
+                    <h4 className='font-style'>Before Knee Replacement</h4>
                   </div>
                 </div>
                 <div className='ab-image position-relative ' >
                   <img src={`${process.env.PUBLIC_URL}/images/slide_02.jpg`} alt=""  className='ad-img'/>
                   <div className='content'>
-                    <h2>After knee replacement <br />Happy after knee</h2>
+                    <h4 className='font-style'>After knee replacement <br />Happy after knee</h4>
                   </div>
                 </div>
                 <div className='ab-image position-relative '>
                   <img src={`${process.env.PUBLIC_URL}/images/slide_03.jpg`} alt="" className='ad-img' />
                   <div className='content'>
-                    <h2>In sports injury</h2>
+                    <h4 className='font-style'>In sports injury</h4>
                   </div>
                 </div>
                 <div className='ab-image position-relative '>
                   <img src={`${process.env.PUBLIC_URL}/images/slide_04.jpg`} alt="" className='ad-img' />
                   <div className='content'>
-                    <h2>Recovering after surgery</h2>
+                    <h4 className='font-style'>Recovering after surgery</h4>
                   </div>
                 </div>
                 <div className='ab-image position-relative '>
                   <img src={`${process.env.PUBLIC_URL}/images/slide_05.jpg`} alt="" className='ad-img' />
                   <div className='content'>
-                    <h2>feeling much better now</h2>
+                    <h4 className='font-style'>feeling much better now</h4>
                   </div>
                 </div>
                 <div className='ab-image position-relative '>
                   <img src={`${process.env.PUBLIC_URL}/images/slide_06.jpg`} alt="" className='ad-img' />
                   <div className='content'>
-                    <h2>I’m cancer free now</h2>
+                    <h4 className='font-style'>I’m cancer free now</h4>
                   </div>
                 </div>
                 <div className='ab-image position-relative '>
                   <img src={`${process.env.PUBLIC_URL}/images/slide_07.jpg`} alt="" className='ad-img' />
                   <div className='content'>
-                    <h2>Pregnant</h2>
+                    <h4 className='font-style'>Pregnant</h4>
                   </div>
                 </div>
                 {/* <div className='ab-image position-relative '>
                   <img  src={`${process.env.PUBLIC_URL}/images/slide_08.jpg`} alt="" />
                   <div className='content'>
-                    <h2>Knee sucessfull surgery</h2>
+                    <h4 className='font-style'>Knee sucessfull surgery</h4>
                   </div>
                 </div> */}
                 {/* <div className='ab-image position-relative'>
                   <img  src={`${process.env.PUBLIC_URL}/images/slide_09.jpg`} alt="" className='ad-img'  />
                   <div className='content'>
-                    <h2>Old is Gold</h2>
+                    <h4 className='font-style'>Old is Gold</h4>
                   </div>
                 </div> */}
                 {/* <div className='ab-image position-relative'>
                   <img  src={`${process.env.PUBLIC_URL}/images/slide_10.jpg`} alt="" />
                   <div className='content'>
-                    <h2>TB</h2>
+                    <h4 className='font-style'>TB</h4>
                   </div>
                 </div> */}
                 <div className='ab-image position-relative'>
                   <img src={`${process.env.PUBLIC_URL}/images/slide_11.jpg`} alt="" className='ad-img' />
                   <div className='content'>
-                    <h2>Cancer free</h2>
+                    <h4 className='font-style'>Cancer free</h4>
                   </div>
                 </div>
 
@@ -461,7 +461,7 @@ function Homepage() {
                   </div>
                   <Card.Body>
                     <Card.Title><h6 className='card-heading'>Galenia Hospital</h6></Card.Title>
-                    <Card.Text><h6>Mexico City</h6></Card.Text>
+                    <Card.Text><p className='card-sub-heading-1'>Mexico City</p></Card.Text>
                     <Card.Text className='card-text'>Mexico - 16 Specialties</Card.Text>
                   </Card.Body>
                 </Card>
@@ -473,7 +473,7 @@ function Homepage() {
                   </div>
                   <Card.Body>
                     <Card.Title><h6 className='card-heading'>Apollo Hospital</h6></Card.Title>
-                    <Card.Text><h6>Chennai</h6></Card.Text>
+                    <Card.Text>Chennai</Card.Text>
                     <Card.Text className='card-text'>India - 25 Specialties</Card.Text>
                   </Card.Body>
                 </Card>
@@ -485,7 +485,7 @@ function Homepage() {
                   </div>
                   <Card.Body>
                     <Card.Title><h6 className='card-heading'>Hospital Universitario Austral</h6></Card.Title>
-                    <Card.Text><h6>Santa Fe</h6></Card.Text>
+                    <Card.Text>Santa Fe</Card.Text>
                     <Card.Text className='card-text'>Argentina - 3 Specialties</Card.Text>
                   </Card.Body>
                 </Card>
@@ -497,7 +497,7 @@ function Homepage() {
                   </div>
                   <Card.Body>
                     <Card.Title><h6 className='card-heading'>KPJ Damansara Hospital</h6></Card.Title>
-                    <Card.Text><h6>Kuala Lumpur</h6></Card.Text>
+                    <Card.Text>Kuala Lumpur</Card.Text>
                     <Card.Text className='card-text'>Malaysia - 28 Specialties</Card.Text>
                   </Card.Body>
                 </Card>
@@ -509,7 +509,7 @@ function Homepage() {
                   </div>
                   <Card.Body>
                     <Card.Title><h6 className='card-heading'>Apollo Hospital</h6></Card.Title>
-                    <Card.Text><h6>Chennai</h6></Card.Text>
+                    <Card.Text>Chennai</Card.Text>
                     <Card.Text className='card-text'>India - 25 Specialties</Card.Text>
                   </Card.Body>
                 </Card>
@@ -521,7 +521,7 @@ function Homepage() {
                   </div>
                   <Card.Body>
                     <Card.Title><h6 className='card-heading'>Hospital Universitario Austral</h6></Card.Title>
-                    <Card.Text><h6>Santa Fe</h6></Card.Text>
+                    <Card.Text>Santa Fe</Card.Text>
                     <Card.Text className='card-text'>Argentina - 3 Specialties</Card.Text>
                   </Card.Body>
                 </Card>
@@ -531,7 +531,7 @@ function Homepage() {
           </Row>
           <Row>
             <div className="text-center">
-              <Link to={'/view-medical-center'}><Button className="line-primary-btn px-4 py-2 text-center mt-5" variant="outline-primary"><h6 className='btn-font'>View All Medical Centers</h6></Button></Link>
+              <Link to={'/view-medical-center'}><Button className="line-primary-btn btn-hover px-4 py-2 text-center mt-5" variant="outline-primary"><h6 className='btn-font'>View All Medical Centers</h6></Button></Link>
             </div>
           </Row>
         </Container>
@@ -610,7 +610,7 @@ function Homepage() {
       </section>
 
 
-      <section id="section-04" className="py-5 featured-destinations" style={{ height: '100vh' }}>
+      <section id="section-04" className="py-3 featured-destinations" style={{ height: '100vh' }}>
         <Container>
           <Row>
             <div className="col-md-8 mb-3">
@@ -670,7 +670,7 @@ function Homepage() {
           </Row>
           <Row>
             <div className="text-center py-4">
-              <Button className="line-primary-btn px-5 py-2  text-center" variant="outline-primary"><h6 className='btn-font'>View All Destinations</h6></Button>
+              <Button className="line-primary-btn px-5 py-2 btn-hover text-center" variant="outline-primary"><h6 className='btn-font'>View All Destinations</h6></Button>
             </div>
           </Row>
         </Container>
@@ -772,7 +772,7 @@ function Homepage() {
               <Card className="border-0 position-relative blog-card">
                 <Card.Img variant="top"  className="rounded-0" src={`${process.env.PUBLIC_URL}/images/blog1.png`} />
                 <Card.Body>
-                  <Card.Title className='card-title'><h5 className='medical-card-heading'>Our New Miami Beach Hotel is Open Now!</h5></Card.Title>
+                  <Card.Title className='card-title card-h'><h5 className='medical-card-heading'>Our New Miami Beach Hotel is Open Now!</h5></Card.Title>
                   <Card.Text><p className='medical-card-sub-heading'>A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.</p></Card.Text>
                   <Button className="text-link" variant="link">Read More</Button>
                 </Card.Body>
@@ -782,7 +782,7 @@ function Homepage() {
               <Card className="border-0 position-relative blog-card">
                 <Card.Img variant="top"  className="rounded-0" src={`${process.env.PUBLIC_URL}/images/blog2.png`} />
                 <Card.Body>
-                  <Card.Title className='card-title'><h5 className='medical-card-heading'>Know the Secreat of Resort Its Amazing!</h5></Card.Title>
+                  <Card.Title className='card-title card-h'><h5 className='medical-card-heading'>Know the Secreat of Resort Its Amazing!</h5></Card.Title>
                   <Card.Text><p className='medical-card-sub-heading'>A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.</p></Card.Text>
                   <Button className="text-link" variant="link">Read More</Button>
                 </Card.Body>
@@ -792,7 +792,7 @@ function Homepage() {
               <Card className="border-0 position-relative blog-card">
                 <Card.Img variant="top"  className="rounded-0" src={`${process.env.PUBLIC_URL}/images/blog3.png`} />
                 <Card.Body>
-                  <Card.Title className='card-title'><h5 className='medical-card-heading'>How to book a Resort in best price on Mountains</h5></Card.Title>
+                  <Card.Title className='card-title card-h'><h5 className='medical-card-heading'>How to book a Resort in best price on Mountains</h5></Card.Title>
                   <Card.Text><p className='medical-card-sub-heading'>A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.</p></Card.Text>
                   <Button className="text-link" variant="link">Read More</Button>
                 </Card.Body>
@@ -800,7 +800,7 @@ function Homepage() {
             </Col>
           </Row>
           <Row>
-           <Link to={'/view-all-announcement'}> <div class="text-center"><button type="button" class="line-primary-btn px-4 py-2 btn btn-outline-primary"><h6 className='btn-font'>View All Announcement</h6></button></div></Link>
+           <Link to={'/view-all-announcement'}> <div class="text-center"><button type="button" class="line-primary-btn px-4 py-2 btn-hover btn btn-outline-primary"><h6 className='btn-font'>View All Announcement</h6></button></div></Link>
           </Row>
         </Container>
 

@@ -27,7 +27,7 @@ function HospitalSignUp() {
         year: Yup.string()
             .required('Establishment year is required'),
         contactnumber: Yup.string()
-            .required('Establishment year is required')
+            .required('Contact number year is required')
             .min(5),
         email: Yup.string()
             .required('Email is required')

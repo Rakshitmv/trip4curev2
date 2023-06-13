@@ -1,5 +1,6 @@
-@import url("//db.onlinewebfonts.com/c/8e1f2a0617863e3914ef2ccdab13480c?family=Centaur");
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+.css-hlgwow {
+    padding: 0 !important;
+}
 
 .banner-text h2 {
     font-family: var(--body-font-family);
@@ -17,7 +18,7 @@
     object-fit: contain;
 }
 
-.btn:hover {
+.btn-hover:hover {
     background-color: #b8353b !important;
     border: #b8353b !important;
 }
@@ -80,28 +81,29 @@
     height: 10px;
 }
 
-.choose-text {
+.css-1jqq78o-placeholder,
+.css-1dimb5e-singleValue {
     font-family: var(--body-font-family);
-    font-size: 15px;
+    font-size: small;
 }
 
 .form-control-filter {
-    font-family: 'Poppins';
+    font-family: var(--body-font-family);
     margin-top: -16px;
     margin-right: -17px;
     height: 5px;
-    font-size: large;
+    font-size: medium;
 }
 
 .form-control-filter .css-13cymwt-control {
     border: 0;
-    font-family: 'Poppins';
+    font-family: var(--heading--font-family);
     font-weight: 400;
     background: transparent;
 }
 
 .form-control-filter .css-1fdsijx-ValueContainer {
-    font-family: 'Poppins';
+    font-family: var(--heading--font-family);
     /* font-weight: 300; */
     padding: 0;
 }
@@ -111,7 +113,7 @@
     border: 0;
     box-shadow: none;
     background: transparent;
-    font-family: 'Poppins';
+    font-family: var(--heading--font-family);
     /* font-weight: 500; */
 }
 
@@ -227,18 +229,6 @@
 }
 
 
-
-/* .ab-section-black {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
-
-/* .ab-section-black:hover {
-    background-color: none;
-    text-align: center;
-} */
-
 .featured-medical-center {
     background: linear-gradient(to bottom, #eaeae9 50%, #ffff 50%);
 }
@@ -267,26 +257,10 @@
 
 }
 
-/* .text-center {
-    
-    animation: mymove 5s infinite;
-     animation-delay: 2s;
-}
 
-  @keyframes mymove {
-      from {
-          left: 0px;
-      }
-
-      to {
-          left: 500px;
-      }
-  } */
 
 .medical-tourism-guide {
 
-    /* background-size: auto;
-    */
     background-repeat: no-repeat;
 }
 
@@ -297,10 +271,15 @@
     padding-bottom: 170px !important
 }
 
-.card-title {
+.card-h {
     height: 40px;
 }
 
+.card-text p {
+    margin-bottom: 0px !important;
+}
+
+/* .mgt-
 /* .mgt-block {
 border:0;
 box-shadow: 0px 0px 10px rgba(86,68,169,.1);
@@ -342,7 +321,7 @@ margin: 10px;
 
 .medical-card-sub-heading {
     font-family: 'Poppins';
-    font-size: 11px;
+    font-size: 0.8rem;
 }
 
 .card-img-top {
@@ -397,9 +376,17 @@ margin: 10px;
     font-family: 'Poppins';
 }
 
+.font-style {
+    font-family: var(--body-font-family);
+}
+
 .fd-bottom-content {
     text-align: center;
     width: 100%;
+}
+
+.form-label {
+    margin-bottom: 0;
 }
 
 .destination-country-g {
@@ -521,27 +508,34 @@ margin: 10px;
 }
 
 .card-text {
-    font-size: 10px;
+    font-size: 0.8rem;
 }
 
 .ab-image .content {
     position: absolute;
     inset: 0;
+    background: rgba(0, 0, 0, .2) !important;
+    font-family: 'Poppins' !important;
     background: transparent;
     text-align: center;
-    color: #b8353b;
+    color: #b8353b !important;
     display: flex;
-    font-weight: 700;
+    /* text-shadow: 1px 1px rgb(0, 0, 0); */
+    font-weight: 900 !important;
     align-items: flex-end;
     justify-content: center;
-    padding-bottom: 30px;
-    transition: .2s;
-    /* background: rgba(0, 0, 0, .3); */
-    /* padding: 20px; */
+    /* padding-bottom: 10px !important; */
+    /* //transition: .2s; */
 }
 
+.ab-image:hover .content {
+    background: rgba(0, 0, 0, .3);
+    padding-bottom: 30px;
+}
+
+
 .ab-image {
-    height: 400px;
+    /* height: 400px; */
 
     /* padding-left: 15px; */
 
@@ -569,10 +563,6 @@ margin: 10px;
     z-index: 2;
 } */
 
-.ab-image:hover .content {
-    background: rgba(0, 0, 0, .3);
-    padding-bottom: 50px;
-}
 
 .ab-section .slick-prev {
     left: -60px;

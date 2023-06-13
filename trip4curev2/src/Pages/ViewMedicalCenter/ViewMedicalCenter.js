@@ -28,8 +28,8 @@ const ViewMedicalCenter = () => {
                             </div>
                             <Card.Body>
                                 <Card.Title><h4 className='card-heading'>Galenia Hospital</h4></Card.Title>
-                                <Card.Text><h4>Mexico City</h4></Card.Text>
-                                <Card.Text>Mexico - 16 Specialties</Card.Text>
+                                <Card.Text><p className='card-sub-heading-view-medical'>Mexico City</p></Card.Text>
+                                <Card.Text><p>Mexico - 16 Specialties</p></Card.Text>
                             </Card.Body>
                             </Card>
                             </Link>
@@ -41,8 +41,8 @@ const ViewMedicalCenter = () => {
                             </div>
                             <Card.Body>
                                 <Card.Title><h4 className='card-heading'>Apollo Hospital Chennai</h4></Card.Title>
-                                <Card.Text><h4>Chennai</h4></Card.Text>
-                                <Card.Text>India - 25 Specialties</Card.Text>
+                                <Card.Text><p>Chennai</p></Card.Text>
+                                <Card.Text><p>India - 25 Specialties</p></Card.Text>
                             </Card.Body>
                             </Card>
                             </Link>
@@ -57,8 +57,8 @@ const ViewMedicalCenter = () => {
                             </div>
                             <Card.Body>
                                 <Card.Title><h4 className='card-heading'>Hospital Universitario Austral</h4></Card.Title>
-                                <Card.Text><h4>Santa Fe</h4></Card.Text>
-                                <Card.Text>Argentina - 3 Specialties</Card.Text>
+                                <Card.Text><p>Santa Fe</p></Card.Text>
+                                <Card.Text><p>Argentina - 3 Specialties</p></Card.Text>
                             </Card.Body>
                             </Card>
                             </Link>
@@ -70,8 +70,8 @@ const ViewMedicalCenter = () => {
                             </div>
                             <Card.Body>
                                 <Card.Title><h4 className='card-heading'>KPJ Damansara Hospital</h4></Card.Title>
-                                <Card.Text><h4>Kuala Lumpur</h4></Card.Text>
-                                <Card.Text>Malaysia - 28 Specialties</Card.Text>
+                                <Card.Text><p>Kuala Lumpur</p></Card.Text>
+                                <Card.Text><p>Malaysia - 28 Specialties</p></Card.Text>
                             </Card.Body>
                             </Card>
                             </Link>
@@ -86,8 +86,8 @@ const ViewMedicalCenter = () => {
                             </div>
                             <Card.Body>
                                 <Card.Title><h4 className='card-heading'>Hospital Universitario Austral</h4></Card.Title>
-                                <Card.Text><h4>Santa Fe</h4></Card.Text>
-                                <Card.Text>Argentina - 3 Specialties</Card.Text>
+                                <Card.Text><p>Santa Fe</p></Card.Text>
+                                <Card.Text><p>Argentina - 3 Specialties</p></Card.Text>
                             </Card.Body>
                             </Card>
                             </Link>
@@ -98,8 +98,8 @@ const ViewMedicalCenter = () => {
                                 </div>
                                 <Card.Body>
                                     <Card.Title><h4 className='card-heading'>Galenia Hospital</h4></Card.Title>
-                                    <Card.Text><h4>Mexico City</h4></Card.Text>
-                                    <Card.Text>Mexico - 16 Specialties</Card.Text>
+                                    <Card.Text><p>Mexico City</p></Card.Text>
+                                    <Card.Text><p>Mexico - 16 Specialties</p></Card.Text>
                                 </Card.Body>
                                 </Card>
                                 </Link>

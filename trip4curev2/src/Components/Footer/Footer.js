@@ -13,7 +13,7 @@ function Footer() {
         <img  src={`${process.env.PUBLIC_URL}/images/logo-w.png`} alt='' height={120} />
         </Col>
         <Col md={4} style={{paddingLeft:'3%'}}>
-          <h5 className='footer-font'>Quick Links</h5>
+          <h6 className='footer-font'>Quick Links</h6>
           <Row>
             <Col md={6}>
               <ul className="footer-links">
@@ -37,7 +37,7 @@ function Footer() {
           </Row>
         </Col>
         <Col md={3} style={{paddingLeft:'5%'}}>
-          <h5>Featured Specialties</h5>
+          <h6>Featured Specialties</h6>
           <ul className="footer-links">
                 <li><Link to={''}>Cancer Treatment</Link></li>
                 <li><Link to={''}>Cardiac Surgery</Link></li>
