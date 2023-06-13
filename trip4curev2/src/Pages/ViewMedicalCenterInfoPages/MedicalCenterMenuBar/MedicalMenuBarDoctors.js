@@ -4,6 +4,21 @@ import Footer from '../../../Components/Footer/Footer';
 import '../../ViewMedicalCenterInfoPages/MedicalCenterInfoPages.css'
 import { Col, Container, Form, Row, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Select from 'react-select';
+
+
+
+
+const speciality = [
+  { value: 'Cancer Treatment', label: 'Cancer Treatment' },
+  { value: 'Cardiac Surgery', label: 'Cardiac Surgery' },
+  { value: 'Cosemtic Surgery', label: 'Cosemtic Surgery' },
+  { value: 'Fertility Treatment', label: 'Fertility Treatment' },
+  { value: 'Neurology', label: 'Neurology' },
+  { value: 'Orthopedic Surgery', label: 'Orthopedic Surgery' }
+
+]
+
 
 const MedicalMenuBarDoctors = () => {
 
@@ -53,22 +68,37 @@ const MedicalMenuBarDoctors = () => {
             </div>
           </Row>
           <Row>
-            <div className='col-md-7 mt-5'>
+            <div className='col-md-8 mt-5'>
               <h4>Staff</h4>  
               
             </div>
-            <div className='col-md-7 mt-5'>
-             
-                <select value={selectedOption} onChange={handleOptionChange}>
-                  <option value="">-- Select --</option>
+          </Row>
+          <Row>
+              <Col xl={3} md={4} className="col-2 pt-1 me-3">
+                <Select className="medical-menu-bar-select" placeholder="--All Specialties--" options={speciality}></Select>  
+              </Col>
+              <Col xl={3} md={4} className="col-2 pt-1 ">
+                 <input name="text" type="text" className='menu-bar-name' style={{width: '200px' , height: '35px'}} placeholder='Name' />
+            </Col>
+            <Col xl="3">
+                <button type="submit" className=" w-90 h-100 medical-menu-search-btn" style={{ backgroundColor: '#b8353b', color: 'white' }}><i class="fa fa-search"></i> Search</button>
+            </Col>
+          
+                {/* <select  className="select-drop-menu"  value={selectedOption} onChange={handleOptionChange}>
+                  <option  className="select-drop-menu" value="">-- Select --</option>
                   <option value="option1">Option 1</option>
                   <option value="option2">Option 2</option>
                   <option value="option3">Option 3</option>
-                </select>
-                {selectedOption && (
-                  <p>You have selected: {selectedOption}</p>
-                )}
-            </div>
+                </select> */}
+          </Row>
+          <Row>
+              <div className='col-md-12 mt-5 medical-doctor-menu-card-1'  >
+                <img src={`${process.env.PUBLIC_URL}/images/mc3.png`} style={{ width: '130px', height: '100px' }} className="" alt="" />
+                <div>
+                  <h2>Dr Vincent</h2>
+                  <h4>Designation</h4>
+                </div>
+              </div>
           </Row>
         </Container>
      </section>
