@@ -42,9 +42,9 @@ const MedicalMenuBarServices = () => {
           </Row>
           <Row>
             <div className='col-md-8 mt-5  medical-center-menu-bar'>
-              <button type="button" class="line-primary-btn px-4 py-2 btn btn-outline-primary menu-bar-info">Overview</button>
-              <button type="button" class="line-primary-btn px-4 py-2 btn btn-outline-primary menu-bar-info">Services</button>
-              <button type="button" class="line-primary-btn px-4 py-2 btn btn-outline-primary menu-bar-info">Doctors</button>
+              <Link to={'/view-medical-center/medical-center-info-page_1/medical-menu-bar-service/medical-center-info-page_1'}><button type="button" class="line-primary-btn px-4 py-2 btn btn-outline-primary menu-bar-info-1">Overview</button></Link>
+              <button type="button" class="line-primary-btn px-4 py-2 btn btn-outline-primary menu-bar-info-2">Services</button>
+             <Link to={'/view-medical-center/medical-center-info-page_1/medical-menu-bar-service/medical-menu-bar-doctor'}><button type="button" class="line-primary-btn px-4 py-2 btn btn-outline-primary menu-bar-info-3">Doctors</button></Link>
             </div>
           </Row>
           <Row>

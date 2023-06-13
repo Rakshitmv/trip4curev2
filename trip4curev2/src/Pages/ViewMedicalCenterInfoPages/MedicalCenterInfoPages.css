@@ -36,7 +36,7 @@
 .img-gallery-slider {
     width: 100px;
     height: 70px;
-    margin-right: 20px;
+    margin-right: 30px;
     
 }
 
@@ -44,9 +44,26 @@
     margin-right: 30px;
 }
 
-.menu-bar-info {
+.menu-bar-info-1 {
     width: 220px;
- 
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    /* margin-right: 20px; */
+}
+
+.menu-bar-info-2 {
+    width: 220px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    /* margin-right: 20px; */
+}
+
+.menu-bar-info-3 {
+    width: 220px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
     /* margin-right: 20px; */
 }
 

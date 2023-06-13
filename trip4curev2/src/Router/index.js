@@ -77,11 +77,25 @@ const router = createBrowserRouter([
     element: <MedicalMenuBarDoctors />
   },
 
-  // {
-  //   path: "/view-medical-center/medical-center-info-page_1/medical-menu-bar-overview",
-  //   element: <Med
-  // },
+  {
+    path: "/view-medical-center/medical-center-info-page_1/medical-menu-bar-service/medical-menu-bar-doctor",
+    element: <MedicalMenuBarDoctors />
+  },
+  
+  {
+    path: "/view-medical-center/medical-center-info-page_1/medical-menu-bar-service/medical-center-info-page_1",
+    element: <MedicalCenterInfoPages_1 />
+  },
 
+  {
+    path: "/view-medical-center/medical-center-info-page_1/medical-menu-bar-doctor/medical-menu-bar-service",
+    element: <MedicalMenuBarServices />
+  },
+  
+   {
+    path: "/view-medical-center/medical-center-info-page_1/medical-menu-bar-doctor/medical-center-info-page_1",
+    element: <MedicalCenterInfoPages_1 />
+  },
     {
     path: "/view-medical-center/medical-center-info-page_2",
     element: <MedicalCenterInfoPages_2 />
