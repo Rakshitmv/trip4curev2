@@ -9,7 +9,7 @@ import Slider from "react-slick";
 import ViewSpeciality from '../ViewSpeciality/ViewSpeciality';
 import ViewMedicalCenter from '../ViewMedicalCenter/ViewMedicalCenter';
 import MedicalCenterInfoPages_1 from '../ViewMedicalCenterInfoPages/MedicalCenterInfoPages_1';
-
+import { useHistory } from 'react-router-dom';
 
 
 
@@ -225,6 +225,9 @@ const globalProvider = {
 
 
 function Homepage() {
+
+  
+
   return (
     <>
 
@@ -263,7 +266,7 @@ function Homepage() {
                       </Form.Group>
                     </Col>
                     <Col xl="2">
-                      <button type="submit" className="btn   w-60  search-big-btn" style={{ backgroundColor: '#b8353b', color: 'white' }}><i class="fa fa-search"></i> Search</button>
+                      <Link to={'/search'}><button type="submit" className="btn   w-60  search-big-btn" style={{ backgroundColor: '#b8353b', color: 'white' }}><i class="fa fa-search"></i> Search</button></Link>
                     </Col>
                   </Row>
                 </Container>
@@ -360,7 +363,7 @@ function Homepage() {
       <section className='ab-section' style={{ height: '100vh' }}>
         <Container>
           <Row>
-            <div className='col-md-7 mx-auto mt-3 mb-3 text-center'>
+            <div className='col-md-9 mx-auto mt-3 mb-3 text-center'>
               <h2 className='main-heading-page'>Our Success Stories...</h2>
               <h5 className='main-sub-heading'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</h5>
             </div>
@@ -446,7 +449,7 @@ function Homepage() {
       <section id="section-02" className=" featured-medical-center" style={{ height: '100vh' }}>
         <Container>
           <Row>
-            <div className="col-md-7 mx-auto mb-3 mt-3 text-center">
+            <div className="col-md-9 mx-auto mb-3 mt-3 text-center">
               <h2 className='main-heading-page'>Featured Medical Centers</h2>
               <p className='main-sub-heading-page-fmc'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</p>
             </div>
@@ -613,7 +616,7 @@ function Homepage() {
       <section id="section-04" className="py-3 featured-destinations" style={{ height: '100vh' }}>
         <Container>
           <Row>
-            <div className="col-md-8 mb-3">
+            <div className="col-md-9 mb-3">
               <h2 className='main-heading-page'>Featured Destinations</h2>
               <h5 className='main-sub-heading'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</h5>
             </div>
@@ -733,7 +736,7 @@ function Homepage() {
       <section id="section-06" className="py-5 global-provider " style={{ height: '100vh' }}>
         <Container>
           <Row>
-            <div className="col-md-8 mb-5">
+            <div className="col-md-9 mb-5">
               <h2 className='main-heading-page'>Global Insurance Providers</h2>
               <h5 className='main-sub-heading'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</h5>
             </div>
@@ -762,7 +765,7 @@ function Homepage() {
       <section id="section-07" className="py-2 latest announcement" style={{ height: '100vh' }}>
         <Container>
           <Row>
-            <div className="col-md-8  mx-auto text-center">
+            <div className="col-md-9  mx-auto text-center">
               <h2 className='main-heading-page'>Latest Announcements</h2>
               <h5 className='main-sub-heading'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</h5>
             </div>

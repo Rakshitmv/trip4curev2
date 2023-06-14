@@ -215,8 +215,8 @@
 }
 
 .main-sub-heading {
-    font-family: 'Centaur';
-    font-weight: 700;
+    font-family: 'Poppins';
+    font-weight: 500;
     font-size: larger;
 }
 
@@ -245,6 +245,9 @@
 }
 
 .main-sub-heading-page-fmc {
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: larger;
     color: rgb(101, 99, 99)
 }
 
@@ -479,7 +482,9 @@ margin: 10px;
 .text-white-heading {
     font-family: 'Centaur';
     color: white;
-    font-weight: 700;
+    font-weight: bolder;
+    font-size: 40px;
+    
 }
 
 /* .client-block{
