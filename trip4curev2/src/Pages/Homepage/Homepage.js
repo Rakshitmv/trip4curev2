@@ -9,9 +9,7 @@ import Slider from "react-slick";
 import ViewSpeciality from '../ViewSpeciality/ViewSpeciality';
 import ViewMedicalCenter from '../ViewMedicalCenter/ViewMedicalCenter';
 import MedicalCenterInfoPages_1 from '../ViewMedicalCenterInfoPages/MedicalCenterInfoPages_1';
-import { useHistory } from 'react-router-dom';
-
-
+import React,{useState} from 'react';
 
 
 
@@ -227,6 +225,31 @@ const globalProvider = {
 function Homepage() {
 
   
+  
+    const [country, setCountry] = useState('');
+    const [specialty, setSpecialty] = useState('');
+
+    const handleSearch = async () => {
+      try {
+        const response = await fetch('http://13.234.216.30:8080/search_hospital/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ country, specialty }),
+        });
+
+        const data = await response.json();
+
+        // Navigate to the search results page with search results as URL parameters
+        const queryParams = new URLSearchParams({ country, specialty });
+        window.location.href = `/search?${queryParams.toString()}`;
+      } catch (error) {
+        console.error('Error searching:', error);
+      }
+    };
+
+  
 
   return (
     <>
@@ -256,17 +279,17 @@ function Homepage() {
                     <Col xl={3} md={4} className="col-2 pt-1   bg-white-transparent bdrtlb border-right position-relative rounded-left form-search-item">
                       <Form.Group className="pb-0 choose-height" controlId="formBasicEmail">
                         <Form.Label><p className='font-style'>Choose Speciality</p></Form.Label>
-                        <Select className="form-control-filter" options={speciality} />
+                        <Select className="form-control-filter" onChange={(e) => setSpecialty(e.target.value)} options={speciality} />
                       </Form.Group>
                     </Col>&emsp;
                     <Col xl={3} md={4} className="col-2 pt-1 bg-white-transparent brtb position-relative rounded-right form-search-item">
                       <Form.Group className="" controlId="formBasicEmail">
                         <Form.Label><p className='font-style'>Choose Country</p></Form.Label>
-                        <Select className="form-control-filter" options={country} />
+                        <Select className="form-control-filter"    onChange={(e) => setCountry(e.target.value)} options={country} />
                       </Form.Group>
                     </Col>
                     <Col xl="2">
-                      <Link to={'/search'}><button type="submit" className="btn   w-60  search-big-btn" style={{ backgroundColor: '#b8353b', color: 'white' }}><i class="fa fa-search"></i> Search</button></Link>
+                      <Link to={'/search'}><button type="submit"  onClick={handleSearch} className="btn   w-60  search-big-btn" style={{ backgroundColor: '#b8353b', color: 'white' }}><i class="fa fa-search"></i> Search</button></Link>
                     </Col>
                   </Row>
                 </Container>
