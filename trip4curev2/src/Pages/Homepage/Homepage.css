@@ -27,6 +27,7 @@
     background: #f3f3f3 url(../../../public/images/marisa-howenstine-nFsOlSE9Mn8-unsplash.png);
     background-size: contain;
     background-position: right top;
+    background-size: 750px 570px;
     background-repeat: no-repeat;
     position: relative;
     z-index: 1;
@@ -248,15 +249,18 @@
     font-family: 'Poppins';
     font-weight: 500;
     font-size: larger;
-    color: rgb(101, 99, 99)
+    color: black;
+    /* color: rgb(101, 99, 99) */
 }
 
 .card-heading {
     font-family: 'Poppins';
+    font-weight: 700;
 }
 
 .card-sub-heading {
     font-family: 'Poppins';
+    
 
 }
 
@@ -280,6 +284,8 @@
 
 .card-text p {
     margin-bottom: 0px !important;
+    font-weight: 600;
+    font-family: 'Poppins';
 }
 
 /* .mgt-

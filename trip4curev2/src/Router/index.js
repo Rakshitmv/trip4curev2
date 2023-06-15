@@ -23,6 +23,7 @@ import ViewAllDestination from "../Pages/ViewAllDestination/ViewAllDestination";
 import Search from "../Pages/Search/Search";
 import MedicalMenuBarServices from "../Pages/ViewMedicalCenterInfoPages/MedicalCenterMenuBar/MedicalMenuBarServices";
 import MedicalMenuBarDoctors from "../Pages/ViewMedicalCenterInfoPages/MedicalCenterMenuBar/MedicalMenuBarDoctors";
+import CancerTreatment from "../Pages/CancerTreatment/CancerTreatment";
 
 
 const router = createBrowserRouter([
@@ -156,7 +157,12 @@ const router = createBrowserRouter([
   {
     path: "/search",
     element: <Search />
-    }
+  },
+  
+  {
+    path: "/cancer-treatment",
+    element: <CancerTreatment />
+  },
     
     ],
      { basename: '/trip4curev2' }

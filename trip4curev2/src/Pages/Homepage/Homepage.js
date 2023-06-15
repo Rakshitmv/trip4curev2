@@ -299,7 +299,7 @@ function Homepage() {
             <div className="font-size-lg mt-2 mb-2">Or browse Top Specialties: <Link to={'/view-speciality'} className="red-link">View All Specialties</Link></div>
             <div className="list-inline pb-5 flex-wrap my-n2">
               <div className="list-inline-item py-2">
-                <Link to={''} class="card border-0 icon-box link-hover-dark-white">
+                <Link to={'/cancer-treatment'} class="card border-0 icon-box link-hover-dark-white">
                   <div class="card-body p-0">
                     <div>
                       <img src={`${process.env.PUBLIC_URL}/images/ic-cancer-treatment.png`} className="normal-state" alt="" />
@@ -488,7 +488,7 @@ function Homepage() {
                   <Card.Body>
                     <Card.Title><h6 className='card-heading'>Galenia Hospital</h6></Card.Title>
                     <Card.Text><p className='card-sub-heading-1'>Mexico City</p></Card.Text>
-                    <Card.Text className='card-text'>Mexico - 16 Specialties</Card.Text>
+                    <Card.Text className='card-text'><p>Mexico - 16 Specialties</p></Card.Text>
                   </Card.Body>
                 </Card>
               </Link>
@@ -499,8 +499,8 @@ function Homepage() {
                   </div>
                   <Card.Body>
                     <Card.Title><h6 className='card-heading'>Apollo Hospital</h6></Card.Title>
-                    <Card.Text>Chennai</Card.Text>
-                    <Card.Text className='card-text'>India - 25 Specialties</Card.Text>
+                    <Card.Text><p className='card-sub-heading-1'>Chennai</p></Card.Text>
+                    <Card.Text className='card-text'><p>India - 25 Specialties</p></Card.Text>
                   </Card.Body>
                 </Card>
               </Link>
@@ -511,8 +511,8 @@ function Homepage() {
                   </div>
                   <Card.Body>
                     <Card.Title><h6 className='card-heading'>Hospital Universitario Austral</h6></Card.Title>
-                    <Card.Text>Santa Fe</Card.Text>
-                    <Card.Text className='card-text'>Argentina - 3 Specialties</Card.Text>
+                    <Card.Text><p className='card-sub-heading-1'>Santa Fe</p></Card.Text>
+                    <Card.Text className='card-text'><p>Argentina - 3 Specialties</p></Card.Text>
                   </Card.Body>
                 </Card>
               </Link>
@@ -523,8 +523,8 @@ function Homepage() {
                   </div>
                   <Card.Body>
                     <Card.Title><h6 className='card-heading'>KPJ Damansara Hospital</h6></Card.Title>
-                    <Card.Text>Kuala Lumpur</Card.Text>
-                    <Card.Text className='card-text'>Malaysia - 28 Specialties</Card.Text>
+                    <Card.Text><p className='card-sub-heading-1'>Kuala Lumpur</p></Card.Text>
+                    <Card.Text className='card-text'><p>Malaysia - 28 Specialties</p></Card.Text>
                   </Card.Body>
                 </Card>
               </Link>
@@ -535,8 +535,8 @@ function Homepage() {
                   </div>
                   <Card.Body>
                     <Card.Title><h6 className='card-heading'>Apollo Hospital</h6></Card.Title>
-                    <Card.Text>Chennai</Card.Text>
-                    <Card.Text className='card-text'>India - 25 Specialties</Card.Text>
+                    <Card.Text><p className='card-sub-heading-1'>Chennai</p></Card.Text>
+                    <Card.Text className='card-text'><p>India - 25 Specialties</p></Card.Text>
                   </Card.Body>
                 </Card>
               </Link>
@@ -547,8 +547,8 @@ function Homepage() {
                   </div>
                   <Card.Body>
                     <Card.Title><h6 className='card-heading'>Hospital Universitario Austral</h6></Card.Title>
-                    <Card.Text>Santa Fe</Card.Text>
-                    <Card.Text className='card-text'>Argentina - 3 Specialties</Card.Text>
+                    <Card.Text><p className='card-sub-heading-1'>Santa Fe</p></Card.Text>
+                    <Card.Text className='card-text'><p>Argentina - 3 Specialties</p></Card.Text>
                   </Card.Body>
                 </Card>
               </Link>
