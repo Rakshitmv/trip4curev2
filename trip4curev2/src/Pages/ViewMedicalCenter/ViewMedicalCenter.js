@@ -22,9 +22,9 @@ const ViewMedicalCenter = () => {
                         <div className='col-md-9 pt-5 mx-auto card-series-1'>
                             
                             <Link to={'/view-medical-center/medical-center-info-page_1'} className="sliderblock"> 
-                            <Card className="text-center">
+                            <Card className="text-center" style={{width:"420px",margin:'0 10px'}}>
                             <div className="image-block">
-                            <Card.Img variant="top" src={`${process.env.PUBLIC_URL}/images/mc1.png`} />
+                            <Card.Img variant="top" style={{width:'100%'}} src={`${process.env.PUBLIC_URL}/images/mc1.png`} />
                             </div>
                             <Card.Body>
                                 <Card.Title><h4 className='card-heading'>Galenia Hospital</h4></Card.Title>
@@ -35,9 +35,9 @@ const ViewMedicalCenter = () => {
                             </Link>
 
                             <Link to={'/view-medical-center/medical-center-info-page_2'} className="sliderblock">
-                            <Card className="text-center">
+                            <Card className="text-center" style={{width:"420px",margin:'0 10px'}}>
                             <div className="image-block">
-                            <Card.Img variant="top" src={`${process.env.PUBLIC_URL}/images/mc-2.png`} />
+                            <Card.Img variant="top" style={{width:'100%'}} src={`${process.env.PUBLIC_URL}/images/mc-2.png`} />
                             </div>
                             <Card.Body>
                                 <Card.Title><h4 className='card-heading'>Apollo Hospital Chennai</h4></Card.Title>
@@ -51,9 +51,9 @@ const ViewMedicalCenter = () => {
                     <Row>
                         <div className='col-md-9 pt-5 mx-auto card-series-2'>
                             <Link to={'/view-medical-center/medical-center-info-page_3'} className="sliderblock">
-                            <Card className="text-center">
+                            <Card className="text-center" style={{width:"420px",margin:'0 10px'}}>
                             <div className="image-block">
-                            <Card.Img variant="top" src={`${process.env.PUBLIC_URL}/images/mc3.png`} />
+                            <Card.Img variant="top" style={{width:'100%'}} src={`${process.env.PUBLIC_URL}/images/mc3.png`} />
                             </div>
                             <Card.Body>
                                 <Card.Title><h4 className='card-heading'>Hospital Universitario Austral</h4></Card.Title>
@@ -64,9 +64,9 @@ const ViewMedicalCenter = () => {
                             </Link>
 
                             <Link to={'/view-medical-center/medical-center-info-page_4'} className="sliderblock">
-                            <Card className="text-center">
+                            <Card className="text-center" style={{width:"420px",margin:'0 10px'}}>
                             <div className="image-block">
-                            <Card.Img variant="top" src={`${process.env.PUBLIC_URL}/images/mc4.png`} />
+                            <Card.Img variant="top" style={{width:'100%'}} src={`${process.env.PUBLIC_URL}/images/mc4.png`} />
                             </div>
                             <Card.Body>
                                 <Card.Title><h4 className='card-heading'>KPJ Damansara Hospital</h4></Card.Title>
@@ -80,9 +80,9 @@ const ViewMedicalCenter = () => {
                     <Row>
                         <div className='col-md-9 pt-5 mx-auto mb-5 card-series-2'>
                             <Link to={'/view-medical-center/medical-center-info-page_5'} className="sliderblock">
-                            <Card className="text-center">
+                            <Card className="text-center" style={{width:"420px",margin:'0 10px'}}>
                             <div className="image-block">
-                            <Card.Img variant="top" src={`${process.env.PUBLIC_URL}/images/mc6.png`} />
+                            <Card.Img variant="top" style={{width:'100%'}} src={`${process.env.PUBLIC_URL}/images/mc6.png`} />
                             </div>
                             <Card.Body>
                                 <Card.Title><h4 className='card-heading'>Hospital Universitario Austral</h4></Card.Title>
@@ -92,9 +92,9 @@ const ViewMedicalCenter = () => {
                             </Card>
                             </Link>
                                <Link to={'/view-medical-center/medical-center-info-page_1'} className="sliderblock">
-                                <Card className="text-center">
+                                <Card className="text-center" style={{width:"420px",margin:'0 10px'}}>
                                 <div className="image-block">
-                                <Card.Img variant="top" src={`${process.env.PUBLIC_URL}/images/mc1.png`} />
+                                <Card.Img variant="top" style={{width:'100%'}} src={`${process.env.PUBLIC_URL}/images/mc1.png`} />
                                 </div>
                                 <Card.Body>
                                     <Card.Title><h4 className='card-heading'>Galenia Hospital</h4></Card.Title>

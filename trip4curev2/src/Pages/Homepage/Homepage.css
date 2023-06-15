@@ -387,6 +387,14 @@ margin: 10px;
 
 .font-style {
     font-family: var(--body-font-family);
+ 
+}
+
+.ab-font-style {
+    font-family: var(--body-font-family);
+    background-color: rgb(255, 255, 255);
+    color: red;
+    opacity: .8;
 }
 
 .fd-bottom-content {

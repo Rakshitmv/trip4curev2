@@ -312,7 +312,7 @@ function Homepage() {
                 </Link>
               </div>
               <div className="list-inline-item py-2">
-                <Link to={''} class="card border-0 icon-box link-hover-dark-white">
+                <Link to={'/cardiac-surgery'} class="card border-0 icon-box link-hover-dark-white">
                   <div class="card-body p-0">
                     <div>
                       <img src={`${process.env.PUBLIC_URL}/images/ic-cardiac.png`} className="normal-state" alt="" />
@@ -325,7 +325,7 @@ function Homepage() {
                 </Link>
               </div>
               <div className="list-inline-item py-2">
-                <Link to={''} class="card border-0 icon-box link-hover-dark-white">
+                <Link to={'/cosemtic-surgery'} class="card border-0 icon-box link-hover-dark-white">
                   <div class="card-body p-0">
                     <div>
                       <img src={`${process.env.PUBLIC_URL}/images/ic-cosmetic-surgery.png`} className="normal-state" alt="" />
@@ -338,7 +338,7 @@ function Homepage() {
                 </Link>
               </div>
               <div className="list-inline-item py-2">
-                <Link to={''} class="card border-0 icon-box link-hover-dark-white">
+                <Link to={'/fertility-treatment'} class="card border-0 icon-box link-hover-dark-white">
                   <div class="card-body p-0">
                     <div>
                       <img src={`${process.env.PUBLIC_URL}/images/ic-fertility.png`} className="normal-state" alt="" />
@@ -351,7 +351,7 @@ function Homepage() {
                 </Link>
               </div>
               <div className="list-inline-item py-2">
-                <Link to={''} class="card border-0 icon-box link-hover-dark-white">
+                <Link to={'/neurology'} class="card border-0 icon-box link-hover-dark-white">
                   <div class="card-body p-0">
                     <div>
                       <img src={`${process.env.PUBLIC_URL}/images/ic-neurology.png`} className="normal-state" alt="" />
@@ -399,43 +399,43 @@ function Homepage() {
                 <div className='ab-image position-relative '>
                   <img className='ab-img-black ad-img' src={`${process.env.PUBLIC_URL}/images/slide_01.jpg`} alt="" />
                   <div className='content'>
-                    <h4 className='font-style'>Before Knee Replacement</h4>
+                    <h4 className='ab-font-style'>Before Knee Replacement</h4>
                   </div>
                 </div>
                 <div className='ab-image position-relative ' >
                   <img src={`${process.env.PUBLIC_URL}/images/slide_02.jpg`} alt=""  className='ad-img'/>
                   <div className='content'>
-                    <h4 className='font-style'>After knee replacement <br />Happy after knee</h4>
+                    <h4 className='ab-font-style'>After knee replacement <br />Happy after knee</h4>
                   </div>
                 </div>
                 <div className='ab-image position-relative '>
                   <img src={`${process.env.PUBLIC_URL}/images/slide_03.jpg`} alt="" className='ad-img' />
                   <div className='content'>
-                    <h4 className='font-style'>In sports injury</h4>
+                    <h4 className='ab-font-style'>In sports injury</h4>
                   </div>
                 </div>
                 <div className='ab-image position-relative '>
                   <img src={`${process.env.PUBLIC_URL}/images/slide_04.jpg`} alt="" className='ad-img' />
                   <div className='content'>
-                    <h4 className='font-style'>Recovering after surgery</h4>
+                    <h4 className='ab-font-style'>Recovering after surgery</h4>
                   </div>
                 </div>
                 <div className='ab-image position-relative '>
                   <img src={`${process.env.PUBLIC_URL}/images/slide_05.jpg`} alt="" className='ad-img' />
                   <div className='content'>
-                    <h4 className='font-style'>feeling much better now</h4>
+                    <h4 className='ab-font-style'>feeling much better now</h4>
                   </div>
                 </div>
                 <div className='ab-image position-relative '>
                   <img src={`${process.env.PUBLIC_URL}/images/slide_06.jpg`} alt="" className='ad-img' />
                   <div className='content'>
-                    <h4 className='font-style'>I’m cancer free now</h4>
+                    <h4 className='ab-font-style'>I’m cancer free now</h4>
                   </div>
                 </div>
                 <div className='ab-image position-relative '>
                   <img src={`${process.env.PUBLIC_URL}/images/slide_07.jpg`} alt="" className='ad-img' />
                   <div className='content'>
-                    <h4 className='font-style'>Pregnant</h4>
+                    <h4 className='ab-font-style'>Pregnant</h4>
                   </div>
                 </div>
                 {/* <div className='ab-image position-relative '>
@@ -459,7 +459,7 @@ function Homepage() {
                 <div className='ab-image position-relative'>
                   <img src={`${process.env.PUBLIC_URL}/images/slide_11.jpg`} alt="" className='ad-img' />
                   <div className='content'>
-                    <h4 className='font-style'>Cancer free</h4>
+                    <h4 className='ab-font-style'>Cancer free</h4>
                   </div>
                 </div>
 
@@ -649,7 +649,7 @@ function Homepage() {
               <Card className="sliderblock" style={{width:'250px'}}>
                 <Card.Img variant="top"  style={{width:"100%"}} src={`${process.env.PUBLIC_URL}/images/india.png`} />
                 <div className="fd-content">
-                  <Card.Img className=" i-flag  m-2 top-0 start-0" variant="top" src={`${process.env.PUBLIC_URL}/images/india-flag.png`} />
+                  <Card.Img className=" i-flag    top-0 start-0" variant="top" src={`${process.env.PUBLIC_URL}/images/india-flag.png`} />
                   <div className="fd-bottom-content">
                     <h3 className="destination-country">India</h3>
                     <h4 className="destination-centers">(44 Medical Centers)</h4>
@@ -660,7 +660,7 @@ function Homepage() {
               <Card className="sliderblock" style={{width:'250px'}}>
                 <Card.Img variant="top" style={{width:"100%"}} src={`${process.env.PUBLIC_URL}/images/spain.png`} />
                 <div className="fd-content">
-                  <Card.Img className=" i-flag  m-2 top-0 start-0" variant="top" src={`${process.env.PUBLIC_URL}/images/spain-flag.png`} />
+                  <Card.Img className=" i-flag   top-0 start-0" variant="top" src={`${process.env.PUBLIC_URL}/images/spain-flag.png`} />
                   <div className="fd-bottom-content">
                     <h3 className="destination-country">Spain</h3>
                     <h4 className="destination-centers">(52 Medical Centers)</h4>
@@ -671,7 +671,7 @@ function Homepage() {
               <Card className="sliderblock" style={{width:'250px'}}>
                 <Card.Img variant="top"  style={{width:"100%"}} src={`${process.env.PUBLIC_URL}/images/germany.png`} />
                 <div className="fd-content">
-                  <Card.Img className=" i-flag  m-2 top-0 start-0" variant="top" src={`${process.env.PUBLIC_URL}/images/germany-flag.png`} />
+                  <Card.Img className=" i-flag   top-0 start-0" variant="top" src={`${process.env.PUBLIC_URL}/images/germany-flag.png`} />
                   <div className="fd-bottom-content">
                     <h3 className="destination-country">Germany</h3>
                     <h4 className="destination-centers">(8 Medical Centers)</h4>
@@ -682,7 +682,7 @@ function Homepage() {
               <Card className="sliderblock" style={{width:'250px'}}>
                 <Card.Img variant="top"  style={{width:"100%"}} src={`${process.env.PUBLIC_URL}/images/india.png`} />
                 <div className="fd-content">
-                  <Card.Img className=" i-flag  m-2 top-0 start-0" variant="top" src={`${process.env.PUBLIC_URL}/images/india-flag.png`} />
+                  <Card.Img className=" i-flag   top-0 start-0" variant="top" src={`${process.env.PUBLIC_URL}/images/india-flag.png`} />
                   <div className="fd-bottom-content">
                     <h3 className="destination-country">India</h3>
                     <h4 className="destination-centers">(44 Medical Centers)</h4>
@@ -695,9 +695,9 @@ function Homepage() {
             </Slider>
           </Row>
           <Row>
-            <div className="text-center py-4">
+            <Link to={'/view-all-destination'}><div className="text-center py-4">
               <Button className="line-primary-btn px-5 py-2 btn-hover text-center" variant="outline-primary"><h6 className='btn-font'>View All Destinations</h6></Button>
-            </div>
+            </div></Link>
           </Row>
         </Container>
       </section>

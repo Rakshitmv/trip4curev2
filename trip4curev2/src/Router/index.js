@@ -24,32 +24,36 @@ import Search from "../Pages/Search/Search";
 import MedicalMenuBarServices from "../Pages/ViewMedicalCenterInfoPages/MedicalCenterMenuBar/MedicalMenuBarServices";
 import MedicalMenuBarDoctors from "../Pages/ViewMedicalCenterInfoPages/MedicalCenterMenuBar/MedicalMenuBarDoctors";
 import CancerTreatment from "../Pages/CancerTreatment/CancerTreatment";
+import CardiacSurgery from "../Pages/CardiacSurgery/CardiacSurgery";
+import CosemticSurgery from "../Pages/CosemticSurgery/CosemticSurgery";
+import FertilityTreatment from "../Pages/FertilityTreatment/FertilityTreatment";
+import { Neurology } from "../Pages/Neurology/Neurology";
 
 
 const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Homepage />
-    },
-    {
-      path: "/user-sign-in",
-      element: <SignIn />
-    },
-    {
-      path: "/hospital-sign-in",
-      element: <HospitalSignIn />
-    },
-    {
-      path: "/sign-up",
-      element: <SignUp />
-    },
-    {
-      path: "/hospital-sign-up",
-      element: <HospitalSignUp />
+  {
+    path: "/",
+    element: <Homepage />
   },
-    {
-      path: "/contact-us",
-      element: <ContactUS />
+  {
+    path: "/user-sign-in",
+    element: <SignIn />
+  },
+  {
+    path: "/hospital-sign-in",
+    element: <HospitalSignIn />
+  },
+  {
+    path: "/sign-up",
+    element: <SignUp />
+  },
+  {
+    path: "/hospital-sign-up",
+    element: <HospitalSignUp />
+  },
+  {
+    path: "/contact-us",
+    element: <ContactUS />
   },
 
   {
@@ -73,7 +77,7 @@ const router = createBrowserRouter([
     element: <MedicalMenuBarServices />
   },
 
-    {
+  {
     path: "/view-medical-center/medical-center-info-page_1/medical-menu-bar-doctor",
     element: <MedicalMenuBarDoctors />
   },
@@ -93,31 +97,31 @@ const router = createBrowserRouter([
     element: <MedicalMenuBarServices />
   },
   
-   {
+  {
     path: "/view-medical-center/medical-center-info-page_1/medical-menu-bar-doctor/medical-center-info-page_1",
     element: <MedicalCenterInfoPages_1 />
   },
-    {
+  {
     path: "/view-medical-center/medical-center-info-page_2",
     element: <MedicalCenterInfoPages_2 />
   },
 
-    {
+  {
     path: "/view-medical-center/medical-center-info-page_3",
     element: <MedicalCenterInfoPages_3 />
   },
 
-    {
+  {
     path: "/view-medical-center/medical-center-info-page_4",
     element: <MedicalCenterInfoPages_4 />
   },
 
-    {
+  {
     path: "/view-medical-center/medical-center-info-page_5",
     element: <MedicalCenterInfoPages_5 />
   },
 
-    {
+  {
     path: "/view-medical-center/medical-center-info-page_6",
     element: <MedicalCenterInfoPages_6 />
   },
@@ -127,32 +131,32 @@ const router = createBrowserRouter([
     element: <VerifyAccount />
   },
 
-    {
-      path: "/forgot-password",
-      element: <ForgotPassword /> 
-    },
-    {
-      path: "/new-password",
-      element: <NewPassword /> 
+  {
+    path: "/forgot-password",
+    element: <ForgotPassword />
+  },
+  {
+    path: "/new-password",
+    element: <NewPassword />
   },
     
-    {
-      path: "/reset-password",
-      element: <ResetPassword /> 
-    },
- 
-     {
-      path: "/verify-otp",
-      element: <VerifyOtp /> 
-  } ,
-     
-     {
-       path: "/view-all-announcement",
-       element: <UserProfilePage />
+  {
+    path: "/reset-password",
+    element: <ResetPassword />
   },
-    {
-      path: "/view-all-destination",
-      element: <ViewAllDestination />
+ 
+  {
+    path: "/verify-otp",
+    element: <VerifyOtp />
+  },
+     
+  {
+    path: "/view-all-announcement",
+    element: <UserProfilePage />
+  },
+  {
+    path: "/view-all-destination",
+    element: <ViewAllDestination />
   },
   {
     path: "/search",
@@ -163,6 +167,27 @@ const router = createBrowserRouter([
     path: "/cancer-treatment",
     element: <CancerTreatment />
   },
+
+  {
+    path: "/cardiac-surgery",
+    element: <CardiacSurgery />
+  },
+
+  {
+    path: "/cosemtic-surgery",
+    element: <CosemticSurgery />
+  },
+
+  {
+    path: "/fertility-treatment",
+    element: <FertilityTreatment />
+  },
+
+  {
+    path: "/neurology",
+    element: <Neurology />
+  },
+  
     
     ],
      { basename: '/trip4curev2' }

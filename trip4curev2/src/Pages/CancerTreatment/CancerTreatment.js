@@ -68,12 +68,40 @@ const CancerTreatment = () => {
                             <Card.Img variant="top" src={`${process.env.PUBLIC_URL}/images/mc4.png`} />
                             </div>
                             <Card.Body>
-                                <Card.Title><h4 className='card-heading'>KPJ Damansara Hospital</h4></Card.Title>
+                                <Card.Title><h4 className='cancer-card-heading'>KPJ Damansara Hospital</h4></Card.Title>
                                 <Card.Text><p className='cancer-card-sub-heading'>Kuala Lumpur</p></Card.Text>
                                 <Card.Text><p className='cancer-card-sub-heading'>Malaysia - 28 Specialties</p></Card.Text>
                             </Card.Body>
                             </Card>
                             </Link>
+                        </div>
+                    </Row>
+                     <Row>
+                        <div className='col-md-9 pt-5 mx-auto mb-5 cancer-card-series-2'>
+                            <Link to={''} className="sliderblock">
+                            <Card className="text-center">
+                            <div className="image-block">
+                            <Card.Img variant="top" src={`${process.env.PUBLIC_URL}/images/mc6.png`} />
+                            </div>
+                            <Card.Body>
+                                <Card.Title><h4 className='cancer-card-heading'>Hospital Universitario Austral</h4></Card.Title>
+                                <Card.Text><p cancer-card-sub-heading>Santa Fe</p></Card.Text>
+                                <Card.Text><p cancer-card-sub-heading>Argentina - 3 Specialties</p></Card.Text>
+                            </Card.Body>
+                            </Card>
+                            </Link>
+                               <Link to={'/view-medical-center/medical-center-info-page_1'} className="sliderblock">
+                                <Card className="text-center">
+                                <div className="image-block">
+                                <Card.Img variant="top" src={`${process.env.PUBLIC_URL}/images/mc1.png`} />
+                                </div>
+                                <Card.Body>
+                                    <Card.Title><h4 className='cancer-card-heading'>Galenia Hospital</h4></Card.Title>
+                                    <Card.Text><p cancer-card-sub-heading>Mexico City</p></Card.Text>
+                                    <Card.Text><p cancer-card-sub-heading>Mexico - 16 Specialties</p></Card.Text>
+                                </Card.Body>
+                                </Card>
+                                </Link>
                         </div>
                     </Row>
               </Container>
