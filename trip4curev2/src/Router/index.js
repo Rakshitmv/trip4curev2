@@ -28,6 +28,7 @@ import CardiacSurgery from "../Pages/CardiacSurgery/CardiacSurgery";
 import CosemticSurgery from "../Pages/CosemticSurgery/CosemticSurgery";
 import FertilityTreatment from "../Pages/FertilityTreatment/FertilityTreatment";
 import { Neurology } from "../Pages/Neurology/Neurology";
+import Destination1 from "../Pages/ViewAllDestination/AllDestinations/Destination1";
 
 
 const router = createBrowserRouter([
@@ -158,6 +159,12 @@ const router = createBrowserRouter([
     path: "/view-all-destination",
     element: <ViewAllDestination />
   },
+
+  {
+    path: "/view-all-destination/AllDestinations/Destination1",
+    element: <Destination1 />
+  },
+
   {
     path: "/search",
     element: <Search />

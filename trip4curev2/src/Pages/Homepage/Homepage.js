@@ -11,6 +11,7 @@ import ViewMedicalCenter from '../ViewMedicalCenter/ViewMedicalCenter';
 import MedicalCenterInfoPages_1 from '../ViewMedicalCenterInfoPages/MedicalCenterInfoPages_1';
 import React,{useState} from 'react';
 
+import { Rating } from 'react-simple-star-rating';
 
 
 
@@ -226,29 +227,49 @@ function Homepage() {
 
   
   
-    const [country, setCountry] = useState('');
-    const [specialty, setSpecialty] = useState('');
+    // const [country, setCountry] = useState('');
+    // const [specialty, setSpecialty] = useState('');
 
-    const handleSearch = async () => {
-      try {
-        const response = await fetch('http://13.234.216.30:8080/search_hospital/', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ country, specialty }),
-        });
+    // const handleSearch = async () => {
+    //   try {
+    //     const response = await fetch('http://13.234.216.30:8080/search_hospital/', {
+    //       method: 'POST',
+    //       headers: {
+    //         'Content-Type': 'application/json',
+    //       },
+    //       body: JSON.stringify({ country, specialty }),
+    //     });
 
-        const data = await response.json();
+    //     const data = await response.json();
 
-        // Navigate to the search results page with search results as URL parameters
-        const queryParams = new URLSearchParams({ country, specialty });
-        window.location.href = `/search?${queryParams.toString()}`;
-      } catch (error) {
-        console.error('Error searching:', error);
-      }
-    };
+    //     // Navigate to the search results page with search results as URL parameters
+    //     const queryParams = new URLSearchParams({ country, specialty });
+    //     window.location.href = `/search?${queryParams.toString()}`;
+    //   } catch (error) {
+    //     console.error('Error searching:', error);
+    //   }
+    // };
 
+  
+   
+ const [rating, setRating] = useState(0);
+  const [hoveredRating, setHoveredRating] = useState(0);
+
+  const handleMouseEnter = (value) => {
+    setHoveredRating(value);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredRating(0);
+  };
+
+  const handleClick = (value) => {
+    if (rating === value) {
+      setRating(0);
+    } else {
+      setRating(value);
+    }
+  };
   
 
   return (
@@ -279,17 +300,17 @@ function Homepage() {
                     <Col xl={3} md={4} className="col-2 pt-1   bg-white-transparent bdrtlb border-right position-relative rounded-left form-search-item">
                       <Form.Group className="pb-0 choose-height" controlId="formBasicEmail">
                         <Form.Label><p className='font-style'>Choose Speciality</p></Form.Label>
-                        <Select className="form-control-filter" onChange={(e) => setSpecialty(e.target.value)} options={speciality} />
-                      </Form.Group>
+                        <Select className="form-control-filter"  options={speciality} />
+                      </Form.Group>        
                     </Col>&emsp;
                     <Col xl={3} md={4} className="col-2 pt-1 bg-white-transparent brtb position-relative rounded-right form-search-item">
                       <Form.Group className="" controlId="formBasicEmail">
                         <Form.Label><p className='font-style'>Choose Country</p></Form.Label>
-                        <Select className="form-control-filter"    onChange={(e) => setCountry(e.target.value)} options={country} />
+                        <Select className="form-control-filter"    options={country} />
                       </Form.Group>
                     </Col>
                     <Col xl="2">
-                      <Link to={'/search'}><button type="submit"  onClick={handleSearch} className="btn   w-60  search-big-btn" style={{ backgroundColor: '#b8353b', color: 'white' }}><i class="fa fa-search"></i> Search</button></Link>
+                      <Link to={'/search'}><button type="submit"   className="btn   w-60  search-big-btn" style={{ backgroundColor: '#b8353b', color: 'white' }}><i class="fa fa-search"></i> Search</button></Link>
                     </Col>
                   </Row>
                 </Container>
@@ -399,6 +420,7 @@ function Homepage() {
                 <div className='ab-image position-relative '>
                   <img className='ab-img-black ad-img' src={`${process.env.PUBLIC_URL}/images/slide_01.jpg`} alt="" />
                   <div className='content'>
+                    <div className='ab-white-empty-card'></div>
                     <h4 className='ab-font-style'>Before Knee Replacement</h4>
                   </div>
                 </div>
@@ -706,19 +728,36 @@ function Homepage() {
       <section id="section-05" className="py-5 testimonials" style={{ height: '100vh' }}>
         <Container>
           <Row>
-            <div class="col-md-9 mx-auto py-5 text-center"><h2 className="text-white-heading">What our Patients say...</h2></div>
+            <div class="col-md-9 mx-auto  text-center"><h2 className="text-white-heading">What our Patients say...</h2></div>
           </Row>
           <Row>
-            <div className="col-md-8 mx-auto text-center testimonial-card">
+            <div className="col-md-8 mx-auto pb-5 text-center testimonial-card">
               <Slider {...testimonial}>
                 <Card>
-                  <Card.Img variant="top"  className=" mt-3  ml-5 guest-img" src={`${process.env.PUBLIC_URL}/images/guest-testimonial-1.png`} />
+                  <Card.Img variant="top"  className="  ml-5 guest-img" src={`${process.env.PUBLIC_URL}/images/guest-testimonial-1.png`} />
                   <Card.Body>
-                    <Card.Text className="mt-2">
+                    <Card.Text className="">
                       <h6 className="text-white"> Your Service was excellent, I had a reply and appointment within 24 hours.If I require
                         medical assistance in the future I will most certainly consider using your platform. </h6>
                     </Card.Text>
-                    <Card.Text className="mt-5">
+                    <div className='col-md-9 mx-auto rating-star'>
+                     {[1, 2, 3, 4, 5].map((value) => (
+                      <span
+                        key={value}
+                        style={{
+                          cursor: 'pointer',
+                          color: value <= (hoveredRating || rating) ? 'orange' : 'gray',
+                          fontSize: value <= (hoveredRating || rating) ? '3rem' : '2rem'
+                        }}
+                        onClick={() => handleClick(value)}
+                        onMouseEnter={() => handleMouseEnter(value)}
+                        onMouseLeave={handleMouseLeave}
+                      >
+                       &#x1F7CA;
+                      </span>
+                    ))}
+                    </div>
+                    <Card.Text className="mt-5 ">
                       <h5 className="text-white">JULIA ROSE</h5>
                       <h6 className="text-white">From Los Angeles,Calfornia</h6>
                     </Card.Text>
@@ -731,6 +770,23 @@ function Homepage() {
                       <h6 className="text-white"> Your Service was excellent, I had a reply and appointment within 24 hours.If I require
                         medical assistance in the future I will most certainly consider using your platform. </h6>
                     </Card.Text>
+                    <div className='col-md-9 mx-auto rating-star'>
+                          {[1, 2, 3, 4, 5].map((value) => (
+                          <span
+                            key={value}
+                            style={{
+                              cursor: 'pointer',
+                              color: value <= (hoveredRating || rating) ? 'orange' : 'gray',
+                              fontSize: value <= (hoveredRating || rating) ? '3rem' : '2rem'
+                            }}
+                            onClick={() => handleClick(value)}
+                            onMouseEnter={() => handleMouseEnter(value)}
+                            onMouseLeave={handleMouseLeave}
+                          >
+                            &#x1F7CA;
+                          </span>
+                        ))}
+                    </div>
                     <Card.Text className="mt-5">
                       <h5 className="text-white">JULIA ROSE</h5>
                       <h6 className="text-white">From Los Angeles,Calfornia</h6>
@@ -744,6 +800,23 @@ function Homepage() {
                       <h6 className="text-white"> Your Service was excellent, I had a reply and appointment within 24 hours.If I require
                         medical assistance in the future I will most certainly consider using your platform. </h6>
                     </Card.Text>
+                    <div className='col-md-9 mx-auto rating-star'>
+                        {[1, 2, 3, 4, 5].map((value) => (
+                        <span
+                        key={value}
+                        style={{
+                          cursor: 'pointer',
+                          color: value <= (hoveredRating || rating) ? 'orange' : 'gray',
+                          fontSize: value <= (hoveredRating || rating) ? '3rem' : '2rem'
+                        }}
+                        onClick={() => handleClick(value)}
+                        onMouseEnter={() => handleMouseEnter(value)}
+                        onMouseLeave={handleMouseLeave}
+                      >
+                        &#x1F7CA;
+                      </span>
+                    ))}
+                    </div>
                     <Card.Text className="mt-5">
                       <h5 className="text-white">JULIA ROSE</h5>
                       <h6 className="text-white">From Los Angeles,Calfornia</h6>

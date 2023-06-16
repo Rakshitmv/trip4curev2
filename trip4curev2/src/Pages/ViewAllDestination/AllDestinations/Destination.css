@@ -1,0 +1,26 @@
+@import url("//db.onlinewebfonts.com/c/8e1f2a0617863e3914ef2ccdab13480c?family=Centaur");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+.destination1-main-heading {
+    font-size: 40px;
+    font-family: 'Centaur';
+    font-weight: bolder;
+}
+
+/* .medical-menu-bar-select {
+    display: flex;
+    width: 950px;
+    height: 60px;
+} */
+
+.search-country {
+    font-family: 'Poppins';
+}
+
+.browse-country {
+    font-family: 'Poppins';
+}
+
+.destination-info {
+    font-family: 'Poppins';
+}
