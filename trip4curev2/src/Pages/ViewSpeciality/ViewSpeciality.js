@@ -111,7 +111,7 @@ const ViewSpeciality = () => {
             </div>
               <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
               <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/neurology.png`} alt="" />
-              <h5 className='viewspeciality-heading'>neurology</h5>
+              <h5 className='viewspeciality-heading'>Neurology</h5>
             </div>
                <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
               <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/neuro-surgery.png`} alt="" />

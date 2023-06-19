@@ -9,30 +9,59 @@ import Slider from "react-slick";
 import ViewSpeciality from '../ViewSpeciality/ViewSpeciality';
 import ViewMedicalCenter from '../ViewMedicalCenter/ViewMedicalCenter';
 import MedicalCenterInfoPages_1 from '../ViewMedicalCenterInfoPages/MedicalCenterInfoPages_1';
-import React,{useState} from 'react';
-
+import React, {useState , useMemo} from 'react';
 import { Rating } from 'react-simple-star-rating';
+import countryList from 'react-select-country-list'
 
 
 
 const speciality = [
+  { value: 'Addiction Treatment', label: 'Addiction Treatment' },
+  { value: 'Aesthetics', label: 'Aesthetics' },
+  { value: 'Anesthesiology', label: 'Anesthesiology' },
+  { value: 'Bariatric Surgery', label: 'Bariatric Surgery' },
+  { value: 'Bone Marrow Transplant', label: 'Bone Marrow Transplant' },
   { value: 'Cancer Treatment', label: 'Cancer Treatment' },
-  { value: 'Cardiac Surgery', label: 'Cardiac Surgery' },
-  { value: 'Cosemtic Surgery', label: 'Cosemtic Surgery' },
-  { value: 'Fertility Treatment', label: 'Fertility Treatment' },
+  { value: 'Cardiology', label: 'Cardiology' },
+  { value: 'Cosmetic Surgery', label: 'Cosmetic Surgery' },
+  { value: 'Dental', label: 'Dental' },
+  { value: 'Dermatology', label: 'Dermatology' },
+  { value: 'Dialysis', label: 'Dialysis' },
+  { value: 'Ear Nose And Throat', label: 'Ear Nose And Throat' },
+  { value: 'Endocrinology', label: 'Endocrinology' },
+  { value: 'Eye Surgery', label: 'Eye Surgery' },
+  { value: 'Fertility Treatments', label: 'Fertility Treatments' },
+  { value: 'Gastroenterology', label: 'Gastroenterology' },
+  { value: 'General Surgery', label: 'General Surgery' },
+  { value: 'Hair Transplant', label: 'Hair Transplant' },
+  { value: 'Hematology', label: 'Hematology' },
+  { value: 'Imaging', label: 'Imaging' },
+  { value: 'Medical Check Ups', label: 'Medical Check Ups' },
+  { value: 'Nephrology', label: 'Nephrology' },
   { value: 'Neurology', label: 'Neurology' },
-  { value: 'Orthopedic Surgery', label: 'Orthopedic Surgery' }
-
+  { value: 'Neuro Surgery', label: 'Neuro Surgery' },
+  { value: 'Ob Gyn', label: 'Ob Gyn' },
+  { value: 'Orthopedics', label: 'Orthopedics' },
+  { value: 'Pediatrics', label: 'Pediatrics' },
+  { value: 'Rehabilitation', label: 'Rehabilitation' },
+  { value: 'Stem', label: 'Stem' },
+  { value: 'Thyroid', label: 'Thyroid' },
+  { value: 'Urology', label: 'Urology' },
+  { value: 'Vascular Surgery', label: 'Vascular Surgery' },
+                           
 ]
 
-const country = [
-  { value: 'Argentina', label: 'Argentina' },
-  { value: 'Germany', label: 'Germany' },
-  { value: 'India', label: 'India' },
-  { value: 'Malaysia', label: 'Malaysia' },
-  { value: 'Mexico', label: 'Mexico' },
-  { value: 'Spain', label: 'Spain' }
-]
+
+
+
+// const country = [
+//   { value: 'Argentina', label: 'Argentina' },
+//   { value: 'Germany', label: 'Germany' },
+//   { value: 'India', label: 'India' },
+//   { value: 'Malaysia', label: 'Malaysia' },
+//   { value: 'Mexico', label: 'Mexico' },
+//   { value: 'Spain', label: 'Spain' }
+// ]
 
 
 const fmc = {
@@ -225,7 +254,12 @@ const globalProvider = {
 
 function Homepage() {
 
-  
+  const [value, setValue] = useState('')
+  const options = useMemo(() => countryList().getData(), [])
+
+  const changeHandler = value => {
+    setValue(value)
+  }
   
     // const [country, setCountry] = useState('');
     // const [specialty, setSpecialty] = useState('');
@@ -306,7 +340,7 @@ function Homepage() {
                     <Col xl={3} md={4} className="col-2 pt-1 bg-white-transparent brtb position-relative rounded-right form-search-item">
                       <Form.Group className="" controlId="formBasicEmail">
                         <Form.Label><p className='font-style'>Choose Country</p></Form.Label>
-                        <Select className="form-control-filter"    options={country} />
+                        <Select className="form-control-filter"   options={options} value={value} onChange={changeHandler} />
                       </Form.Group>
                     </Col>
                     <Col xl="2">
@@ -654,6 +688,11 @@ function Homepage() {
 
             </Slider>
           </Row>
+          <Row>
+              <Link to={'/view-medical-tourism-guide'}><div className="text-center mx-auto mt-5 py-4">
+              <Button className="line-primary-btn px-5 py-2 btn-hover text-center" variant="outline-primary"><h6 className='btn-font'>View All</h6></Button>
+            </div></Link>
+          </Row>
         </Container>
       </section>
 
@@ -734,7 +773,7 @@ function Homepage() {
             <div className="col-md-8 mx-auto pb-5 text-center testimonial-card">
               <Slider {...testimonial}>
                 <Card>
-                  <Card.Img variant="top"  className="  ml-5 guest-img" src={`${process.env.PUBLIC_URL}/images/guest-testimonial-1.png`} />
+                  <Card.Img variant="top"  className=" mt-5 ml-5 guest-img" src={`${process.env.PUBLIC_URL}/images/guest-testimonial-1.png`} />
                   <Card.Body>
                     <Card.Text className="">
                       <h6 className="text-white"> Your Service was excellent, I had a reply and appointment within 24 hours.If I require
@@ -764,7 +803,7 @@ function Homepage() {
                   </Card.Body>
                 </Card>
                 <Card>
-                  <Card.Img variant="top"  className=" mt-3  ml-5 guest-img" src={`${process.env.PUBLIC_URL}/images/guest-testimonial-1.png`} />
+                  <Card.Img variant="top"  className=" mt-5  ml-5 guest-img" src={`${process.env.PUBLIC_URL}/images/guest-testimonial-1.png`} />
                   <Card.Body>
                     <Card.Text className="mt-2">
                       <h6 className="text-white"> Your Service was excellent, I had a reply and appointment within 24 hours.If I require
@@ -794,7 +833,7 @@ function Homepage() {
                   </Card.Body>
                 </Card>
                 <Card>
-                  <Card.Img variant="top" className=" mt-3  ml-5 guest-img" src={`${process.env.PUBLIC_URL}/images/guest-testimonial-1.png`} />
+                  <Card.Img variant="top" className=" mt-5  ml-5 guest-img" src={`${process.env.PUBLIC_URL}/images/guest-testimonial-1.png`} />
                   <Card.Body>
                     <Card.Text className="mt-2">
                       <h6 className="text-white"> Your Service was excellent, I had a reply and appointment within 24 hours.If I require

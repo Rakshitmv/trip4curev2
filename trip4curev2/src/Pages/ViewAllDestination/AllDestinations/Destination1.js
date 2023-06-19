@@ -10,12 +10,38 @@ import Select from 'react-select';
 
 
 const speciality = [
+  { value: 'Addiction Treatment', label: 'Addiction Treatment' },
+  { value: 'Aesthetics', label: 'Aesthetics' },
+  { value: 'Anesthesiology', label: 'Anesthesiology' },
+  { value: 'Bariatric Surgery', label: 'Bariatric Surgery' },
+  { value: 'Bone Marrow Transplant', label: 'Bone Marrow Transplant' },
   { value: 'Cancer Treatment', label: 'Cancer Treatment' },
-  { value: 'Cardiac Surgery', label: 'Cardiac Surgery' },
-  { value: 'Cosemtic Surgery', label: 'Cosemtic Surgery' },
-  { value: 'Fertility Treatment', label: 'Fertility Treatment' },
+  { value: 'Cardiology', label: 'Cardiology' },
+  { value: 'Cosmetic Surgery', label: 'Cosmetic Surgery' },
+  { value: 'Dental', label: 'Dental' },
+  { value: 'Dermatology', label: 'Dermatology' },
+  { value: 'Dialysis', label: 'Dialysis' },
+  { value: 'Ear Nose And Throat', label: 'Ear Nose And Throat' },
+  { value: 'Endocrinology', label: 'Endocrinology' },
+  { value: 'Eye Surgery', label: 'Eye Surgery' },
+  { value: 'Fertility Treatments', label: 'Fertility Treatments' },
+  { value: 'Gastroenterology', label: 'Gastroenterology' },
+  { value: 'General Surgery', label: 'General Surgery' },
+  { value: 'Hair Transplant', label: 'Hair Transplant' },
+  { value: 'Hematology', label: 'Hematology' },
+  { value: 'Imaging', label: 'Imaging' },
+  { value: 'Medical Check Ups', label: 'Medical Check Ups' },
+  { value: 'Nephrology', label: 'Nephrology' },
   { value: 'Neurology', label: 'Neurology' },
-  { value: 'Orthopedic Surgery', label: 'Orthopedic Surgery' }
+  { value: 'Neuro Surgery', label: 'Neuro Surgery' },
+  { value: 'Ob Gyn', label: 'Ob Gyn' },
+  { value: 'Orthopedics', label: 'Orthopedics' },
+  { value: 'Pediatrics', label: 'Pediatrics' },
+  { value: 'Rehabilitation', label: 'Rehabilitation' },
+  { value: 'Stem', label: 'Stem' },
+  { value: 'Thyroid', label: 'Thyroid' },
+  { value: 'Urology', label: 'Urology' },
+  { value: 'Vascular Surgery', label: 'Vascular Surgery' },
 
 ]
 

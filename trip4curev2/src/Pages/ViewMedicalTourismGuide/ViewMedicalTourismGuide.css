@@ -1,0 +1,32 @@
+@import url("//db.onlinewebfonts.com/c/8e1f2a0617863e3914ef2ccdab13480c?family=Centaur");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+.medical-tourism-main-heading {
+    font-size: 40px;
+    font-family: 'Centaur';
+    font-weight: bolder;
+}
+
+/* .medical-menu-bar-select {
+    display: flex;
+    width: 950px;
+    height: 60px;
+} */
+
+.medical-tourism-guide-card {
+    display: flex;
+    gap: 100px;
+}
+
+.medical-card-heading {
+    font-family: 'Centaur';
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.medical-card-sub-heading {
+    font-family: 'Poppins';
+    font-size: 0.8rem;
+}
+
+

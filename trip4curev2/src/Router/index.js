@@ -29,6 +29,7 @@ import CosemticSurgery from "../Pages/CosemticSurgery/CosemticSurgery";
 import FertilityTreatment from "../Pages/FertilityTreatment/FertilityTreatment";
 import { Neurology } from "../Pages/Neurology/Neurology";
 import Destination1 from "../Pages/ViewAllDestination/AllDestinations/Destination1";
+import ViewMedicalTourismGuide from "../Pages/ViewMedicalTourismGuide/ViewMedicalTourismGuide";
 
 
 const router = createBrowserRouter([
@@ -126,6 +127,12 @@ const router = createBrowserRouter([
     path: "/view-medical-center/medical-center-info-page_6",
     element: <MedicalCenterInfoPages_6 />
   },
+
+  {
+    path: "/view-medical-tourism-guide",
+    element: <ViewMedicalTourismGuide />
+ },
+
 
   {
     path: "/verify-account/:name",

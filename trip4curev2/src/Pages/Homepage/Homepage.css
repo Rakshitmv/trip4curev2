@@ -397,9 +397,12 @@ margin: 10px;
 
 .ab-font-style {
     font-family: var(--body-font-family);
+    font-weight: 800;
+    border-radius: 12px;
     background-color: rgb(255, 255, 255);
     padding: 20px;
-    color: #b8353b;
+    box-shadow: 2px 3px 2px 1px #4f4e4e;;  
+    color: rgba(0, 0, 0, 0.9);
     opacity: .8;
 }
 
@@ -708,5 +711,5 @@ margin: 10px;
 }
 
 .rating-star {
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
