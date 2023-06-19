@@ -24,3 +24,14 @@
 .destination-info {
     font-family: 'Poppins';
 }
+
+.medical-destination-card-series-1 {
+    display: flex;
+    gap: 100px;
+}
+
+.search-big-btn {
+    /* margin-top: 10px; */
+    font-family: var(--body-font-family);
+    height: 100%;
+}

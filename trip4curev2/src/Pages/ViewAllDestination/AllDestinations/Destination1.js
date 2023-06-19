@@ -65,9 +65,9 @@ const Destination1 = () => {
                     <Col xl={3} md={4} className="col-2  me-3">
                         <Select className="" placeholder="--All Specialties--" options={speciality}></Select>  
                     </Col>
-                    
+                     
                     <Col xl="3">
-                        <p className='browse-country'>or Browse India Hospital and clinics</p>
+                      <button type="submit"   className="btn   w-60  search-big-btn-destination" style={{ backgroundColor: '#b8353b', color: 'white' }}><i class="fa fa-search"></i> Search</button>
                     </Col>
           
                 {/* <select  className="select-drop-menu"  value={selectedOption} onChange={handleOptionChange}>
@@ -84,6 +84,90 @@ const Destination1 = () => {
                        <p className='mt-4 destination-info'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</p>
                        <p className='mt-4 destination-info'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</p>
                        <p className='mt-4 destination-info'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</p>
+                    </div>
+                  </Row>
+                  <Row>
+                    <div className='col-md-9 pt-5 mx-auto medical-destination-card-series-1'>
+                      <Link to={''} className="sliderblock">
+                            <Card className="text-center" style={{width:"420px",margin:'0 10px'}}>
+                            <div className="image-block">
+                            <Card.Img variant="top" style={{width:'100%'}} src={`${process.env.PUBLIC_URL}/images/mc-2.png`} />
+                            </div>
+                            <Card.Body>
+                                <Card.Title><h4 className='card-heading'>Apollo Hospital Chennai</h4></Card.Title>
+                                <Card.Text><p>Chennai</p></Card.Text>
+                                <Card.Text><p>India - 25 Specialties</p></Card.Text>
+                            </Card.Body>
+                            </Card>
+                        </Link>
+                            <Link to={''} className="sliderblock">
+                            <Card className="text-center" style={{width:"420px",margin:'0 10px'}}>
+                            <div className="image-block">
+                            <Card.Img variant="top" style={{width:'100%'}} src={`${process.env.PUBLIC_URL}/images/mc-2.png`} />
+                            </div>
+                            <Card.Body>
+                                <Card.Title><h4 className='card-heading'>Apollo Hospital Chennai</h4></Card.Title>
+                                <Card.Text><p>Chennai</p></Card.Text>
+                                <Card.Text><p>India - 25 Specialties</p></Card.Text>
+                            </Card.Body>
+                            </Card>
+                        </Link>
+                    </div>
+                  </Row>
+                   <Row>
+                    <div className='col-md-9 pt-5 mx-auto medical-destination-card-series-1'>
+                      <Link to={''} className="sliderblock">
+                            <Card className="text-center" style={{width:"420px",margin:'0 10px'}}>
+                            <div className="image-block">
+                            <Card.Img variant="top" style={{width:'100%'}} src={`${process.env.PUBLIC_URL}/images/mc-2.png`} />
+                            </div>
+                            <Card.Body>
+                                <Card.Title><h4 className='card-heading'>Apollo Hospital Chennai</h4></Card.Title>
+                                <Card.Text><p>Chennai</p></Card.Text>
+                                <Card.Text><p>India - 25 Specialties</p></Card.Text>
+                            </Card.Body>
+                            </Card>
+                        </Link>
+                            <Link to={''} className="sliderblock">
+                            <Card className="text-center" style={{width:"420px",margin:'0 10px'}}>
+                            <div className="image-block">
+                            <Card.Img variant="top" style={{width:'100%'}} src={`${process.env.PUBLIC_URL}/images/mc-2.png`} />
+                            </div>
+                            <Card.Body>
+                                <Card.Title><h4 className='card-heading'>Apollo Hospital Chennai</h4></Card.Title>
+                                <Card.Text><p>Chennai</p></Card.Text>
+                                <Card.Text><p>India - 25 Specialties</p></Card.Text>
+                            </Card.Body>
+                            </Card>
+                        </Link>
+                    </div>
+                  </Row>
+                   <Row>
+                    <div className='col-md-9 pt-5 mb-5 mx-auto medical-destination-card-series-1'>
+                      <Link to={''} className="sliderblock">
+                            <Card className="text-center" style={{width:"420px",margin:'0 10px'}}>
+                            <div className="image-block">
+                            <Card.Img variant="top" style={{width:'100%'}} src={`${process.env.PUBLIC_URL}/images/mc-2.png`} />
+                            </div>
+                            <Card.Body>
+                                <Card.Title><h4 className='card-heading'>Apollo Hospital Chennai</h4></Card.Title>
+                                <Card.Text><p>Chennai</p></Card.Text>
+                                <Card.Text><p>India - 25 Specialties</p></Card.Text>
+                            </Card.Body>
+                            </Card>
+                        </Link>
+                            <Link to={''} className="sliderblock">
+                            <Card className="text-center" style={{width:"420px",margin:'0 10px'}}>
+                            <div className="image-block">
+                            <Card.Img variant="top" style={{width:'100%'}} src={`${process.env.PUBLIC_URL}/images/mc-2.png`} />
+                            </div>
+                            <Card.Body>
+                                <Card.Title><h4 className='card-heading'>Apollo Hospital Chennai</h4></Card.Title>
+                                <Card.Text><p>Chennai</p></Card.Text>
+                                <Card.Text><p>India - 25 Specialties</p></Card.Text>
+                            </Card.Body>
+                            </Card>
+                        </Link>
                     </div>
                   </Row>
               </Container>

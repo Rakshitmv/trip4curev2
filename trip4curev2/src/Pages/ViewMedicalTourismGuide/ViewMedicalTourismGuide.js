@@ -14,7 +14,7 @@ const ViewMedicalTourismGuide = () => {
               <Container>
                   <Row>
                        <div className='col-md-9 mx-auto mt-5 text-center '>
-                            <h2 className='medical-tourism-main-heading'>Medical Tourism </h2>
+                            <h2 className='medical-tourism-main-heading'>Medical Tourism Guide</h2>
                             <p className='main-sub-heading-page-fmc'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</p>
                         </div>  
                   </Row>
@@ -26,7 +26,7 @@ const ViewMedicalTourismGuide = () => {
                             <Card.Text>
                                 <h6 className='medical-card-sub-heading'>A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.</h6>
                             </Card.Text>
-                            <Button className="text-link" variant="link">Read More</Button>
+                            <Link to={'/view-medical-tourism-guide/view-medical-tourism-info-page-1'}><Button className="text-link" variant="link">Read More</Button></Link>
                             </Card.Body>
                         </Card>
                         <Card className="sliderblock mgt-block">
@@ -35,7 +35,7 @@ const ViewMedicalTourismGuide = () => {
                             <Card.Text>
                                 <h6 className='medical-card-sub-heading'>A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.</h6>
                             </Card.Text>
-                            <Button className="text-link" variant="link">Read More</Button>
+                            <Link to={'/view-medical-tourism-guide/view-medical-tourism-info-page-2'}><Button className="text-link" variant="link">Read More</Button></Link>
                             </Card.Body>
                         </Card>
                       </div>
@@ -48,7 +48,7 @@ const ViewMedicalTourismGuide = () => {
                             <Card.Text>
                                 <h6 className='medical-card-sub-heading'>A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.</h6>
                             </Card.Text>
-                            <Button className="text-link" variant="link">Read More</Button>
+                            <Link to={'/view-medical-tourism-guide/view-medical-tourism-info-page-3'}><Button className="text-link" variant="link">Read More</Button></Link>
                             </Card.Body>
                         </Card>
                         <Card className="sliderblock mgt-block">
@@ -57,7 +57,7 @@ const ViewMedicalTourismGuide = () => {
                             <Card.Text>
                                 <h6 className='medical-card-sub-heading'>A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.</h6>
                             </Card.Text>
-                            <Button className="text-link" variant="link">Read More</Button>
+                            <Link to={'/view-medical-tourism-guide/view-medical-tourism-info-page-4'}><Button className="text-link" variant="link">Read More</Button></Link>
                             </Card.Body>
                         </Card>
                       </div>
@@ -70,7 +70,7 @@ const ViewMedicalTourismGuide = () => {
                             <Card.Text>
                                 <h6 className='medical-card-sub-heading'>A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.</h6>
                             </Card.Text>
-                            <Button className="text-link" variant="link">Read More</Button>
+                            <Link to={'/view-medical-tourism-guide/view-medical-tourism-info-page-5'}><Button className="text-link" variant="link">Read More</Button></Link>
                             </Card.Body>
                         </Card>
                         <Card className="sliderblock mgt-block">
@@ -79,7 +79,7 @@ const ViewMedicalTourismGuide = () => {
                             <Card.Text>
                                 <h6 className='medical-card-sub-heading'>A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.</h6>
                             </Card.Text>
-                            <Button className="text-link" variant="link">Read More</Button>
+                            <Link to={'/view-medical-tourism-guide/view-medical-tourism-info-page-6'}><Button className="text-link" variant="link">Read More</Button></Link>
                             </Card.Body>
                         </Card>
                       </div>

@@ -938,7 +938,7 @@ function Homepage() {
             </Col>
           </Row>
           <Row>
-           <Link to={'/view-all-announcement'}> <div class="text-center"><button type="button" class="line-primary-btn px-4 py-2 btn-hover btn btn-outline-primary"><h6 className='btn-font'>View All Announcement</h6></button></div></Link>
+           <Link to={'/view-all-announcement'}> <div class="text-center"><button type="button" class="line-primary-btn px-4 py-2 btn-hover btn btn-outline-primary"><h6 className='btn-font'>View All Announcements</h6></button></div></Link>
           </Row>
         </Container>
 
