@@ -20,9 +20,9 @@ const ViewAllDestination = () => {
           <Row>
             <div className='col-md-9 pt-5 mx-auto destination-card-series-1'>
               
-              <Card className="sliderblock" style={{ width: '250px', height: '550px' }}>
+              <Card className="sliderblock" style={{ width: '250px', height: '500px' }}>
                 <Link to={'/view-all-destination/AllDestinations/Destination1'}>
-                <Card.Img variant="top"  style={{width:"100%"}} src={`${process.env.PUBLIC_URL}/images/india.png`} />
+                <Card.Img variant="top"  style={{width:"100%", height: "100%" }} src={`${process.env.PUBLIC_URL}/images/india.png`} />
                 <div className="fd-content">
                   <Card.Img className=" i-flag   top-0 start-0" variant="top" src={`${process.env.PUBLIC_URL}/images/india-flag.png`} />
                   <div className="fd-bottom-content">
@@ -34,8 +34,8 @@ const ViewAllDestination = () => {
               </Card>
           
 
-              <Card className="sliderblock" style={{width:'250px' ,height: '550px'}}>
-                <Card.Img variant="top" style={{width:"100%"}} src={`${process.env.PUBLIC_URL}/images/spain.png`} />
+              <Card className="sliderblock" style={{width:'250px' ,height: '500px'}}>
+                <Card.Img variant="top" style={{width:"100%" , height: "100%"}} src={`${process.env.PUBLIC_URL}/images/spain.png`} />
                 <div className="fd-content">
                   <Card.Img className=" i-flag   top-0 start-0" variant="top" src={`${process.env.PUBLIC_URL}/images/spain-flag.png`} />
                   <div className="fd-bottom-content">
@@ -48,8 +48,8 @@ const ViewAllDestination = () => {
           </Row>
           <Row>
             <div className='col-md-9 pt-5 mx-auto destination-card-series-1'>
-              <Card className="sliderblock" style={{width:'250px' ,height: '550px'}}>
-                <Card.Img variant="top"  style={{width:"100%"}} src={`${process.env.PUBLIC_URL}/images/germany.png`} />
+              <Card className="sliderblock" style={{width:'250px' ,height: '500px'}}>
+                <Card.Img variant="top"  style={{width:"100%" , height: "100%"}} src={`${process.env.PUBLIC_URL}/images/germany.png`} />
                 <div className="fd-content">
                   <Card.Img className=" i-flag   top-0 start-0" variant="top" src={`${process.env.PUBLIC_URL}/images/germany-flag.png`} />
                   <div className="fd-bottom-content">
@@ -59,7 +59,7 @@ const ViewAllDestination = () => {
                 </div>
               </Card>
 
-              <Card className="sliderblock" style={{width:'250px' , height: '550px'}}>
+              <Card className="sliderblock" style={{width:'250px' , height: '500px'}}>
                 <Card.Img variant="top"  style={{width:"100%", height: "100%"}} src={`${process.env.PUBLIC_URL}/images/usa.jpg`} />
                 <div className="fd-content">
                   <Card.Img className=" i-flag   top-0 start-0" variant="top" src={`${process.env.PUBLIC_URL}/images/usa-flag.png`} />
@@ -73,7 +73,7 @@ const ViewAllDestination = () => {
           </Row>
           <Row>
             <div className='col-md-9 pt-5 mx-auto destination-card-series-1'>
-              <Card className="sliderblock" style={{width:'250px' ,height: '550px'}}>
+              <Card className="sliderblock" style={{width:'250px' ,height: '500px'}}>
                 <Card.Img variant="top" style={{width:"100%", height: "100%"}} src={`${process.env.PUBLIC_URL}/images/canada.jpg`} />
                 <div className="fd-content">
                   <Card.Img className=" i-flag   top-0 start-0" variant="top" src={`${process.env.PUBLIC_URL}/images/canada-flag.png`} />
@@ -83,7 +83,7 @@ const ViewAllDestination = () => {
                   </div>
                 </div>
               </Card>
-              <Card className="sliderblock" style={{width:'250px' ,height: '550px'}}>
+              <Card className="sliderblock" style={{width:'250px' ,height: '500px'}}>
                 <Card.Img variant="top"  style={{width:"100%", height: "100%"}} src={`${process.env.PUBLIC_URL}/images/england.jpg`} />
                 <div className="fd-content">
                   <Card.Img className=" i-flag   top-0 start-0" variant="top" src={`${process.env.PUBLIC_URL}/images/england-flag.png`} />
@@ -97,7 +97,7 @@ const ViewAllDestination = () => {
           </Row>
           <Row>
             <div className='col-md-9 pt-5 mx-auto destination-card-series-1'>
-              <Card className="sliderblock" style={{width:'250px' , height: '550px'}}>
+              <Card className="sliderblock" style={{width:'250px' , height: '500px'}}>
                 <Card.Img variant="top"  style={{width:"100%", height: "100%"}} src={`${process.env.PUBLIC_URL}/images/russia.jpg`} />
                 <div className="fd-content">
                   <Card.Img className=" i-flag   top-0 start-0" variant="top" src={`${process.env.PUBLIC_URL}/images/russia-flag.png`} />
@@ -108,7 +108,7 @@ const ViewAllDestination = () => {
                 </div>
               </Card>
 
-              <Card className="sliderblock" style={{width:'250px' ,height: '550px'}}>
+              <Card className="sliderblock" style={{width:'250px' ,height: '500px'}}>
                 <Card.Img variant="top" style={{width:"100%" ,height: "100%"}} src={`${process.env.PUBLIC_URL}/images/china.jpg`} />
                 <div className="fd-content">
                   <Card.Img className=" i-flag   top-0 start-0" variant="top" src={`${process.env.PUBLIC_URL}/images/china-flag.png`} />
@@ -122,7 +122,7 @@ const ViewAllDestination = () => {
           </Row>
           <Row>
             <div className='col-md-9 pt-5 mx-auto mb-5 destination-card-series-1'>
-              <Card className="sliderblock" style={{width:'250px' ,height: '550px'}}>
+              <Card className="sliderblock" style={{width:'250px' ,height: '500px'}}>
                 <Card.Img variant="top" style={{width:"100%", height: "100%"}} src={`${process.env.PUBLIC_URL}/images/japan.jpg`} />
                 <div className="fd-content">
                   <Card.Img className=" i-flag  m-2 top-0 start-0" variant="top" src={`${process.env.PUBLIC_URL}/images/japan-flag.png`} />
@@ -132,7 +132,7 @@ const ViewAllDestination = () => {
                   </div>
                 </div>
               </Card>
-              <Card className="sliderblock" style={{width:'250px' ,height: '550px'}}>
+              <Card className="sliderblock" style={{width:'250px' ,height: '500px'}}>
                 <Card.Img variant="top"  style={{width:"100%", height: "100%"}} src={`${process.env.PUBLIC_URL}/images/uae.jpg`} />
                 <div className="fd-content">
                   <Card.Img className=" i-flag  m-2 top-0 start-0" variant="top" src={`${process.env.PUBLIC_URL}/images/uae-flag.png`} />

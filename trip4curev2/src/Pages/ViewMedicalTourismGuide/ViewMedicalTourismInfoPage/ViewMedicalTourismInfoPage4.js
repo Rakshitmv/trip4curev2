@@ -18,7 +18,7 @@ const ViewMedicalTourismInfoPage4 = () => {
                         </div>  
                   </Row>
                   <Row>
-                      <div className='col-md-9 mt-5'>
+                      <div className='col-md-12 mx-auto mt-5'>
                           <p className='announce-info-para'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</p>
                           <p className='announce-info-para'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</p>
                           <p className='announce-info-para'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</p>

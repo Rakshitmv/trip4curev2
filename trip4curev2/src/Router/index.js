@@ -277,7 +277,7 @@ const router = createBrowserRouter([
   
     
     ],
-     { basename: '/trip4curev2' }
+     { basename: '/trip4cure0' }
     );
 
 
