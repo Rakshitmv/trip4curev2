@@ -14,7 +14,7 @@ function Menu() {
     settoken(token);
     setuser(user);
     //console.log(">>>>>>>>>>>>>>",params.name)
-});
+},[]);
 
 
 const [token,settoken ] = useState("");
@@ -37,14 +37,14 @@ const [user,setuser ] = useState("");
                 
           <Nav className='ms-auto'>
           {token ? (<>
-            <Link className='btn' style={{ backgroundColor: '#b8353b', color: 'white' }} to={'/contact-us' } >Contact Us</Link>
+            <Link className='btn' style={{ backgroundColor: '#b8353b', color: 'white' }} to={'/contact-us' } >CONTACT US</Link>
             <Link className='nav-link' to={'/user-sign-in'}><i class="fa fa-user" style={{fontSize:'24px'}}></i></Link>
             {user=='Hospital User' ? (<> <Link className='nav-link' to={'/hospital-sign-in'}><i class="fa fa-database" style={{fontSize:'22px'}}></i></Link>
             </>):<></>}
           </>):(<>
             <Link className='nav-link' to={'/user-sign-in'}>User Sign In</Link>
             <Link className='nav-link' to={'/hospital-sign-in'}>Hospital Sign In</Link>
-            <Link className='btn' style={{ backgroundColor: '#b8353b', color: 'white' , fontSize: '15px' }} to={'/contact-us' } >CONTACT US</Link>
+            <Link className='btn' style={{ backgroundColor: '#b8353b', color: 'white' }} to={'/contact-us' } >CONTACT US</Link>
             
           </>)}
           {/* <Link className='nav-link' to={'/user-sign-in'}>User Sign In</Link>

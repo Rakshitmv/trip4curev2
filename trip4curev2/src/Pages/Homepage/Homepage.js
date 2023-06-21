@@ -4,14 +4,15 @@ import Header from "../../Components/Header/Header";
 import Topbar from "../../Components/Topbar/Topbar";
 import "./Homepage.css";
 import Footer from "../../Components/Footer/Footer";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Slider from "react-slick";
-import ViewSpeciality from '../ViewSpeciality/ViewSpeciality';
-import ViewMedicalCenter from '../ViewMedicalCenter/ViewMedicalCenter';
-import MedicalCenterInfoPages_1 from '../ViewMedicalCenterInfoPages/MedicalCenterInfoPages_1';
-import React, {useState , useMemo} from 'react';
-import { Rating } from 'react-simple-star-rating';
+// import ViewSpeciality from '../ViewSpeciality/ViewSpeciality';
+// import ViewMedicalCenter from '../ViewMedicalCenter/ViewMedicalCenter';
+// import MedicalCenterInfoPages_1 from '../ViewMedicalCenterInfoPages/MedicalCenterInfoPages_1';
+import React, { useCallback, useState, useEffect, useMemo } from 'react';
 import countryList from 'react-select-country-list'
+
+
 
 
 
@@ -48,20 +49,17 @@ const speciality = [
   { value: 'Thyroid', label: 'Thyroid' },
   { value: 'Urology', label: 'Urology' },
   { value: 'Vascular Surgery', label: 'Vascular Surgery' },
-                           
+
 ]
 
-
-
-
-// const country = [
-//   { value: 'Argentina', label: 'Argentina' },
-//   { value: 'Germany', label: 'Germany' },
-//   { value: 'India', label: 'India' },
-//   { value: 'Malaysia', label: 'Malaysia' },
-//   { value: 'Mexico', label: 'Mexico' },
-//   { value: 'Spain', label: 'Spain' }
-// ]
+const countryOptions = [
+  { value: 'Argentina', label: 'Argentina' },
+  { value: 'Germany', label: 'Germany' },
+  { value: 'India', label: 'India' },
+  { value: 'Malaysia', label: 'Malaysia' },
+  { value: 'Mexico', label: 'Mexico' },
+  { value: 'Spain', label: 'Spain' }
+]
 
 
 const fmc = {
@@ -195,7 +193,7 @@ const fd = {
   infinite: true,
   speed: 500,
   slidesToShow: 4,
-  slidesToScroll: 2,
+  slidesToScroll: 1,
   arrows: true,
   responsive: [
     {
@@ -254,39 +252,61 @@ const globalProvider = {
 
 function Homepage() {
 
+  const navigate = useNavigate()
+
   const [value, setValue] = useState('')
+  const [country, setCountry] = useState(null);
+  const [specialty, setSpecialty] = useState(null);
   const options = useMemo(() => countryList().getData(), [])
+
+  const [hospitals, setHospitals] = useState([])
 
   const changeHandler = value => {
     setValue(value)
   }
-  
-    // const [country, setCountry] = useState('');
-    // const [specialty, setSpecialty] = useState('');
 
-    // const handleSearch = async () => {
-    //   try {
-    //     const response = await fetch('http://13.234.216.30:8080/search_hospital/', {
-    //       method: 'POST',
-    //       headers: {
-    //         'Content-Type': 'application/json',
-    //       },
-    //       body: JSON.stringify({ country, specialty }),
-    //     });
+  const [destinations, setDestinations] = useState({
+    India: 0,
+    Spain: 0,
+    Germany: 0
+  })
 
-    //     const data = await response.json();
+  const handleSearch = useCallback((e) => {
+    e.preventDefault()
+    navigate(`/search/${specialty.value}/${country.value}`)
+  }, [country, specialty, navigate])
 
-    //     // Navigate to the search results page with search results as URL parameters
-    //     const queryParams = new URLSearchParams({ country, specialty });
-    //     window.location.href = `/search?${queryParams.toString()}`;
-    //   } catch (error) {
-    //     console.error('Error searching:', error);
-    //   }
-    // };
+  useEffect(() => {
 
-  
-   
- const [rating, setRating] = useState(0);
+    const fetchHospitals = async () => {
+      try {
+        const response = await fetch('http://13.234.216.30:8080/featured_hospital/');
+
+        const data = await response.json();
+        const hospitalsData = data.Feature_Hospital
+        console.log(hospitalsData)
+        setHospitals(() => [...hospitalsData]);
+      } catch (error) {
+        console.error('Error fetching search results:', error);
+      }
+    };
+    const fetchDestinations = async () => {
+      try {
+        const response = await fetch('http://13.234.216.30:8080/feature_destination/');
+
+        const data = await response.json();
+        setDestinations(() => ({ ...data }));
+      } catch (error) {
+        console.error('Error fetching search results:', error);
+      }
+    };
+
+    fetchHospitals();
+    fetchDestinations();
+  }, []);
+  const [rating, setRating] = useState(0);
+  const [rating1, setRating1] = useState(0);
+  const [rating2, setRating2] = useState(0);
   const [hoveredRating, setHoveredRating] = useState(0);
 
   const handleMouseEnter = (value) => {
@@ -304,8 +324,22 @@ function Homepage() {
       setRating(value);
     }
   };
-  
 
+  const handleClick1 = (value) => {
+    if (rating === value) {
+      setRating1(0);
+    } else {
+      setRating1(value);
+    }
+  };
+
+  const handleClick2 = (value) => {
+    if (rating === value) {
+      setRating2(0);
+    } else {
+      setRating2(value);
+    }
+  };
   return (
     <>
 
@@ -328,23 +362,23 @@ function Homepage() {
                   </Col> */}
 
             <div className="form-search pb-5 ">
-              <Form>
+              <Form onSubmit={handleSearch}>
                 <Container>
                   <Row>
                     <Col xl={3} md={4} className="col-2 pt-1   bg-white-transparent bdrtlb border-right position-relative rounded-left form-search-item">
                       <Form.Group className="pb-0 choose-height" controlId="formBasicEmail">
                         <Form.Label><p className='font-style'>Choose Speciality</p></Form.Label>
-                        <Select className="form-control-filter"  options={speciality} />
-                      </Form.Group>        
+                        <Select className="form-control-filter" name='speciality' required={true} onChange={value => setSpecialty(value)} options={speciality} />
+                      </Form.Group>
                     </Col>&emsp;
                     <Col xl={3} md={4} className="col-2 pt-1 bg-white-transparent brtb position-relative rounded-right form-search-item">
                       <Form.Group className="" controlId="formBasicEmail">
                         <Form.Label><p className='font-style'>Choose Country</p></Form.Label>
-                        <Select className="form-control-filter"   options={options} value={value} onChange={changeHandler} />
+                        <Select className="form-control-filter" options={options} value={value} onChange={changeHandler} />
                       </Form.Group>
                     </Col>
                     <Col xl="2">
-                      <Link to={'/search'}><button type="submit"   className="btn   w-60  search-big-btn" style={{ backgroundColor: '#b8353b', color: 'white' }}><i class="fa fa-search"></i> Search</button></Link>
+                      <button type="submit" className="btn   w-60  search-big-btn" style={{ backgroundColor: '#b8353b', color: 'white' }}><i class="fa fa-search"></i>Search</button>
                     </Col>
                   </Row>
                 </Container>
@@ -380,7 +414,7 @@ function Homepage() {
                 </Link>
               </div>
               <div className="list-inline-item py-2">
-                <Link to={'/cosemtic-surgery'} class="card border-0 icon-box link-hover-dark-white">
+                <Link to={'/cosmetic-surgery'} class="card border-0 icon-box link-hover-dark-white">
                   <div class="card-body p-0">
                     <div>
                       <img src={`${process.env.PUBLIC_URL}/images/ic-cosmetic-surgery.png`} className="normal-state" alt="" />
@@ -393,7 +427,7 @@ function Homepage() {
                 </Link>
               </div>
               <div className="list-inline-item py-2">
-                <Link to={'/fertility-treatment'} class="card border-0 icon-box link-hover-dark-white">
+                <Link to={'/fertilty-treatment'} class="card border-0 icon-box link-hover-dark-white">
                   <div class="card-body p-0">
                     <div>
                       <img src={`${process.env.PUBLIC_URL}/images/ic-fertility.png`} className="normal-state" alt="" />
@@ -441,7 +475,7 @@ function Homepage() {
       <section className='ab-section' style={{ height: '100vh' }}>
         <Container>
           <Row>
-            <div className='col-md-9 mx-auto mt-3 mb-3 text-center'>
+            <div className='col-md-10 mx-auto mt-3 mb-3 text-center'>
               <h2 className='main-heading-page'>Our Success Stories...</h2>
               <h5 className='main-sub-heading'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</h5>
             </div>
@@ -459,7 +493,7 @@ function Homepage() {
                   </div>
                 </div>
                 <div className='ab-image position-relative ' >
-                  <img src={`${process.env.PUBLIC_URL}/images/slide_02.jpg`} alt=""  className='ad-img'/>
+                  <img src={`${process.env.PUBLIC_URL}/images/slide_02.jpg`} alt="" className='ad-img' />
                   <div className='content'>
                     <h4 className='ab-font-style'>After knee replacement <br />Happy after knee</h4>
                   </div>
@@ -495,23 +529,23 @@ function Homepage() {
                   </div>
                 </div>
                 {/* <div className='ab-image position-relative '>
-                  <img  src={`${process.env.PUBLIC_URL}/images/slide_08.jpg`} alt="" />
-                  <div className='content'>
-                    <h4 className='font-style'>Knee sucessfull surgery</h4>
-                  </div>
-                </div> */}
+  <img  src={`${process.env.PUBLIC_URL}/images/slide_08.jpg`} alt="" />
+  <div className='content'>
+    <h4 className='font-style'>Knee sucessfull surgery</h4>
+  </div>
+</div> */}
                 {/* <div className='ab-image position-relative'>
-                  <img  src={`${process.env.PUBLIC_URL}/images/slide_09.jpg`} alt="" className='ad-img'  />
-                  <div className='content'>
-                    <h4 className='font-style'>Old is Gold</h4>
-                  </div>
-                </div> */}
+  <img  src={`${process.env.PUBLIC_URL}/images/slide_09.jpg`} alt="" className='ad-img'  />
+  <div className='content'>
+    <h4 className='font-style'>Old is Gold</h4>
+  </div>
+</div> */}
                 {/* <div className='ab-image position-relative'>
-                  <img  src={`${process.env.PUBLIC_URL}/images/slide_10.jpg`} alt="" />
-                  <div className='content'>
-                    <h4 className='font-style'>TB</h4>
-                  </div>
-                </div> */}
+  <img  src={`${process.env.PUBLIC_URL}/images/slide_10.jpg`} alt="" />
+  <div className='content'>
+    <h4 className='font-style'>TB</h4>
+  </div>
+</div> */}
                 <div className='ab-image position-relative'>
                   <img src={`${process.env.PUBLIC_URL}/images/slide_11.jpg`} alt="" className='ad-img' />
                   <div className='content'>
@@ -528,13 +562,39 @@ function Homepage() {
       <section id="section-02" className=" featured-medical-center" style={{ height: '100vh' }}>
         <Container>
           <Row>
-            <div className="col-md-9 mx-auto mb-3 mt-3 text-center">
+            <div className="col-md-10 mx-auto mb-3 mt-3 text-center">
               <h2 className='main-heading-page'>Featured Medical Centers</h2>
               <p className='main-sub-heading-page-fmc'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</p>
             </div>
           </Row>
           <Row>
-            <Slider {...fmc}>
+            {
+              hospitals.length > 0 && <Slider {...fmc}>
+                {
+                  hospitals.map(hospital => {
+                    return (
+                      <div key={hospital.id}>
+                        <Link to={`/view-medical-center/${hospital.id}`} className="sliderblock" >
+
+                          <Card className="text-center" style={{ width: "320px", margin: '0 10px' }}>
+                            <div className="image-block">
+                              <Card.Img variant="top" style={{ width: '100%' }} src={hospital.profile_image ? 'http://13.234.216.30:8080' + hospital.profile_image : ''} />
+                            </div>
+                            <Card.Body>
+                              <Card.Title className='card-heading'>{hospital.hospital_name}</Card.Title>
+                              <Card.Text className='card-sub-heading-1'>{hospital.hospital_city}</Card.Text>
+                              <Card.Text className='card-text'>{hospital.hospital_country} - 16 Specialties</Card.Text>
+                            </Card.Body>
+                          </Card>
+                        </Link>
+                      </div>
+                    )
+                  })
+                }
+              </Slider>
+            }
+
+{/* <Slider {...fmc}>
               <Link to={''} className="sliderblock">
 
                 <Card className="text-center" style={{width:"320px",margin:'0 10px'}}>
@@ -609,7 +669,7 @@ function Homepage() {
                 </Card>
               </Link>
 
-            </Slider>
+            </Slider> */}
           </Row>
           <Row>
             <div className="text-center">
@@ -623,7 +683,7 @@ function Homepage() {
       <section id="section-03" className="py-5  medical-tourism-guide" style={{ height: '100vh' }}>
         <Container>
           <Row>
-            <div className="col-md-9 mx-auto py-5  text-center">
+            <div className="col-md-10 mx-auto py-5  text-center">
               <h2 className='main-heading-page my-5'>Medical Tourism Guide</h2>
               <h5 className='main-sub-heading'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</h5>
             </div>
@@ -689,7 +749,7 @@ function Homepage() {
             </Slider>
           </Row>
           <Row>
-              <Link to={'/view-medical-tourism-guide'}><div className="text-center mx-auto mt-5 py-4">
+            <Link to={'/view-medical-tourism-guide'}><div className="text-center mx-auto mt-5 py-4">
               <Button className="line-primary-btn px-5 py-2 btn-hover text-center" variant="outline-primary"><h6 className='btn-font'>View All</h6></Button>
             </div></Link>
           </Row>
@@ -700,131 +760,127 @@ function Homepage() {
       <section id="section-04" className="py-3 featured-destinations" style={{ height: '100vh' }}>
         <Container>
           <Row>
-            <div className="col-md-9 mb-3">
+            <div className="col-md-10 mb-3">
               <h2 className='main-heading-page'>Featured Destinations</h2>
               <h5 className='main-sub-heading'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</h5>
             </div>
           </Row>
           <Row>
             <Slider className="arrowonTopright" {...fd}>
-              <Card className="sliderblock" style={{width:'250px'}}>
-                <Card.Img variant="top"  style={{width:"100%"}} src={`${process.env.PUBLIC_URL}/images/india.png`} />
-                <div className="fd-content">
-                  <Card.Img className=" i-flag    top-0 start-0" variant="top" src={`${process.env.PUBLIC_URL}/images/india-flag.png`} />
-                  <div className="fd-bottom-content">
-                    <h3 className="destination-country">India</h3>
-                    <h4 className="destination-centers">(44 Medical Centers)</h4>
+              <Link to={'/view-destination-centers/India'} className="sliderblock" style={{ width: '250px' }}>
+                <Card className="sliderblock">
+                  <Card.Img variant="top" style={{ width: "100%" }} src={`${process.env.PUBLIC_URL}/images/india.png`} />
+                  <div className="fd-content">
+                    <Card.Img className=" i-flag  m-2 top-0 start-0" variant="top" src={`${process.env.PUBLIC_URL}/images/india-flag.png`} />
+                    <div className="fd-bottom-content">
+                      <h3 className="destination-country">India</h3>
+                      <h4 className="destination-centers">({destinations.India} Medical Centers)</h4>
+                    </div>
                   </div>
-                </div>
-              </Card>
+                </Card>
+              </Link>
 
-              <Card className="sliderblock" style={{width:'250px'}}>
-                <Card.Img variant="top" style={{width:"100%"}} src={`${process.env.PUBLIC_URL}/images/spain.png`} />
-                <div className="fd-content">
-                  <Card.Img className=" i-flag   top-0 start-0" variant="top" src={`${process.env.PUBLIC_URL}/images/spain-flag.png`} />
-                  <div className="fd-bottom-content">
-                    <h3 className="destination-country">Spain</h3>
-                    <h4 className="destination-centers">(52 Medical Centers)</h4>
+              <Link to={'/view-destination-centers/Spain'} className="sliderblock" style={{ width: '250px' }}>
+                <Card className="sliderblock" style={{ width: '250px' }}>
+                  <Card.Img variant="top" style={{ width: "100%" }} src={`${process.env.PUBLIC_URL}/images/spain.png`} />
+                  <div className="fd-content">
+                    <Card.Img className=" i-flag  m-2 top-0 start-0" variant="top" src={`${process.env.PUBLIC_URL}/images/spain-flag.png`} />
+                    <div className="fd-bottom-content">
+                      <h3 className="destination-country">Spain</h3>
+                      <h4 className="destination-centers">({destinations.Spain} Medical Centers)</h4>
+                    </div>
                   </div>
-                </div>
-              </Card>
+                </Card>
+              </Link>
 
-              <Card className="sliderblock" style={{width:'250px'}}>
-                <Card.Img variant="top"  style={{width:"100%"}} src={`${process.env.PUBLIC_URL}/images/germany.png`} />
-                <div className="fd-content">
-                  <Card.Img className=" i-flag   top-0 start-0" variant="top" src={`${process.env.PUBLIC_URL}/images/germany-flag.png`} />
-                  <div className="fd-bottom-content">
-                    <h3 className="destination-country">Germany</h3>
-                    <h4 className="destination-centers">(8 Medical Centers)</h4>
-                  </div>
-                </div>
-              </Card>
 
-              <Card className="sliderblock" style={{width:'250px'}}>
-                <Card.Img variant="top"  style={{width:"100%"}} src={`${process.env.PUBLIC_URL}/images/india.png`} />
-                <div className="fd-content">
-                  <Card.Img className=" i-flag   top-0 start-0" variant="top" src={`${process.env.PUBLIC_URL}/images/india-flag.png`} />
-                  <div className="fd-bottom-content">
-                    <h3 className="destination-country">India</h3>
-                    <h4 className="destination-centers">(44 Medical Centers)</h4>
+              <Link to={'/view-destination-centers/Germany'} className="sliderblock" style={{ width: '250px' }}>
+                <Card className="sliderblock" style={{ width: '250px' }}>
+                  <Card.Img variant="top" style={{ width: "100%" }} src={`${process.env.PUBLIC_URL}/images/germany.png`} />
+                  <div className="fd-content">
+                    <Card.Img className=" i-flag  m-2 top-0 start-0" variant="top" src={`${process.env.PUBLIC_URL}/images/germany-flag.png`} />
+                    <div className="fd-bottom-content">
+                      <h3 className="destination-country">Germany</h3>
+                      <h4 className="destination-centers">({destinations.Germany} Medical Centers)</h4>
+                    </div>
                   </div>
-                </div>
-              </Card>
+                </Card>
+              </Link>
+
+
+
+              <Link to={'/view-destination-centers/Germany'} className="sliderblock" style={{ width: '250px' }}>
+                <Card className="sliderblock" style={{ width: '250px' }}>
+                  <Card.Img variant="top" style={{ width: "100%" }} src={`${process.env.PUBLIC_URL}/images/germany.png`} />
+                  <div className="fd-content">
+                    <Card.Img className=" i-flag  m-2 top-0 start-0" variant="top" src={`${process.env.PUBLIC_URL}/images/germany-flag.png`} />
+                    <div className="fd-bottom-content">
+                      <h3 className="destination-country">Germany</h3>
+                      <h4 className="destination-centers">({destinations.Germany} Medical Centers)</h4>
+                    </div>
+                  </div>
+                </Card>
+              </Link>
+
+
+              <Link to={'/view-destination-centers/Germany'} className="sliderblock" style={{ width: '250px' }}>
+                <Card className="sliderblock" style={{ width: '250px' }}>
+                  <Card.Img variant="top" style={{ width: "100%" }} src={`${process.env.PUBLIC_URL}/images/germany.png`} />
+                  <div className="fd-content">
+                    <Card.Img className=" i-flag  m-2 top-0 start-0" variant="top" src={`${process.env.PUBLIC_URL}/images/germany-flag.png`} />
+                    <div className="fd-bottom-content">
+                      <h3 className="destination-country">Germany</h3>
+                      <h4 className="destination-centers">({destinations.Germany} Medical Centers)</h4>
+                    </div>
+                  </div>
+                </Card>
+              </Link>
 
 
 
             </Slider>
           </Row>
           <Row>
-            <Link to={'/view-all-destination'}><div className="text-center py-4">
-              <Button className="line-primary-btn px-5 py-2 btn-hover text-center" variant="outline-primary"><h6 className='btn-font'>View All Destinations</h6></Button>
-            </div></Link>
+            <div className="text-center py-4">
+              <Link to={'/view-all-destination'}>
+                <Button className="line-primary-btn px-5 py-2 btn-hover text-center" variant="outline-primary"><h6 className='btn-font'>View All Destinations</h6></Button>
+              </Link>
+            </div>
           </Row>
         </Container>
       </section>
 
-
       <section id="section-05" className="py-5 testimonials" style={{ height: '100vh' }}>
         <Container>
           <Row>
-            <div class="col-md-9 mx-auto  text-center"><h2 className="text-white-heading">What our Patients say...</h2></div>
+            <div class="col-md-9 mx-auto py-5 text-center"><h2 className="text-white-heading">What our Patients say...</h2></div>
           </Row>
           <Row>
-            <div className="col-md-8 mx-auto pb-5 text-center testimonial-card">
+            <div className="col-md-8 mx-auto text-center testimonial-card">
               <Slider {...testimonial}>
                 <Card>
-                  <Card.Img variant="top"  className=" mt-5 ml-5 guest-img" src={`${process.env.PUBLIC_URL}/images/guest-testimonial-1.png`} />
-                  <Card.Body>
-                    <Card.Text className="">
-                      <h6 className="text-white"> Your Service was excellent, I had a reply and appointment within 24 hours.If I require
-                        medical assistance in the future I will most certainly consider using your platform. </h6>
-                    </Card.Text>
-                    <div className='col-md-9 mx-auto rating-star'>
-                     {[1, 2, 3, 4, 5].map((value) => (
-                      <span
-                        key={value}
-                        style={{
-                          cursor: 'pointer',
-                          color: value <= (hoveredRating || rating) ? 'orange' : 'gray',
-                          fontSize: value <= (hoveredRating || rating) ? '3rem' : '2rem'
-                        }}
-                        onClick={() => handleClick(value)}
-                        onMouseEnter={() => handleMouseEnter(value)}
-                        onMouseLeave={handleMouseLeave}
-                      >
-                       &#x1F7CA;
-                      </span>
-                    ))}
-                    </div>
-                    <Card.Text className="mt-5 ">
-                      <h5 className="text-white">JULIA ROSE</h5>
-                      <h6 className="text-white">From Los Angeles,Calfornia</h6>
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-                <Card>
-                  <Card.Img variant="top"  className=" mt-5  ml-5 guest-img" src={`${process.env.PUBLIC_URL}/images/guest-testimonial-1.png`} />
+                  <Card.Img variant="top" className=" mt-3  ml-5 guest-img" src={`${process.env.PUBLIC_URL}/images/guest-testimonial-1.png`} />
                   <Card.Body>
                     <Card.Text className="mt-2">
                       <h6 className="text-white"> Your Service was excellent, I had a reply and appointment within 24 hours.If I require
                         medical assistance in the future I will most certainly consider using your platform. </h6>
                     </Card.Text>
                     <div className='col-md-9 mx-auto rating-star'>
-                          {[1, 2, 3, 4, 5].map((value) => (
-                          <span
-                            key={value}
-                            style={{
-                              cursor: 'pointer',
-                              color: value <= (hoveredRating || rating) ? 'orange' : 'gray',
-                              fontSize: value <= (hoveredRating || rating) ? '3rem' : '2rem'
-                            }}
-                            onClick={() => handleClick(value)}
-                            onMouseEnter={() => handleMouseEnter(value)}
-                            onMouseLeave={handleMouseLeave}
-                          >
-                            &#x1F7CA;
-                          </span>
-                        ))}
+                      {[1, 2, 3, 4, 5].map((value) => (
+                        <span
+                          key={value}
+                          style={{
+                            cursor: 'pointer',
+                            color: value <= (hoveredRating || rating) ? 'orange' : 'gray',
+                            fontSize: value <= (hoveredRating || rating) ? '3rem' : '2rem'
+                          }}
+                          onClick={() => handleClick(value)}
+                          onMouseEnter={() => handleMouseEnter(value)}
+                          onMouseLeave={handleMouseLeave}
+                        >
+                          &#x1F7CA;
+                        </span>
+                      ))}
                     </div>
                     <Card.Text className="mt-5">
                       <h5 className="text-white">JULIA ROSE</h5>
@@ -833,28 +889,58 @@ function Homepage() {
                   </Card.Body>
                 </Card>
                 <Card>
-                  <Card.Img variant="top" className=" mt-5  ml-5 guest-img" src={`${process.env.PUBLIC_URL}/images/guest-testimonial-1.png`} />
+                  <Card.Img variant="top" className=" mt-3  ml-5 guest-img" src={`${process.env.PUBLIC_URL}/images/guest-testimonial-1.png`} />
                   <Card.Body>
                     <Card.Text className="mt-2">
                       <h6 className="text-white"> Your Service was excellent, I had a reply and appointment within 24 hours.If I require
                         medical assistance in the future I will most certainly consider using your platform. </h6>
                     </Card.Text>
                     <div className='col-md-9 mx-auto rating-star'>
-                        {[1, 2, 3, 4, 5].map((value) => (
+                      {[1, 2, 3, 4, 5].map((value) => (
                         <span
-                        key={value}
-                        style={{
-                          cursor: 'pointer',
-                          color: value <= (hoveredRating || rating) ? 'orange' : 'gray',
-                          fontSize: value <= (hoveredRating || rating) ? '3rem' : '2rem'
-                        }}
-                        onClick={() => handleClick(value)}
-                        onMouseEnter={() => handleMouseEnter(value)}
-                        onMouseLeave={handleMouseLeave}
-                      >
-                        &#x1F7CA;
-                      </span>
-                    ))}
+                          key={value}
+                          style={{
+                            cursor: 'pointer',
+                            color: value <= (hoveredRating || rating1) ? 'orange' : 'gray',
+                            fontSize: value <= (hoveredRating || rating1) ? '3rem' : '2rem'
+                          }}
+                          onClick={() => handleClick1(value)}
+                          onMouseEnter={() => handleMouseEnter(value)}
+                          onMouseLeave={handleMouseLeave}
+                        >
+                          &#x1F7CA;
+                        </span>
+                      ))}
+                    </div>
+                    <Card.Text className="mt-5">
+                      <h5 className="text-white">JULIA ROSE</h5>
+                      <h6 className="text-white">From Los Angeles,Calfornia</h6>
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+                <Card>
+                  <Card.Img variant="top" className=" mt-3  ml-5 guest-img" src={`${process.env.PUBLIC_URL}/images/guest-testimonial-1.png`} />
+                  <Card.Body>
+                    <Card.Text className="mt-2">
+                      <h6 className="text-white"> Your Service was excellent, I had a reply and appointment within 24 hours.If I require
+                        medical assistance in the future I will most certainly consider using your platform. </h6>
+                    </Card.Text>
+                    <div className='col-md-9 mx-auto rating-star'>
+                      {[1, 2, 3, 4, 5].map((value) => (
+                        <span
+                          key={value}
+                          style={{
+                            cursor: 'pointer',
+                            color: value <= (hoveredRating || rating2) ? 'orange' : 'gray',
+                            fontSize: value <= (hoveredRating || rating2) ? '3rem' : '2rem'
+                          }}
+                          onClick={() => handleClick2(value)}
+                          onMouseEnter={() => handleMouseEnter(value)}
+                          onMouseLeave={handleMouseLeave}
+                        >
+                          &#x1F7CA;
+                        </span>
+                      ))}
                     </div>
                     <Card.Text className="mt-5">
                       <h5 className="text-white">JULIA ROSE</h5>
@@ -871,7 +957,7 @@ function Homepage() {
       <section id="section-06" className="py-5 global-provider " style={{ height: '100vh' }}>
         <Container>
           <Row>
-            <div className="col-md-9 mb-5">
+            <div className="col-md-10 mb-5">
               <h2 className='main-heading-page'>Global Insurance Providers</h2>
               <h5 className='main-sub-heading'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</h5>
             </div>
@@ -900,7 +986,7 @@ function Homepage() {
       <section id="section-07" className="py-2 latest announcement" style={{ height: '100vh' }}>
         <Container>
           <Row>
-            <div className="col-md-9  mx-auto text-center">
+            <div className="col-md-10  mx-auto text-center">
               <h2 className='main-heading-page'>Latest Announcements</h2>
               <h5 className='main-sub-heading'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</h5>
             </div>
@@ -908,7 +994,7 @@ function Homepage() {
           <Row className="mt-4">
             <Col md={4}>
               <Card className="border-0 position-relative blog-card">
-                <Card.Img variant="top"  className="rounded-0" src={`${process.env.PUBLIC_URL}/images/blog1.png`} />
+                <Card.Img variant="top" className="rounded-0" src={`${process.env.PUBLIC_URL}/images/blog1.png`} />
                 <Card.Body>
                   <Card.Title className='card-title card-h'><h5 className='medical-card-heading'>Our New Miami Beach Hotel is Open Now!</h5></Card.Title>
                   <Card.Text><p className='medical-card-sub-heading'>A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.</p></Card.Text>
@@ -918,7 +1004,7 @@ function Homepage() {
             </Col>
             <Col md={4}>
               <Card className="border-0 position-relative blog-card">
-                <Card.Img variant="top"  className="rounded-0" src={`${process.env.PUBLIC_URL}/images/blog2.png`} />
+                <Card.Img variant="top" className="rounded-0" src={`${process.env.PUBLIC_URL}/images/blog2.png`} />
                 <Card.Body>
                   <Card.Title className='card-title card-h'><h5 className='medical-card-heading'>Know the Secreat of Resort Its Amazing!</h5></Card.Title>
                   <Card.Text><p className='medical-card-sub-heading'>A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.</p></Card.Text>
@@ -928,7 +1014,7 @@ function Homepage() {
             </Col>
             <Col md={4}>
               <Card className="border-0 position-relative blog-card">
-                <Card.Img variant="top"  className="rounded-0" src={`${process.env.PUBLIC_URL}/images/blog3.png`} />
+                <Card.Img variant="top" className="rounded-0" src={`${process.env.PUBLIC_URL}/images/blog3.png`} />
                 <Card.Body>
                   <Card.Title className='card-title card-h'><h5 className='medical-card-heading'>How to book a Resort in best price on Mountains</h5></Card.Title>
                   <Card.Text><p className='medical-card-sub-heading'>A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.</p></Card.Text>
@@ -938,7 +1024,7 @@ function Homepage() {
             </Col>
           </Row>
           <Row>
-           <Link to={'/view-all-announcement'}> <div class="text-center"><button type="button" class="line-primary-btn px-4 py-2 btn-hover btn btn-outline-primary"><h6 className='btn-font'>View All Announcements</h6></button></div></Link>
+            <Link to={'/view-all-announcement'}> <div class="text-center"><button type="button" class="line-primary-btn px-4 py-2 btn-hover btn btn-outline-primary"><h6 className='btn-font'>View All Announcements</h6></button></div></Link>
           </Row>
         </Container>
 

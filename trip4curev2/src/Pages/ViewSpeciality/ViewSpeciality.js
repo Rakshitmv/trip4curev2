@@ -3,10 +3,12 @@ import '../ViewSpeciality/ViewSpeciality.css'
 import {  Col, Container, Form, Row, Card, Button } from "react-bootstrap";
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
+import ScrollToTop from '../../Utilies/ScrollTop';
 
 const ViewSpeciality = () => {
   return (
     <>
+     
       <Header />
       <section className='viewspeciality-page'>
         <Container>
@@ -111,7 +113,7 @@ const ViewSpeciality = () => {
             </div>
               <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
               <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/neurology.png`} alt="" />
-              <h5 className='viewspeciality-heading'>Neurology</h5>
+              <h5 className='viewspeciality-heading'>neurology</h5>
             </div>
                <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
               <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/neuro-surgery.png`} alt="" />

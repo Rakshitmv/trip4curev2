@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect} from "react";
 import "./Topbar.css";
 import { Col, Container, Nav, Row } from "react-bootstrap";
 import NavDropdown from 'react-bootstrap/NavDropdown';
@@ -17,8 +17,39 @@ export const TickerStates = Object.freeze({ Stopped: 0, Running: 1, Paused: 2 })
 //   setTranslatedText(text);
 // };
 
+// useEffect(() => {
+//     const googleTranslateElementInit = () => {
+//         new window.google.translate.TranslateElement(
+//             {
+//               pageLanguage: "en",
+//               layout:
+//                 window.google.translate.TranslateElement.InlineLayout.SIMPLE,
+//             },
+//             "google_translate_element"
+//           );
+//       };
+//     var addScript = document.createElement("script");
+//     addScript.setAttribute(
+//       "src",
+//       "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+//     );
+//     addScript.setAttribute("async",'')
+//     document.body.appendChild(addScript);
+//     window.googleTranslateElementInit = googleTranslateElementInit;
+//   }, []);
+
+
 
 function Topbar() { 
+
+
+    const handleLngChange = e =>{
+        var lang = e.currentTarget.getAttribute('lang'); 
+        var languageSelect = document.querySelector("select.goog-te-combo");
+        languageSelect.value = lang; 
+        languageSelect.dispatchEvent(new Event("change"));
+    }
+   
     return (
       <section>
         <Container>
@@ -52,10 +83,11 @@ function Topbar() {
                         <Link to={''}><i className="fa fa-instagram"></i></Link>
                     </Nav>
                     <NavDropdown title="ENGLISH" className="navbar-nav flex-row align-items-center  langauge" id="collasible-nav-dropdown">
-                        <NavDropdown.Item href="/">ENGLISH</NavDropdown.Item>
-                        <NavDropdown.Item  href="/">SPANISH</NavDropdown.Item>
-                        <NavDropdown.Item  href="/">ARABIC</NavDropdown.Item>
-                    </NavDropdown>
+                        <NavDropdown.Item onClick={handleLngChange} lang="en">ENGLISH</NavDropdown.Item>
+                        <NavDropdown.Item onClick={handleLngChange} lang="es">SPANISH</NavDropdown.Item>
+                        <NavDropdown.Item onClick={handleLngChange} lang="ar">ARABIC</NavDropdown.Item>
+    </NavDropdown>
+    <div id="google_translate_element"></div>
                     
                 
                     </div>
