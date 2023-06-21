@@ -44,7 +44,7 @@ const [user,setuser ] = useState("");
           </>):(<>
             <Link className='nav-link' to={'/user-sign-in'}>User Sign In</Link>
             <Link className='nav-link' to={'/hospital-sign-in'}>Hospital Sign In</Link>
-            <Link className='btn' style={{ backgroundColor: '#b8353b', color: 'white' }} to={'/contact-us' } >CONTACT US</Link>
+            <Link className='btn my-1' style={{ backgroundColor: '#b8353b', color: 'white', fontSize: '14px' }} to={'/contact-us' } >CONTACT US</Link>
             
           </>)}
           {/* <Link className='nav-link' to={'/user-sign-in'}>User Sign In</Link>

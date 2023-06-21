@@ -18,44 +18,21 @@ const ViewSpeciality = () => {
               <p className='viewspeciality-sub-heading'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</p>
             </div>
           </Row>
-          <Row>
-            <div className='col-md-12 mt-5 mx-auto icon-img-heading'>
-              <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/addiction-treatment.png`} alt="" />
-              <h5 className='viewspeciality-heading'>Addiction Treatment</h5>
-            </div>
-            <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
-              <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/aesthetics.png`} alt="" />
-              <h5 className='viewspeciality-heading'>Aesthetics</h5>
-            </div>
-            <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
-              <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/anesthesiology.png`} alt="" />
-              <h5 className='viewspeciality-heading'>Anesthesiology</h5>
-            </div>
-            <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
-              <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/bariatric-surgery.png`} alt="" />
-              <h5 className='viewspeciality-heading'>Bariatric Surgery</h5>
-            </div>
-            <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
-              <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/bone-marrow-transplant.png`} alt="" />
-              <h5 className='viewspeciality-heading'>Bone Marrow Transplant</h5>
-            </div>
-            <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
-              <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/cancer-treatment.png`} alt="" />
-              <h5 className='viewspeciality-heading'>Cancer Treatment</h5>
-            </div>
-            <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
-              <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/cardiac-surgery.png`} alt="" />
-              <h5 className='viewspeciality-heading'>Cardiac Surgery</h5>
-            </div>
-            <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
-              <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/cardiology.png`} alt="" />
-              <h5 className='viewspeciality-heading'>Cardiology</h5>
-            </div>
-            <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
-              <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/cosmetic-surgery.png`} alt="" />
-              <h5 className='viewspeciality-heading'>Cosmetic Surgery</h5>
-            </div>
-            <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
+          <Row className=''>
+            <Col md={4}>
+              <div className='col-md-12 mt-5  mx-auto icon-img-heading'>
+                <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/addiction-treatment.png`} alt="" />
+                <h5 className='viewspeciality-heading'>Addiction Treatment</h5>
+              </div>
+              <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
+                  <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/aesthetics.png`} alt="" />
+                  <h5 className='viewspeciality-heading'>Aesthetics</h5>
+              </div>
+              <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
+                  <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/anesthesiology.png`} alt="" />
+                  <h5 className='viewspeciality-heading'>Anesthesiology</h5>
+              </div>
+              <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
               <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/dental.png`} alt="" />
               <h5 className='viewspeciality-heading'>Dental</h5>
             </div>
@@ -66,6 +43,45 @@ const ViewSpeciality = () => {
             <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
               <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/dialysis.png`} alt="" />
               <h5 className='viewspeciality-heading'>Dialysis</h5>
+            </div>
+            <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
+              <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/hair-transplant.png`} alt="" />
+              <h5 className='viewspeciality-heading'>Hair Transplant</h5>
+            </div>
+              <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
+              <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/hematology.png`} alt="" />
+              <h5 className='viewspeciality-heading'>Hematology</h5>
+            </div>
+              <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
+              <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/imaging.png`} alt="" />
+              <h5 className='viewspeciality-heading'>Imaging</h5>
+            </div>
+            <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
+              <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/pediatrics.png`} alt="" />
+              <h5 className='viewspeciality-heading'>Pediatrics</h5>
+            </div>
+               <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
+              <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/rehabilitation.png`} alt="" />
+              <h5 className='viewspeciality-heading'>Rehabilitation</h5>
+            </div>
+               <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
+              <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/stem.png`} alt="" />
+              <h5 className='viewspeciality-heading'>Stem</h5>
+            </div>
+            </Col>
+
+            <Col md={4} className='mt-4'>
+              <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
+              <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/bariatric-surgery.png`} alt="" />
+              <h5 className='viewspeciality-heading'>Bariatric Surgery</h5>
+            </div>
+            <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
+              <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/bone-marrow-transplant.png`} alt="" />
+              <h5 className='viewspeciality-heading'>Bone Marrow Transplant</h5>
+            </div>
+            <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
+              <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/cancer-treatment.png`} alt="" />
+              <h5 className='viewspeciality-heading'>Cancer Treatment</h5>
             </div>
             <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
               <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/ear-nose-and-throat.png`} alt="" />
@@ -79,31 +95,7 @@ const ViewSpeciality = () => {
               <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/eye-surgery.png`} alt="" />
               <h5 className='viewspeciality-heading'>Eye Surgery</h5>
             </div>
-              <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
-              <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/fertility-treatments.png`} alt="" />
-              <h5 className='viewspeciality-heading'>Fertility Treatments</h5>
-            </div>
-              <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
-              <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/gastroenterology.png`} alt="" />
-              <h5 className='viewspeciality-heading'>Gastroenterology</h5>
-            </div>
-              <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
-              <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/general-surgery.png`} alt="" />
-              <h5 className='viewspeciality-heading'>General Surgery</h5>
-            </div>
-              <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
-              <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/hair-transplant.png`} alt="" />
-              <h5 className='viewspeciality-heading'>Hair Transplant</h5>
-            </div>
-              <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
-              <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/hematology.png`} alt="" />
-              <h5 className='viewspeciality-heading'>Hematology</h5>
-            </div>
-              <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
-              <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/imaging.png`} alt="" />
-              <h5 className='viewspeciality-heading'>Imaging</h5>
-            </div>
-              <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
+            <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
               <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/medical-check-ups.png`} alt="" />
               <h5 className='viewspeciality-heading'>Medical Check Ups</h5>
             </div>
@@ -115,19 +107,7 @@ const ViewSpeciality = () => {
               <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/neurology.png`} alt="" />
               <h5 className='viewspeciality-heading'>neurology</h5>
             </div>
-               <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
-              <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/neuro-surgery.png`} alt="" />
-              <h5 className='viewspeciality-heading'>Neuro Surgery</h5>
-            </div>
-               <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
-              <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/ob-gyn.png`} alt="" />
-              <h5 className='viewspeciality-heading'>Ob Gyn</h5>
-            </div>
-               <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
-              <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/orthopedics.png`} alt="" />
-              <h5 className='viewspeciality-heading'>Orthopedics</h5>
-            </div>
-               <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
+             <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
               <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/pediatrics.png`} alt="" />
               <h5 className='viewspeciality-heading'>Pediatrics</h5>
             </div>
@@ -139,7 +119,46 @@ const ViewSpeciality = () => {
               <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/stem.png`} alt="" />
               <h5 className='viewspeciality-heading'>Stem</h5>
             </div>
+            </Col>
+
+            <Col md={4} className='mt-4 '>
               <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
+              <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/cardiac-surgery.png`} alt="" />
+              <h5 className='viewspeciality-heading'>Cardiac Surgery</h5>
+            </div>
+            <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
+              <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/cardiology.png`} alt="" />
+              <h5 className='viewspeciality-heading'>Cardiology</h5>
+            </div>
+            <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
+              <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/cosmetic-surgery.png`} alt="" />
+              <h5 className='viewspeciality-heading'>Cosmetic Surgery</h5>
+            </div>
+            <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
+              <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/fertility-treatments.png`} alt="" />
+              <h5 className='viewspeciality-heading'>Fertility Treatments</h5>
+            </div>
+              <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
+              <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/gastroenterology.png`} alt="" />
+              <h5 className='viewspeciality-heading'>Gastroenterology</h5>
+            </div>
+              <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
+              <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/general-surgery.png`} alt="" />
+              <h5 className='viewspeciality-heading'>General Surgery</h5>
+            </div>
+            <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
+              <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/neuro-surgery.png`} alt="" />
+              <h5 className='viewspeciality-heading'>Neuro Surgery</h5>
+            </div>
+               <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
+              <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/ob-gyn.png`} alt="" />
+              <h5 className='viewspeciality-heading'>Ob Gyn</h5>
+            </div>
+               <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
+              <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/orthopedics.png`} alt="" />
+              <h5 className='viewspeciality-heading'>Orthopedics</h5>
+            </div>
+                     <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
               <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/thyroid.png`} alt="" />
               <h5 className='viewspeciality-heading'>Thyroid</h5>
             </div>
@@ -151,8 +170,8 @@ const ViewSpeciality = () => {
               <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/vascular-surgery.png`} alt="" />
               <h5 className='viewspeciality-heading'>Vascular Surgery</h5>
             </div>
-
-
+            </Col>
+    
           </Row>
         </Container>
       </section>

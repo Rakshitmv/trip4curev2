@@ -1,3 +1,7 @@
+@import url("//db.onlinewebfonts.com/c/8e1f2a0617863e3914ef2ccdab13480c?family=Centaur");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+
 .css-hlgwow {
     padding: 0 !important;
 }
@@ -26,7 +30,7 @@
 .home-main-intro {
     background: #f3f3f3 url(../../../public/images/marisa-howenstine-nFsOlSE9Mn8-unsplash.png);
     background-size: contain;
-    background-position: right top;
+    background-position: 90%;
 
     background-repeat: no-repeat;
     position: relative;
@@ -262,6 +266,12 @@
     font-family: 'Poppins';
 
 
+}
+
+.card-sub-heading-1 {
+    padding-top: 6px;
+    font-family: 'Poppins';
+    font-weight: bold;
 }
 
 
@@ -520,6 +530,8 @@ margin: 10px;
 
 .card-text {
     font-size: 0.8rem;
+    font-family: 'Poppins';
+    font-weight: bold;
 }
 
 .ab-image .content {

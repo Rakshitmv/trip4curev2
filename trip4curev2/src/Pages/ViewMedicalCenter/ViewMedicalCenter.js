@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
 import ScrollToTop from '../../Utilies/ScrollTop';
+import './ViewMedicalCenter.css';
 
 
 const ViewMedicalCenter = () => {
@@ -49,13 +50,13 @@ const ViewMedicalCenter = () => {
                         <div className='col-md-9 pt-5 '>
                             {
                                 hospitals.length > 0 ?
-                                <Row className='g-4'>
+                                <Row className='g-5'>
                                 {
     
                                     hospitals.map(hospital =>
-                                    <Col md={6} key={hospital.id}>
+                                    <Col md={6} className='g-5' key={hospital.id}>
                                     <Link to={`/view-medical-center/${hospital.id}`} className="sliderblock"> 
-                                <Card className="text-center">
+                                <Card className="text-center ">
                                 <div className="image-block">
                                 <Card.Img variant="top" src={hospital.profile_image ? 'http://13.234.216.30:8080'+hospital.profile_image : ''} />
                                 </div>

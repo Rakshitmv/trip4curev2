@@ -8,6 +8,7 @@ import Slider from 'react-slick';
 import Select from 'react-select'
 import { useCallback } from 'react';
 import ScrollToTop from '../../Utilies/ScrollTop';
+import './MedicalCenterInfo.css'
 // import MedicalMenuBarServices from './MedicalCenterMenuBar/MedicalMenuBarServices';
 
 
@@ -171,7 +172,7 @@ const MedicalCenterInfo = () => {
                   </div>
                   <div className='col-6'>
                     <h4 className='mt-3'>Location</h4>
-                    <h6 className='mt-3'>{hospital.hospital_city}, {hospital.hospital_country}</h6>
+                    <h4 className='mt-3'>{hospital.hospital_city}, {hospital.hospital_country}</h4>
                     <a href={`tel:${hospital.contact_number}`} class="line-primary-btn  mt-3 px-4 py-2 btn btn-outline-primary menu-bar-info">Contact Hospital</a>
                   </div>
 
@@ -245,21 +246,21 @@ const MedicalCenterInfo = () => {
               <Col md="8">
                 <Nav variant="pills">
                   <Nav.Item>
-                    <Nav.Link eventKey="overview" className="line-primary-btn px-4 py-2 btn btn-outline-primary nav-tabs round-left" >Overview</Nav.Link>
+                    <Nav.Link eventKey="overview" className="line-primary-btn px-4 py-2 btn btn-outline-primary nav-tabs round-left medical-center-info-text" >Overview</Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
-                    <Nav.Link eventKey="services" className="line-primary-btn px-4 py-2 btn btn-outline-primary nav-tabs nav-tab">Services</Nav.Link>
+                    <Nav.Link eventKey="services" className="line-primary-btn px-4 py-2 btn btn-outline-primary nav-tabs nav-tab medical-center-info-text">Services</Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
-                    <Nav.Link eventKey="doctors" className="line-primary-btn px-4 py-2 btn btn-outline-primary nav-tabs round-right">Doctors</Nav.Link>
+                    <Nav.Link eventKey="doctors" className="line-primary-btn px-4 py-2 btn btn-outline-primary nav-tabs round-right medical-center-info-text">Doctors</Nav.Link>
                   </Nav.Item>
                 </Nav>
               </Col>
               <Col md={7}>
                 <Tab.Content className='my-3'>
                   <Tab.Pane eventKey="overview">
-                    <h1 className='mb-3'>{hospital.hospital_name} - Overview</h1>
-                    <h2 style={{ color: 'gray' }}> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</h2>
+                    <h1 className='mb-3 '>{hospital.hospital_name} - Overview</h1>
+                   
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</p>
                   </Tab.Pane>
                   <Tab.Pane eventKey="services">

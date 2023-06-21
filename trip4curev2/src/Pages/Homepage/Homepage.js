@@ -475,7 +475,7 @@ function Homepage() {
       <section className='ab-section' style={{ height: '100vh' }}>
         <Container>
           <Row>
-            <div className='col-md-10 mx-auto mt-3 mb-3 text-center'>
+            <div className='col-md-10 mx-auto mt-5 pt-4 mb-3 text-center'>
               <h2 className='main-heading-page'>Our Success Stories...</h2>
               <h5 className='main-sub-heading'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</h5>
             </div>
@@ -853,7 +853,7 @@ function Homepage() {
       <section id="section-05" className="py-5 testimonials" style={{ height: '100vh' }}>
         <Container>
           <Row>
-            <div class="col-md-9 mx-auto py-5 text-center"><h2 className="text-white-heading">What our Patients say...</h2></div>
+            <div class="col-md-9 mx-auto py-5 text-center"><h2 className="text-white-heading">What our Customers say...</h2></div>
           </Row>
           <Row>
             <div className="col-md-8 mx-auto text-center testimonial-card">
