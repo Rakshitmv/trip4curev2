@@ -142,7 +142,7 @@
 
 .nav-tabs{
     border-radius: 0 !important;
-    padding: 15px 50px  !important;
+    padding: 10px 50px  !important;
 }
 
 .nav-tab{
@@ -164,6 +164,7 @@ border-right: 0 !important;
 .round-left{
     border-top-left-radius: 8px !important;
     border-bottom-left-radius: 8px !important;
+
 }
 
 

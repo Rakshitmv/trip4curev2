@@ -41,13 +41,13 @@ const ViewMedicalCenter = () => {
             <section id= 'view-medical-page' className='view-medical-center-page '>
                 <Container>
                     <Row>
-                        <div className='col-md-9 mx-auto mt-5 text-center'>
-                            <h1 className='medical-center-heading'>Medical Centers</h1>
-                            <p className='medical-center-subheading'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</p>
+                        <div className='col-md-10 mx-auto mt-5 text-center'>
+                            <h2 className='medical-center-heading'>Medical Centers</h2>
+                            <h5 className='medical-center-subheading'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</h5>
                         </div>
                         
-                        <Row className='mb-5 justify-content-around'> 
-                        <div className='col-md-9 pt-5 '>
+                        <Row className='ms-5 mb-5 justify-content-around'> 
+                        <div className='col-md-10 pt-5  '>
                             {
                                 hospitals.length > 0 ?
                                 <Row className='g-5'>
@@ -56,7 +56,7 @@ const ViewMedicalCenter = () => {
                                     hospitals.map(hospital =>
                                     <Col md={6} className='g-5' key={hospital.id}>
                                     <Link to={`/view-medical-center/${hospital.id}`} className="sliderblock"> 
-                                <Card className="text-center ">
+                                <Card className="text-center " style={{ width: "320px", margin: '0 10px' }}>
                                 <div className="image-block">
                                 <Card.Img variant="top" src={hospital.profile_image ? 'http://13.234.216.30:8080'+hospital.profile_image : ''} />
                                 </div>

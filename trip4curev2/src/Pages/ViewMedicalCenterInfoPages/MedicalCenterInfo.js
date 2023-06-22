@@ -162,7 +162,7 @@ const MedicalCenterInfo = () => {
           <Row>
             <div>
               <div className='col-md-4 mt-5 '>
-                <h1>{hospital.hospital_name}</h1>
+                <h2 className='main-heading-page'>{hospital.hospital_name}</h2>
               </div>
               <div className='col-md-8 mt-5 medical-img-intro'>
                 <div className='row'>
@@ -246,20 +246,20 @@ const MedicalCenterInfo = () => {
               <Col md="8">
                 <Nav variant="pills">
                   <Nav.Item>
-                    <Nav.Link eventKey="overview" className="line-primary-btn px-4 py-2 btn btn-outline-primary nav-tabs round-left medical-center-info-text" >Overview</Nav.Link>
+                    <Nav.Link eventKey="overview" className="line-primary-btn   px-4  btn btn-outline-primary nav-tabs round-left medical-center-info-text" >Overview</Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
-                    <Nav.Link eventKey="services" className="line-primary-btn px-4 py-2 btn btn-outline-primary nav-tabs nav-tab medical-center-info-text">Services</Nav.Link>
+                    <Nav.Link eventKey="services" className="line-primary-btn px-4 btn btn-outline-primary nav-tabs nav-tab medical-center-info-text">Services</Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
-                    <Nav.Link eventKey="doctors" className="line-primary-btn px-4 py-2 btn btn-outline-primary nav-tabs round-right medical-center-info-text">Doctors</Nav.Link>
+                    <Nav.Link eventKey="doctors" className="line-primary-btn px-4  btn btn-outline-primary nav-tabs round-right medical-center-info-text">Doctors</Nav.Link>
                   </Nav.Item>
                 </Nav>
               </Col>
               <Col md={7}>
                 <Tab.Content className='my-3'>
                   <Tab.Pane eventKey="overview">
-                    <h1 className='mb-3 '>{hospital.hospital_name} - Overview</h1>
+                    <h2 className='mb-3 '>{hospital.hospital_name}</h2>
                    
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</p>
                   </Tab.Pane>

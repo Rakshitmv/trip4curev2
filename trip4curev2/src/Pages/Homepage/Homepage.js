@@ -11,6 +11,7 @@ import Slider from "react-slick";
 // import MedicalCenterInfoPages_1 from '../ViewMedicalCenterInfoPages/MedicalCenterInfoPages_1';
 import React, { useCallback, useState, useEffect, useMemo } from 'react';
 import countryList from 'react-select-country-list'
+import UserProfilePage from '../UserProfilePage/UserProfilePage';
 
 
 
@@ -304,9 +305,9 @@ function Homepage() {
     fetchHospitals();
     fetchDestinations();
   }, []);
+
+
   const [rating, setRating] = useState(0);
-  const [rating1, setRating1] = useState(0);
-  const [rating2, setRating2] = useState(0);
   const [hoveredRating, setHoveredRating] = useState(0);
 
   const handleMouseEnter = (value) => {
@@ -325,21 +326,7 @@ function Homepage() {
     }
   };
 
-  const handleClick1 = (value) => {
-    if (rating === value) {
-      setRating1(0);
-    } else {
-      setRating1(value);
-    }
-  };
 
-  const handleClick2 = (value) => {
-    if (rating === value) {
-      setRating2(0);
-    } else {
-      setRating2(value);
-    }
-  };
   return (
     <>
 
@@ -850,7 +837,7 @@ function Homepage() {
         </Container>
       </section>
 
-      <section id="section-05" className="py-5 testimonials" style={{ height: '100vh' }}>
+      <section id="section-05" className=" py-5 pb-3 testimonials" style={{ height: '100vh' }}>
         <Container>
           <Row>
             <div class="col-md-9 mx-auto py-5 text-center"><h2 className="text-white-heading">What our Customers say...</h2></div>
@@ -865,76 +852,82 @@ function Homepage() {
                       <h6 className="text-white"> Your Service was excellent, I had a reply and appointment within 24 hours.If I require
                         medical assistance in the future I will most certainly consider using your platform. </h6>
                     </Card.Text>
-                    <div className='col-md-9 mx-auto rating-star'>
+                         <div style={{ fontSize: '2rem' }}>
+                          {[1, 2, 3, 4, 5].map((value) => (
+                            <span
+                              key={value}
+                              style={{
+                                cursor: 'pointer',
+                                color: value <= (hoveredRating || rating) ? 'orange' : 'gray',
+                                display: 'inline-block',
+                                width: '30px',
+                                height: '30px',
+                              }}
+                              onClick={() => handleClick(value)}
+                              onMouseEnter={() => handleMouseEnter(value)}
+                              onMouseLeave={handleMouseLeave}
+                            >
+                             &#x1F7CA;
+                            </span>
+                          ))}
+                        </div>
+                    <Card.Text className="mt-5">
+                      <h5 className="text-white">JULIA ROSE</h5>
+                      <h6 className="text-white">From Los Angeles,Calfornia</h6>
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+                <Card>
+                  <Card.Img variant="top" className=" mt-3  ml-5 guest-img" src={`${process.env.PUBLIC_URL}/images/guest-testimonial-1.png`} />
+                  <Card.Body>
+                    <Card.Text className="mt-2">
+                      <h6 className="text-white"> Your Service was excellent, I had a reply and appointment within 24 hours.If I require
+                        medical assistance in the future I will most certainly consider using your platform. </h6>
+                    </Card.Text>
+                          <div style={{ fontSize: '2rem' }}>
+                          {[1, 2, 3, 4, 5].map((value) => (
+                            <span
+                              key={value}
+                              style={{
+                                cursor: 'pointer',
+                                color: value <= (hoveredRating || rating) ? 'orange' : 'gray',
+                                display: 'inline-block',
+                                width: '30px',
+                                height: '30px',
+                              }}
+                              onClick={() => handleClick(value)}
+                              onMouseEnter={() => handleMouseEnter(value)}
+                              onMouseLeave={handleMouseLeave}
+                            >
+                            &#x1F7CA;
+                            </span>
+                          ))}
+                        </div>
+                    <Card.Text className="mt-5">
+                      <h5 className="text-white">JULIA ROSE</h5>
+                      <h6 className="text-white">From Los Angeles,Calfornia</h6>
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+                <Card>
+                  <Card.Img variant="top" className=" mt-3  ml-5 guest-img" src={`${process.env.PUBLIC_URL}/images/guest-testimonial-1.png`} />
+                  <Card.Body>
+                    <Card.Text className="mt-2">
+                      <h6 className="text-white"> Your Service was excellent, I had a reply and appointment within 24 hours.If I require
+                        medical assistance in the future I will most certainly consider using your platform. </h6>
+                    </Card.Text>
+                        <div style={{ fontSize: '2rem' }}>
                       {[1, 2, 3, 4, 5].map((value) => (
                         <span
                           key={value}
                           style={{
                             cursor: 'pointer',
                             color: value <= (hoveredRating || rating) ? 'orange' : 'gray',
-                            fontSize: value <= (hoveredRating || rating) ? '3rem' : '2rem'
+                            display: 'inline-block',
+                            width: '30px',
+                            height: '30px',
                           }}
                           onClick={() => handleClick(value)}
-                          onMouseEnter={() => handleMouseEnter(value)}
-                          onMouseLeave={handleMouseLeave}
-                        >
-                          &#x1F7CA;
-                        </span>
-                      ))}
-                    </div>
-                    <Card.Text className="mt-5">
-                      <h5 className="text-white">JULIA ROSE</h5>
-                      <h6 className="text-white">From Los Angeles,Calfornia</h6>
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-                <Card>
-                  <Card.Img variant="top" className=" mt-3  ml-5 guest-img" src={`${process.env.PUBLIC_URL}/images/guest-testimonial-1.png`} />
-                  <Card.Body>
-                    <Card.Text className="mt-2">
-                      <h6 className="text-white"> Your Service was excellent, I had a reply and appointment within 24 hours.If I require
-                        medical assistance in the future I will most certainly consider using your platform. </h6>
-                    </Card.Text>
-                    <div className='col-md-9 mx-auto rating-star'>
-                      {[1, 2, 3, 4, 5].map((value) => (
-                        <span
-                          key={value}
-                          style={{
-                            cursor: 'pointer',
-                            color: value <= (hoveredRating || rating1) ? 'orange' : 'gray',
-                            fontSize: value <= (hoveredRating || rating1) ? '3rem' : '2rem'
-                          }}
-                          onClick={() => handleClick1(value)}
-                          onMouseEnter={() => handleMouseEnter(value)}
-                          onMouseLeave={handleMouseLeave}
-                        >
-                          &#x1F7CA;
-                        </span>
-                      ))}
-                    </div>
-                    <Card.Text className="mt-5">
-                      <h5 className="text-white">JULIA ROSE</h5>
-                      <h6 className="text-white">From Los Angeles,Calfornia</h6>
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-                <Card>
-                  <Card.Img variant="top" className=" mt-3  ml-5 guest-img" src={`${process.env.PUBLIC_URL}/images/guest-testimonial-1.png`} />
-                  <Card.Body>
-                    <Card.Text className="mt-2">
-                      <h6 className="text-white"> Your Service was excellent, I had a reply and appointment within 24 hours.If I require
-                        medical assistance in the future I will most certainly consider using your platform. </h6>
-                    </Card.Text>
-                    <div className='col-md-9 mx-auto rating-star'>
-                      {[1, 2, 3, 4, 5].map((value) => (
-                        <span
-                          key={value}
-                          style={{
-                            cursor: 'pointer',
-                            color: value <= (hoveredRating || rating2) ? 'orange' : 'gray',
-                            fontSize: value <= (hoveredRating || rating2) ? '3rem' : '2rem'
-                          }}
-                          onClick={() => handleClick2(value)}
                           onMouseEnter={() => handleMouseEnter(value)}
                           onMouseLeave={handleMouseLeave}
                         >
@@ -1029,8 +1022,8 @@ function Homepage() {
         </Container>
 
       </section>
-
       <Footer />
+      <UserProfilePage />
     </>
   );
 }

@@ -26,4 +26,11 @@
 
 .viewspeciality-sub-heading {
     font-family: 'Poppins';
+    font-weight: 500;
+    font-size: larger;
+    color: black;
+}
+
+.left-side {
+    
 }

@@ -13,13 +13,13 @@ const ViewSpeciality = () => {
       <section className='viewspeciality-page'>
         <Container>
           <Row>
-            <div className=' text-center mt-5 mx-auto viewspeciality-header'>
+            <div className='col-md-10 text-center mt-5 mx-auto viewspeciality-header'>
               <h2 className='viewspeciality-main-heading'>All Available Specialties</h2>
               <p className='viewspeciality-sub-heading'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</p>
             </div>
           </Row>
           <Row className=''>
-            <Col md={4}>
+            <Col md={4} className=''>
               <div className='col-md-12 mt-5  mx-auto icon-img-heading'>
                 <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/addiction-treatment.png`} alt="" />
                 <h5 className='viewspeciality-heading'>Addiction Treatment</h5>
@@ -70,8 +70,8 @@ const ViewSpeciality = () => {
             </div>
             </Col>
 
-            <Col md={4} className='mt-4'>
-              <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
+            <Col md={4} className='mt-4 left-side'>
+              <div className='col-md-12  mt-4 mx-auto icon-img-heading'>
               <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/bariatric-surgery.png`} alt="" />
               <h5 className='viewspeciality-heading'>Bariatric Surgery</h5>
             </div>
@@ -122,7 +122,7 @@ const ViewSpeciality = () => {
             </Col>
 
             <Col md={4} className='mt-4 '>
-              <div className='col-md-12 mt-4 mx-auto icon-img-heading'>
+              <div className='col-md-12 mt-4  icon-img-heading'>
               <img className='icon-img me-3' src={`${process.env.PUBLIC_URL}/images/cardiac-surgery.png`} alt="" />
               <h5 className='viewspeciality-heading'>Cardiac Surgery</h5>
             </div>
