@@ -12,6 +12,7 @@ import Slider from "react-slick";
 import React, { useCallback, useState, useEffect, useMemo } from 'react';
 import countryList from 'react-select-country-list'
 import UserProfilePage from '../UserProfilePage/UserProfilePage';
+import HospitalUserProfile from '../HospitalUserProfile/HospitalUserProfile';
 
 
 
@@ -1024,6 +1025,7 @@ function Homepage() {
       </section>
       <Footer />
       <UserProfilePage />
+      <HospitalUserProfile />
     </>
   );
 }
