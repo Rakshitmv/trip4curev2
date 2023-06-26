@@ -1,0 +1,50 @@
+.medical-center-menu-bar {
+    margin-right: 30px;
+}
+
+.menu-bar-info-1 {
+    width: 220px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    /* margin-right: 20px; */
+}
+
+.menu-bar-info-2 {
+    width: 220px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    /* margin-right: 20px; */
+}
+
+.menu-bar-info-3 {
+    width: 220px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    /* margin-right: 20px; */
+}
+
+.select-drop-menu {
+    width: 200px;
+    height: 60px;
+}
+
+
+.medical-menu-bar-select {
+    display: flex;
+    width: 80px;
+    height: 60px;
+}
+
+.menu-bar-name {
+    height: 50px;
+    width: 130px;
+}
+
+.medical-menu-search-btn {
+    /* margin-left: -50px; */
+    height: 200px;
+    width: 100px;
+}
+

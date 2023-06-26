@@ -1,0 +1,211 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+@import url("//db.onlinewebfonts.com/c/8e1f2a0617863e3914ef2ccdab13480c?family=Centaur");
+
+
+
+:root {
+    --text-white: #fff;
+    --dark-color: #161921;
+    --body-text-color: #687179;
+    --body-font-size: 0.875rem;
+    --body-font-family: 'Poppins';
+    --heading--font-family: 'Centaur';
+    --body-color: #fff;
+    --primary-color: #b8353b;
+    --secondary-color: #04abce;
+    --radius-small: 4px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    :root {
+        scroll-behavior: smooth
+    }
+}
+
+body {
+    margin: 0;
+    font-family: var(--body-font-family);
+    font-size: var(--body-font-size);
+    font-weight: 400;
+    background-color: var(--body-color);
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+}
+
+body,
+html,
+#root {
+    height: 100%;
+
+}
+
+
+/* .VIpgJd-ZVi9od-ORHb-OEVmcd{
+    display: none;
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
+} */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--heading--font-family);
+}
+
+a {
+    color: var(--text-color);
+}
+
+a:hover {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.red-link {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.red-link:hover {
+    text-decoration: underline;
+    color: var(--primary-color)
+}
+
+.font-size-lg {
+    font-size: 1.125rem !important;
+}
+
+/* .sliderblock .card-img-top {
+    width: 100% !important;
+} */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    border-radius: var(--radius-small);
+    color: var(--text-white) !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.text-black {
+    color: #000 !important;
+}
+
+.font-w500 {
+    font-weight: 500;
+}
+
+.fs-14 {
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.fs-18 {
+    font-size: 1.125rem !important;
+    line-height: 1.5;
+}
+
+.slick-dots li button:before {
+    content: none;
+}
+
+.slick-dots li button {
+    border: 2px solid var(--primary-color);
+    border-radius: 100%;
+}
+
+.slick-dots li.slick-active button {
+    border: 2px solid var(--primary-color);
+    background-color: var(--primary-color);
+}
+
+.slick-prev:before {
+    content: url(../public/images/less-then.png) !important;
+}
+
+.slick-next:before {
+    content: url(../public/images/greater-then.png) !important;
+}
+
+.line-primary-btn,
+.line-primary-btn.nav-link {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.line-primary-btn.nav-link {
+    border: 1px solid;
+}
+
+.line-primary-btn:hover,
+.line-primary-btn.nav-link:hover,
+.line-primary-btn.nav-link.active {
+    color: #fff;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+@media (min-width:481px) {
+    .sliderblock {
+        width: 95% !important;
+    }
+}
+
+@media (max-width:480px) {
+
+    /* .list-inline-item:not(.list-inline:nth-child(3)) { 
+        margin-right: 0.5rem;
+    }
+    .list-inline-item:not(.list-inline:nth-child(6)) { 
+        margin-right: 0.5rem;
+    } */
+    .icon-box {
+        width: 114px;
+    }
+
+    .home-main-intro .pb-9 {
+        padding-bottom: 2.375rem !important;
+    }
+
+
+}
+
+@media (min-width:768px) {
+    .arrowonTopright .slick-arrow {
+        position: absolute;
+        top: -110px;
+    }
+
+    .arrowonTopright .slick-arrow.slick-prev {
+        right: 70px;
+        left: auto;
+    }
+
+    .arrowonTopright .slick-arrow.slick-next {
+        right: 29px;
+        left: auto;
+    }
+}
+
+/* #google_translate_element,
+.skiptranslate{
+    display: none;
+} */

@@ -1,0 +1,36 @@
+@import url("//db.onlinewebfonts.com/c/8e1f2a0617863e3914ef2ccdab13480c?family=Centaur");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+.icon-img {
+    width: 40px;
+    /* height: 35px; */
+}
+
+.viewspeciality-main-heading {
+    font-size: 40px;
+    font-family: 'Centaur';
+    font-weight: bolder;
+}
+
+.icon-img-heading {
+    
+    display: flex;
+}
+
+.viewspeciality-heading {
+    
+    font-size: 30px;
+    font-family: 'Centaur';
+    font-weight: bolder;
+}
+
+.viewspeciality-sub-heading {
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: larger;
+    color: black;
+}
+
+.left-side {
+    
+}

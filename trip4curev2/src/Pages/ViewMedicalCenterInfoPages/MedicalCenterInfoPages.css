@@ -139,10 +139,19 @@
     display: flex;
 }
 
+.medical-center-info {
+    font-weight: bold;
+}
+
+.overview-text {
+    font-family: 'Poppins' !important;
+}
 
 .nav-tabs{
+    font-family: 'Poppins';
+    font-size: 17px;
     border-radius: 0 !important;
-    padding: 10px 50px  !important;
+    padding: 8px 50px  !important;
 }
 
 .nav-tab{

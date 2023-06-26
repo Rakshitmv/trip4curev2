@@ -43,7 +43,7 @@ import { Link } from "react-router-dom";
 function Topbar() { 
 
       const [newsItems, setNewsItems] = useState([
-      'Using a medical tourism facilitator. Curabitur porttitor ante eget hendrerit adipiscing.',
+      'Using a medical tourism facilitator. Curabitur porttitor ante eget hendrerit adipiscing Praesent.',
    
     // Add more news items as needed
   ]);
@@ -77,7 +77,7 @@ function Topbar() {
             <Row className="align-items-center">
                 <Col md={8}>
                     <div className="d-flex align-items-center">
-                        <div className="news-title me-3"><img src={`${process.env.PUBLIC_URL}/images/ic-announcement.png`} style={{height:20}}  alt="" /><span className="ps-2 d-md-inline-block d-none">Announcement</span></div>
+                        <div className="news-title me-1"><img src={`${process.env.PUBLIC_URL}/images/ic-announcement.png`} style={{height:20}}  alt="" /><span className="ps-2 d-md-inline-block d-none">Announcement</span></div>
                         {/* <NewsTicker
                         rowHeight = {10}
                         maxRows = {2}
@@ -93,13 +93,13 @@ function Topbar() {
                         <div>Praesent ornare nisl lorem, ut condimentum lectus gravida ut.</div>
                         <div>Nunc ultrices tortor eu massa placerat posuere.</div>
                         </NewsTicker> */}
-                            <div className="news-ticker">
+                        <div className="news-ticker">
                             {newsItems.map((item, index) => (
                                 <div key={index} className="news-item">
                                 {item}
-                                </div>
+                        </div>
                             ))}
-                            </div>
+                      </div>
                     </div>
                 </Col>
                 <Col md={4}>

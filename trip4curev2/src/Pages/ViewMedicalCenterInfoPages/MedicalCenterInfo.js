@@ -8,7 +8,7 @@ import Slider from 'react-slick';
 import Select from 'react-select'
 import { useCallback } from 'react';
 import ScrollToTop from '../../Utilies/ScrollTop';
-import './MedicalCenterInfo.css'
+
 // import MedicalMenuBarServices from './MedicalCenterMenuBar/MedicalMenuBarServices';
 
 
@@ -171,8 +171,8 @@ const MedicalCenterInfo = () => {
 
                   </div>
                   <div className='col-6'>
-                    <h4 className='mt-3'>Location</h4>
-                    <h4 className='mt-3'>{hospital.hospital_city}, {hospital.hospital_country}</h4>
+                    <h5 className='mt-3 medical-center-info'>Location</h5>
+                    <h5 className='mt-3 medical-center-info'>{hospital.hospital_city}, {hospital.hospital_country}</h5>
                     <a href={`tel:${hospital.contact_number}`} class="line-primary-btn  mt-3 px-4 py-2 btn btn-outline-primary menu-bar-info">Contact Hospital</a>
                   </div>
 
@@ -259,12 +259,12 @@ const MedicalCenterInfo = () => {
               <Col md={7}>
                 <Tab.Content className='my-3'>
                   <Tab.Pane eventKey="overview">
-                    <h2 className='mb-3 '>{hospital.hospital_name}</h2>
+                    {/* <h2 className='mb-3 '>{hospital.hospital_name}</h2> */}
                    
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</p>
+                    <p className='overview-text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</p>
                   </Tab.Pane>
                   <Tab.Pane eventKey="services">
-                    <h1>Services</h1>
+                    
                     {
                       services.map(service =>
                         <React.Fragment key={service.id}>

@@ -37,10 +37,12 @@
 
 .news-ticker {
     display: flex;
+    
     overflow: hidden;
 }
 
 .news-item {
+    
     animation: ticker 12s infinite linear;
     white-space: nowrap;
 }

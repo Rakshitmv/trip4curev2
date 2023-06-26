@@ -463,7 +463,7 @@ function Homepage() {
       <section className='ab-section' style={{ height: '100vh' }}>
         <Container>
           <Row>
-            <div className='col-md-10 mx-auto mt-5 pt-4 mb-3 text-center'>
+            <div className='col-md-10 mx-auto mt-3 pt-4 mb-3 text-center'>
               <h2 className='main-heading-page'>Our Success Stories...</h2>
               <h5 className='main-sub-heading'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</h5>
             </div>
@@ -684,7 +684,7 @@ function Homepage() {
                   <Card.Text>
                     <h6 className='medical-card-sub-heading'>A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.</h6>
                   </Card.Text>
-                  <Button className="text-link" variant="link">Read More</Button>
+                  <Link to={'view-medical-tourism-guide/view-medical-tourism-info-page-6'} className="text-link" variant="link">Read More</Link>
                 </Card.Body>
               </Card>
               <Card className="sliderblock mgt-block">
@@ -693,7 +693,7 @@ function Homepage() {
                   <Card.Text>
                     <h6 className='medical-card-sub-heading'>A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.</h6>
                   </Card.Text>
-                  <Button className="text-link" variant="link">Read More</Button>
+                  <Link to={'view-medical-tourism-guide/view-medical-tourism-info-page-6'} className="text-link" variant="link">Read More</Link>
                 </Card.Body>
               </Card>
               <Card className="sliderblock mgt-block">
@@ -702,7 +702,7 @@ function Homepage() {
                   <Card.Text>
                     <h6 className='medical-card-sub-heading'>A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.</h6>
                   </Card.Text>
-                  <Button className="text-link" variant="link">Read More</Button>
+                  <Link to={'view-medical-tourism-guide/view-medical-tourism-info-page-6'} className="text-link" variant="link">Read More</Link>
                 </Card.Body>
               </Card>
               <Card className="sliderblock mgt-block">
@@ -711,7 +711,7 @@ function Homepage() {
                   <Card.Text>
                     <h6 className='medical-card-sub-heading'>A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.</h6>
                   </Card.Text>
-                  <Button className="text-link" variant="link">Read More</Button>
+                  <Link to={'view-medical-tourism-guide/view-medical-tourism-info-page-6'} className="text-link" variant="link">Read More</Link>
                 </Card.Body>
               </Card>
               <Card className="sliderblock mgt-block">
@@ -720,7 +720,7 @@ function Homepage() {
                   <Card.Text>
                     <h6 className='medical-card-sub-heading'>A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.</h6>
                   </Card.Text>
-                  <Button className="text-link" variant="link">Read More</Button>
+                  <Link to={'view-medical-tourism-guide/view-medical-tourism-info-page-6'} className="text-link" variant="link">Read More</Link>
                 </Card.Body>
               </Card>
               <Card className="sliderblock mgt-block">
@@ -729,7 +729,7 @@ function Homepage() {
                   <Card.Text>
                     <h6 className='medical-card-sub-heading'>A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.</h6>
                   </Card.Text>
-                  <Button className="text-link" variant="link">Read More</Button>
+                  <Link to={'view-medical-tourism-guide/view-medical-tourism-info-page-6'} className="text-link" variant="link">Read More</Link>
                 </Card.Body>
               </Card>
 
@@ -759,7 +759,7 @@ function Homepage() {
                 <Card className="sliderblock">
                   <Card.Img variant="top" style={{ width: "100%" }} src={`${process.env.PUBLIC_URL}/images/india.png`} />
                   <div className="fd-content">
-                    <Card.Img className=" i-flag  m-2 top-0 start-0" variant="top" src={`${process.env.PUBLIC_URL}/images/india-flag.png`} />
+                    <Card.Img className=" i-flag   top-0 start-0" variant="top" src={`${process.env.PUBLIC_URL}/images/india-flag.png`} />
                     <div className="fd-bottom-content">
                       <h3 className="destination-country">India</h3>
                       <h4 className="destination-centers">({destinations.India} Medical Centers)</h4>
@@ -772,7 +772,7 @@ function Homepage() {
                 <Card className="sliderblock" style={{ width: '250px' }}>
                   <Card.Img variant="top" style={{ width: "100%" }} src={`${process.env.PUBLIC_URL}/images/spain.png`} />
                   <div className="fd-content">
-                    <Card.Img className=" i-flag  m-2 top-0 start-0" variant="top" src={`${process.env.PUBLIC_URL}/images/spain-flag.png`} />
+                    <Card.Img className=" i-flag   top-0 start-0" variant="top" src={`${process.env.PUBLIC_URL}/images/spain-flag.png`} />
                     <div className="fd-bottom-content">
                       <h3 className="destination-country">Spain</h3>
                       <h4 className="destination-centers">({destinations.Spain} Medical Centers)</h4>
@@ -786,7 +786,7 @@ function Homepage() {
                 <Card className="sliderblock" style={{ width: '250px' }}>
                   <Card.Img variant="top" style={{ width: "100%" }} src={`${process.env.PUBLIC_URL}/images/germany.png`} />
                   <div className="fd-content">
-                    <Card.Img className=" i-flag  m-2 top-0 start-0" variant="top" src={`${process.env.PUBLIC_URL}/images/germany-flag.png`} />
+                    <Card.Img className=" i-flag   top-0 start-0" variant="top" src={`${process.env.PUBLIC_URL}/images/germany-flag.png`} />
                     <div className="fd-bottom-content">
                       <h3 className="destination-country">Germany</h3>
                       <h4 className="destination-centers">({destinations.Germany} Medical Centers)</h4>
@@ -797,27 +797,27 @@ function Homepage() {
 
 
 
-              <Link to={'/view-destination-centers/Germany'} className="sliderblock" style={{ width: '250px' }}>
-                <Card className="sliderblock" style={{ width: '250px' }}>
-                  <Card.Img variant="top" style={{ width: "100%" }} src={`${process.env.PUBLIC_URL}/images/germany.png`} />
+              <Link to={'/view-destination-centers/Germany'} className="sliderblock" style={{ width: '250px', height: '500px' }}>
+                <Card className="sliderblock" style={{ width: '250px' ,height: '405px' }}>
+                  <Card.Img variant="top" style={{ width: "100%" ,height: "100%" }} src={`${process.env.PUBLIC_URL}/images/usa.jpg`} />
                   <div className="fd-content">
-                    <Card.Img className=" i-flag  m-2 top-0 start-0" variant="top" src={`${process.env.PUBLIC_URL}/images/germany-flag.png`} />
+                    <Card.Img className=" i-flag   top-0 start-0" variant="top" src={`${process.env.PUBLIC_URL}/images/usa-flag.png`} />
                     <div className="fd-bottom-content">
-                      <h3 className="destination-country">Germany</h3>
-                      <h4 className="destination-centers">({destinations.Germany} Medical Centers)</h4>
+                      <h3 className="destination-country">USA</h3>
+                      <h4 className="destination-centers">({destinations.USA} Medical Centers)</h4>
                     </div>
                   </div>
                 </Card>
               </Link>
 
 
-              <Link to={'/view-destination-centers/Germany'} className="sliderblock" style={{ width: '250px' }}>
-                <Card className="sliderblock" style={{ width: '250px' }}>
-                  <Card.Img variant="top" style={{ width: "100%" }} src={`${process.env.PUBLIC_URL}/images/germany.png`} />
+              <Link to={'/view-destination-centers/Germany'} className="sliderblock" style={{ width: '250px', height: '405px' }}>
+                <Card className="sliderblock" style={{ width: '250px', height: '405px'}}>
+                  <Card.Img variant="top" style={{ width: "100%", height: "100%" }} src={`${process.env.PUBLIC_URL}/images/canada.jpg`} />
                   <div className="fd-content">
-                    <Card.Img className=" i-flag  m-2 top-0 start-0" variant="top" src={`${process.env.PUBLIC_URL}/images/germany-flag.png`} />
+                    <Card.Img className=" i-flag   top-0 start-0" variant="top" src={`${process.env.PUBLIC_URL}/images/canada-flag.png`} />
                     <div className="fd-bottom-content">
-                      <h3 className="destination-country">Germany</h3>
+                      <h3 className="destination-country">Canada</h3>
                       <h4 className="destination-centers">({destinations.Germany} Medical Centers)</h4>
                     </div>
                   </div>
@@ -988,31 +988,31 @@ function Homepage() {
           <Row className="mt-4">
             <Col md={4}>
               <Card className="border-0 position-relative blog-card">
-                <Card.Img variant="top" className="rounded-0" src={`${process.env.PUBLIC_URL}/images/blog1.png`} />
+                <Card.Img variant="top" className="rounded-0" style={{width:'95%'}}  src={`${process.env.PUBLIC_URL}/images/blog1.png`} />
                 <Card.Body>
                   <Card.Title className='card-title card-h'><h5 className='medical-card-heading'>Our New Miami Beach Hotel is Open Now!</h5></Card.Title>
                   <Card.Text><p className='medical-card-sub-heading'>A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.</p></Card.Text>
-                  <Button className="text-link" variant="link">Read More</Button>
+                 <Link to={'view-all-announcement/announce-card-5'} className="text-link" variant="link">Read More</Link>
                 </Card.Body>
               </Card>
             </Col>
             <Col md={4}>
               <Card className="border-0 position-relative blog-card">
-                <Card.Img variant="top" className="rounded-0" src={`${process.env.PUBLIC_URL}/images/blog2.png`} />
+                <Card.Img variant="top" className="rounded-0" style={{width:'95%'}} src={`${process.env.PUBLIC_URL}/images/blog2.png`} />
                 <Card.Body>
                   <Card.Title className='card-title card-h'><h5 className='medical-card-heading'>Know the Secreat of Resort Its Amazing!</h5></Card.Title>
                   <Card.Text><p className='medical-card-sub-heading'>A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.</p></Card.Text>
-                  <Button className="text-link" variant="link">Read More</Button>
+                 <Link to={'view-all-announcement/announce-card-5'} className="text-link" variant="link">Read More</Link>
                 </Card.Body>
               </Card>
             </Col>
             <Col md={4}>
               <Card className="border-0 position-relative blog-card">
-                <Card.Img variant="top" className="rounded-0" src={`${process.env.PUBLIC_URL}/images/blog3.png`} />
+                <Card.Img variant="top" className="rounded-0" style={{width:'95%'}} src={`${process.env.PUBLIC_URL}/images/blog3.png`} />
                 <Card.Body>
                   <Card.Title className='card-title card-h'><h5 className='medical-card-heading'>How to book a Resort in best price on Mountains</h5></Card.Title>
                   <Card.Text><p className='medical-card-sub-heading'>A guide for what you should ask the doctor or surgeon in order to select the right one for your needs.</p></Card.Text>
-                  <Button className="text-link" variant="link">Read More</Button>
+                 <Link to={'view-all-announcement/announce-card-5'} className="text-link" variant="link">Read More</Link>
                 </Card.Body>
               </Card>
             </Col>

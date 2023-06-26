@@ -10,8 +10,24 @@ import "./UserProfilePage.css";
 import { useForm } from "react-hook-form";
 import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBTypography, MDBIcon } from 'mdb-react-ui-kit';
-
+// import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBTypography, MDBIcon } from 'mdb-react-ui-kit';
+import {
+  MDBCol,
+  MDBContainer,
+  MDBRow,
+  MDBCard,
+  MDBCardText,
+  MDBCardBody,
+  MDBCardImage,
+  MDBBtn,
+  MDBBreadcrumb,
+  MDBBreadcrumbItem,
+  MDBProgress,
+  MDBProgressBar,
+  MDBIcon,
+  MDBListGroup,
+  MDBListGroupItem
+} from 'mdb-react-ui-kit';
 
 
 const UserProfilePage = () => {
@@ -26,58 +42,85 @@ const UserProfilePage = () => {
                         {/* <p className='main-sub-heading-page-fmc'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit diam at sodales tempus. Sed varius magna accumsan nulla egestas, sed faucibus justo blandit. In hac habitasse platea dictumst.</p> */}
                     </div>    
                </Row>
-            <MDBContainer className=" h-100">
-                <MDBRow className="mt-5 justify-content-center h-90">
-                <MDBCol lg="8" className=" mb-lg-0">
-                    <MDBCard className="mb-3" style={{ borderRadius: '.5rem' }}>
-                    <MDBRow className="g-0">
-                        <MDBCol md="4" className="gradient-custom text-center text-white"
-                        style={{ borderTopLeftRadius: '.5rem', borderBottomLeftRadius: '.5rem' }}>
-                        <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
-                            alt="Avatar" className="my-5" style={{ width: '80px' }} fluid />
-                        <MDBTypography tag="h5">Marie Horwitz</MDBTypography>
-                        <MDBCardText>Web Designer</MDBCardText>
-                        <MDBIcon far icon="edit mb-5" />
-                        </MDBCol>
-                        <MDBCol md="8">
-                        <MDBCardBody className="p-4">
-                            <MDBTypography tag="h6">Information</MDBTypography>
-                            <hr className="mt-0 mb-4" />
-                            <MDBRow className="pt-1">
-                            <MDBCol size="6" className="mb-3">
-                                <MDBTypography tag="h6">Email</MDBTypography>
-                                <MDBCardText className="text-muted">info@example.com</MDBCardText>
-                            </MDBCol>
-                            <MDBCol size="6" className="mb-3">
-                                <MDBTypography tag="h6">Phone</MDBTypography>
-                                <MDBCardText className="text-muted">123 456 789</MDBCardText>
-                            </MDBCol>
-                            </MDBRow>
-
-                            <MDBTypography tag="h6">Information</MDBTypography>
-                            <hr className="mt-0 mb-4" />
-                            <MDBRow className="pt-1">
-                            <MDBCol size="6" className="mb-3">
-                                <MDBTypography tag="h6">Email</MDBTypography>
-                                <MDBCardText className="text-muted">info@example.com</MDBCardText>
-                            </MDBCol>
-                            <MDBCol size="6" className="mb-3">
-                                <MDBTypography tag="h6">Phone</MDBTypography>
-                                <MDBCardText className="text-muted">123 456 789</MDBCardText>
-                            </MDBCol>
-                            </MDBRow>
-
-                            <div className="d-flex justify-content-start">
-                            <a href="#!"><MDBIcon fab icon="facebook me-3" size="lg" /></a>
-                            <a href="#!"><MDBIcon fab icon="twitter me-3" size="lg" /></a>
-                            <a href="#!"><MDBIcon fab icon="instagram me-3" size="lg" /></a>
-                            </div>
-                        </MDBCardBody>
-                        </MDBCol>
-                    </MDBRow>
-                    </MDBCard>
+            <MDBContainer className="py-5">
+              {/* <MDBRow>
+                <MDBCol>
+                  <MDBBreadcrumb className="bg-light rounded-3 p-3 mb-4">
+                    <MDBBreadcrumbItem>
+                      <a href='#'>Home</a>
+                    </MDBBreadcrumbItem>
+                    <MDBBreadcrumbItem>
+                      <a href="#">User</a>
+                    </MDBBreadcrumbItem>
+                    <MDBBreadcrumbItem active>User Profile</MDBBreadcrumbItem>
+                  </MDBBreadcrumb>
                 </MDBCol>
-                </MDBRow>
+              </MDBRow> */}
+
+              <MDBRow>
+                <MDBCol lg="4">
+                  <MDBCard className="mb-4">
+                    <MDBCardBody className="text-center">
+                      <MDBCardImage
+                        src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
+                        alt="avatar"
+                        className="rounded-circle"
+                        style={{ width: '130px' }}
+                        fluid />
+                      <p className="text-muted mb-1">Full Stack Developer</p>
+                      <p className="text-muted mb-4">Bay Area, San Francisco, CA</p>
+                   
+                    </MDBCardBody>
+                  </MDBCard>
+
+                 
+                </MDBCol>
+                <MDBCol lg="8">
+                  <MDBCard className="mb-4">
+                    <MDBCardBody>
+                      <MDBRow>
+                        <MDBCol sm="3">
+                          <MDBCardText>Full Name</MDBCardText>
+                        </MDBCol>
+                        <MDBCol sm="9">
+                          <MDBCardText className="text-muted">Johnatan Smith</MDBCardText>
+                        </MDBCol>
+                      </MDBRow>
+                      <hr />
+                      <MDBRow>
+                        <MDBCol sm="3">
+                          <MDBCardText>Email</MDBCardText>
+                        </MDBCol>
+                        <MDBCol sm="9">
+                          <MDBCardText className="text-muted">example@example.com</MDBCardText>
+                        </MDBCol>
+                      </MDBRow>
+                      <hr />
+                      <MDBRow>
+                        <MDBCol sm="3">
+                          <MDBCardText>Set Password</MDBCardText>
+                        </MDBCol>
+                        <MDBCol sm="9">
+                          <MDBCardText className="text-muted">* * *</MDBCardText>
+                        </MDBCol>
+                      </MDBRow>
+                      <hr />
+                      <MDBRow>
+                        <MDBCol sm="3">
+                          <MDBCardText>Confirm Password</MDBCardText>
+                        </MDBCol>
+                        <MDBCol sm="9">
+                          <MDBCardText className="text-muted">* * * *</MDBCardText>
+                        </MDBCol>
+                      </MDBRow>
+                      <hr />
+                    
+                    </MDBCardBody>
+                  </MDBCard>
+
+         
+                </MDBCol>
+              </MDBRow>
             </MDBContainer>
             </section>
             <Footer />
